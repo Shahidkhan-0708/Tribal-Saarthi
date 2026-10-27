@@ -1,0 +1,67 @@
+{
+  "viewport": 390,
+  "documentWidth": 395,
+  "navigationLinks": [
+    {
+      "text": "Dashboard",
+      "visible": false
+    },
+    {
+      "text": "Scholarship Discovery",
+      "visible": false
+    },
+    {
+      "text": "Document Wallet",
+      "visible": false
+    },
+    {
+      "text": "Application & Tracker",
+      "visible": false
+    },
+    {
+      "text": "Scholarship History",
+      "visible": false
+    },
+    {
+      "text": "Help & Grievance",
+      "visible": false
+    }
+  ],
+  "overflowing": [
+    {
+      "tag": "DIV",
+      "classes": "pointer-events-none absolute -right-8 -bottom-8 h-48 w-48 rounded-full bg-amber-500/10 blur-3xl",
+      "right": 401
+    },
+    {
+      "tag": "DIV",
+      "classes": "flex items-center justify-between rounded-xl border border-stone-200/90 bg-stone-50/80 p-3 text-xs dark:border-stone-800 dark:bg-stone-900/6",
+      "right": 395
+    },
+    {
+      "tag": "DIV",
+      "classes": "flex items-center justify-between rounded-xl border border-stone-200/90 bg-stone-50/80 p-3 text-xs dark:border-stone-800 dark:bg-stone-900/6",
+      "right": 395
+    },
+    {
+      "tag": "DIV",
+      "classes": "flex items-center justify-between rounded-xl border border-stone-200/90 bg-stone-50/80 p-3 text-xs dark:border-stone-800 dark:bg-stone-900/6",
+      "right": 395
+    },
+    {
+      "tag": "DIV",
+      "classes": "flex items-center justify-between rounded-xl border border-stone-200/90 bg-stone-50/80 p-3 text-xs dark:border-stone-800 dark:bg-stone-900/6",
+      "right": 395
+    },
+    {
+      "tag": "DIV",
+      "classes": "flex items-center justify-between rounded-xl border border-stone-200/90 bg-stone-50/80 p-3 text-xs dark:border-stone-800 dark:bg-stone-900/6",
+      "right": 395
+    },
+    {
+      "tag": "DIV",
+      "classes": "flex items-center justify-between rounded-xl border border-stone-200/90 bg-stone-50/80 p-3 text-xs dark:border-stone-800 dark:bg-stone-900/6",
+      "right": 395
+    }
+  ]
+}

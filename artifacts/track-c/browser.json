@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-18T12:21:20.721Z",
+  "passed": true,
+  "frontendUrl": "https://tribe-saarthi-staging.vercel.app",
+  "checks": [
+    "Administrator lifecycle list, pending filter and versioned scheme controls render",
+    "Filtered administrator audit CSV downloads from real scoped queries",
+    "Nodal scoped analytics CSV, comparability explanation and charts render",
+    "Student grievance timeline and authenticated private-byte evidence preview work",
+    "Anonymous receipt displays revocation and no student email"
+  ],
+  "errors": []
+}

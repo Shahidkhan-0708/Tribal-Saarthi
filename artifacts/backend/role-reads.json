@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-20T17:53:37.577Z",
+  "results": [
+    {
+      "role": "admin",
+      "passed": true
+    },
+    {
+      "role": "student",
+      "passed": true
+    },
+    {
+      "role": "institute",
+      "passed": true
+    },
+    {
+      "role": "nodal",
+      "passed": true
+    },
+    {
+      "role": "family",
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a15a72-7394-788b-b4b7-aa68b3c0dc11",
+      "ms": 1257
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a15a72-768b-794e-841a-81c0f425752c",
+      "ms": 488
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/pilot_snapshot",
+      "status": 200,
+      "requestId": "01a15a72-79d0-736d-94d6-1df0763fa7de",
+      "ms": 632
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a15a72-7b14-78a9-bf17-af00b9d3f15a",
+      "ms": 241
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a15a72-7c18-713a-9d5a-8f29239a9d2b",
+      "ms": 166
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/pilot_snapshot",
+      "status": 200,
+      "requestId": "01a15a72-7cc7-7a7e-a2b1-9c80c1fc1e40",
+      "ms": 322
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a15a72-7e18-7ced-9432-2cd92bedd871",
+      "ms": 171
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a15a72-7ecf-7103-81a4-907c8dc83b03",
+      "ms": 777
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/pilot_snapshot",
+      "status": 200,
+      "requestId": "01a15a72-81de-7b19-b74f-cdb35f5d5aa0",
+      "ms": 344
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a15a72-833f-736e-8355-180c8af3b27d",
+      "ms": 185
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a15a72-8401-7124-b1ae-bb244b251818",
+      "ms": 302
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/pilot_snapshot",
+      "status": 200,
+      "requestId": "01a15a72-8523-70b6-ad5e-8ca3da891f6d",
+      "ms": 510
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a15a72-8733-769a-87c2-32f2b04ba014",
+      "ms": 198
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a15a72-8804-7121-b7ce-8db1cc671e3a",
+      "ms": 235
+    },
+    {
+      "method": "POST",
+      "path": "/rest/v1/rpc/pilot_family_page",
+      "status": 200,
+      "requestId": "01a15a72-88ff-7c6f-9f3e-66258f46dd97",
+      "ms": 174
+    }
+  ]
+}

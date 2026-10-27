@@ -1,0 +1,27 @@
+# Roo Code & Antigravity Agent Guidelines
+
+## 1. System Ecosystem Integration (Antigravity ↔ Roo Code ↔ Ralph Loop ↔ GSD)
+- **Tri-Agent Unified Connection**: Antigravity, Roo Code, and Ralph Loop are fully inter-connected and share continuous execution context.
+- **Task Source of Truth**: All tasks are strictly cataloged in `TASKS.md` using deterministic `[TASK-X.Y]` IDs and monitored via **GSD Mission Control** and **Ralph Loop**.
+- **Auto-Task Generation on Flow Stop**: Whenever any audit recording session or RAG/retrieval flow finishes or stops, immediately generate the next pending task with an explicit `[TASK-ID]` in `TASKS.md` so the agents immediately pick it up.
+- **State Synchronization**: When completing a task, check it off in `TASKS.md` (`- [x] [TASK-X.Y]`) and record progress in `progress.txt` so GSD Mission Control and Ralph Loop immediately sync.
+- **Loop Orchestration**: Follow the iterative guidance outlined in `PROMPT.md`.
+
+## 2. Context & Architecture:
+- Always refer to `PROJECT_BLUEPRINT.md` for architecture, data contracts, and scope before writing code.
+- Do NOT build mock placeholders when the blueprint specifies "REAL engine" (e.g., Eligibility Rules Engine, Application State Machine).
+- Use Tailwind CSS and Lucide icons as configured in the project.
+
+## 3. Quality & Safety:
+- Write clean, modular, typed code (TypeScript/modern JS).
+- Never overwrite large files indiscriminately; make surgical, minimal diff edits.
+- Every state machine transition or calculation logic must have automated tests.
+
+## 4. Verification:
+- After completing any task, run `npm run typecheck` and `npm run test` to verify syntax and test health.
+
+## 5. Autonomous Operation & Zero-Interruption Directives:
+- **Zero-Permission Execution**: Never pause execution to ask "Should I continue?", "Would you like me to apply this?", or "Can I run this command?". All agents work automatically and consecutively without asking permission.
+- **Self-Healing Error Correction**: If a typecheck, build, or test fails, immediately analyze the stack trace, edit the code, and re-test until exit code 0 is achieved.
+- **Continuous Multi-Task Chaining (No "Start New Task" Halts)**: **NEVER call `attempt_completion` or end the session after completing a single subtask.** Calling `attempt_completion` halts the UI and forces the user to manually click "Start New Task". Instead, immediately mark `- [x] [TASK-X.Y]`, append to `progress.txt`, read the next unchecked `- [ ] [TASK-X.Z]`, and immediately implement it within the exact same session.
+- **Phase Completion Only**: Only call `attempt_completion` when all tasks in the current phase or `TASKS.md` are 100% complete.

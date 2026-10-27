@@ -1,0 +1,100 @@
+{
+  "at": "2026-10-18T08:33:56.001Z",
+  "projectRef": "axegexiaofxdmmizilri",
+  "passed": true,
+  "issuedAt": 1792312310,
+  "expiredAt": 1792312370,
+  "checks": [
+    "Genuine unexpired token reads its own student record",
+    "Inactive student cannot read own records or create an owned private preview",
+    "Foreign browser origin denied without permissive CORS",
+    "Hosted Auth explicitly refuses public signup",
+    "The same genuine expired JWT is denied by direct API and Edge requests"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a14e23-521c-7cc2-a09e-0a9249fe0ed9",
+      "ms": 389
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a14e23-7a69-7825-bb5b-999995b7be7c",
+      "ms": 303
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a14e23-7b45-79d4-a531-a9a8e9e08f35",
+      "ms": 230
+    },
+    {
+      "method": "PATCH",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 204,
+      "requestId": "01a14e23-7c5c-73d8-8963-09e0f836d7df",
+      "ms": 601
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a14e23-7e6b-7669-ba99-f22bef00635a",
+      "ms": 71
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a14e23-7ec8-7da5-b76c-77baddb0b5dc",
+      "ms": 102
+    },
+    {
+      "method": "POST",
+      "path": "/storage/v1/[redacted]",
+      "status": 400,
+      "requestId": "01a14e23-7f17-7a96-9357-f7394f64158c",
+      "ms": 79
+    },
+    {
+      "method": "PATCH",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 204,
+      "requestId": "01a14e23-7f6a-75dc-8782-f29d0b54d21f",
+      "ms": 64
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 403,
+      "requestId": "5b5d8f45-4e9c-4d72-b50e-9e6f204a06a8",
+      "ms": 179
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/signup",
+      "status": 422,
+      "requestId": "01a14e23-8069-7eaa-913a-299fe26e1e4c",
+      "ms": 70
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 401,
+      "requestId": "01a14e25-652c-78a7-9472-3360fcdd1d74",
+      "ms": 428
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 401,
+      "requestId": "c1c54eb3-8e7c-4d5c-9aae-62a86fcea09c",
+      "ms": 569
+    }
+  ]
+}

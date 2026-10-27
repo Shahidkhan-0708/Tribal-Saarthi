@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-18T12:11:47.224Z",
+  "frontendUrl": "https://tribe-saarthi-staging.vercel.app",
+  "supabaseRef": "axegexiaofxdmmizilri",
+  "vercelDeploymentId": "dpl_DCu1cKLfpwCMWD7k9JBwPpCt8rDh",
+  "adapterMode": "simulated",
+  "governmentTransportConnected": false,
+  "migrations": [
+    "20261018111928_pilot_integration_contract.sql",
+    "20261018112847_pilot_privacy_controls.sql",
+    "20261018113157_pilot_bounded_reads.sql",
+    "20261018114932_pilot_snapshot_batch.sql",
+    "20261018115103_pilot_review_adapter_provenance.sql",
+    "20261018115508_pilot_nullable_history.sql",
+    "20261018120904_pilot_broadcast_count_parity.sql"
+  ]
+}

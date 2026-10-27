@@ -1,0 +1,34 @@
+[
+    {
+        "kind":  "backup",
+        "status":  "succeeded",
+        "detail":  {
+                       "code":  "backup_verified",
+                       "bytes":  1399514,
+                       "tables":  52,
+                       "objects":  15,
+                       "backupPrefix":  "2026-10-18/24a852ea-f25d-44a1-8a6f-7f677fe61767"
+                   },
+        "started_at":  "2026-10-18 13:51:00.315924+00",
+        "finished_at":  "2026-10-18 13:51:06.843157+00"
+    },
+    {
+        "kind":  "emails",
+        "status":  "succeeded",
+        "detail":  {
+                       "code":  "email_provider_not_configured",
+                       "processed":  0
+                   },
+        "started_at":  "2026-10-18 14:00:02.502225+00",
+        "finished_at":  "2026-10-18 14:00:02.606212+00"
+    },
+    {
+        "kind":  "monitor",
+        "status":  "succeeded",
+        "detail":  {
+                       "code":  "health_ok"
+                   },
+        "started_at":  "2026-10-18 14:00:02.507395+00",
+        "finished_at":  "2026-10-18 14:00:02.866906+00"
+    }
+]

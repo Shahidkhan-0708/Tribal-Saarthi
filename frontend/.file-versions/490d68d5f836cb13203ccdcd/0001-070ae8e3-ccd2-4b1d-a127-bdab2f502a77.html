@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital sanction signing · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .sign-split{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px;align-items:start}
+  .sign-aside{position:sticky;top:calc(var(--gov) + var(--hdr) + 24px)}
+  .pin{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+  .pin input{width:100%;height:48px;text-align:center;font:600 18px/1 var(--mono);border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);transition:border-color var(--t),box-shadow var(--t)}
+  .pin input:focus{outline:none;border-color:var(--blue);box-shadow:var(--ring)}
+  .pipe3{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .pipe3 > div{padding:13px;background:var(--surface-2);position:relative}
+  .pipe3 > div + div{border-left:1px solid var(--line)}
+  .pipe3 .n{width:18px;height:18px;border-radius:50%;background:#E8EDF3;color:var(--muted);display:grid;place-items:center;font-size:8.5px;font-weight:700;margin-bottom:8px;border:1px solid var(--line-strong)}
+  .pipe3 .done .n{background:var(--green);color:#fff;border-color:var(--green)}
+  .pipe3 .now{background:var(--blue-soft)}
+  .pipe3 .now .n{background:var(--blue);color:#fff;border-color:var(--blue)}
+  @media (max-width:1000px){.sign-split{grid-template-columns:minmax(0,1fr)}.sign-aside{position:static}}
+  @media (max-width:640px){.pipe3{grid-template-columns:repeat(2,minmax(0,1fr))}.pipe3>div:nth-child(3){border-left:0;border-top:1px solid var(--line)}.pipe3>div:nth-child(4){border-top:1px solid var(--line)}}
+</style>
+</head>
+<body data-role="officer" data-page="sanction-signing">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page wide" id="main" data-od-id="sanction-signing-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><a href="officer-case-inspection.html">Case #TS-2026-88194</a><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Sanction signing</span></div>
+      <h1 class="page-title" data-od-id="sanction-signing-title">Statutory digital sanction desk</h1>
+      <p class="page-sub">IT Act 2000, Section 3 · Digital Signature Certificate execution for Mohan Birhor. Illustrative signing step — not a live certificate.</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn btn-secondary" type="button" data-toast="Draft sanction order downloaded">
+        <svg class="i"><use href="#i-download"/></svg>Download draft PDF</button>
+    </div>
+  </div>
+
+  <div class="sign-split">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">Sanction order manifest</h2><p class="micro" style="margin-top:3px">Order ref MOTA/SANCT/2026/JH-88194 · Latehar District Treasury</p></div>
+          <span class="badge badge-amber"><span class="bdot"></span>Awaiting signature</span>
+        </div>
+        <div class="card-b">
+          <div class="flex between center wrap gap12" style="padding-bottom:16px;border-bottom:1px solid var(--line)">
+            <div>
+              <div class="eyebrow">Expenditure commitment · annual</div>
+              <div class="amount" style="margin-top:6px">₹1,32,000</div>
+            </div>
+            <div class="right">
+              <div class="eyebrow">Sanction year</div>
+              <div class="h3" style="margin-top:4px">2026–27</div>
+            </div>
+          </div>
+
+          <div class="bars mt20" style="--max:100">
+            <div class="bar-row" style="grid-template-columns:190px minmax(0,1fr) 96px">
+              <span class="bar-label">BIT Mesra tuition fee</span>
+              <div class="bar-track"><div class="bar" style="--v:74"></div></div>
+              <span class="bar-value">74% · ₹98,000</span>
+            </div>
+            <div class="bar-row" style="grid-template-columns:190px minmax(0,1fr) 96px">
+              <span class="bar-label">Monthly maintenance &amp; mess</span>
+              <div class="bar-track"><div class="bar green" style="--v:18"></div></div>
+              <span class="bar-value">18% · ₹24,000</span>
+            </div>
+            <div class="bar-row" style="grid-template-columns:190px minmax(0,1fr) 96px">
+              <span class="bar-label">PVTG equipment / book grant</span>
+              <div class="bar-track"><div class="bar" style="--v:8;background:#7FA6E8"></div></div>
+              <span class="bar-value">8% · ₹10,000</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Beneficiary disbursement route</h2><span class="badge badge-green">Verified</span></div>
+        <div class="card-b" style="padding-top:8px">
+          <div class="keyline" style="padding:13px 0"><span class="k" style="width:172px">Beneficiary</span><div class="grow"><div class="v">Mohan Birhor · son of Somra Birhor</div><div class="micro" style="margin-top:2px">Village Belta, Block Mahuadanr, District Latehar, Jharkhand · PVTG Tier-1</div></div></div>
+          <div class="keyline" style="padding:13px 0"><span class="k" style="width:172px">Target DBT account</span><div class="grow"><div class="v mono">Bank of India · ••••9012</div><div class="micro" style="margin-top:2px">IFSC BKID0004910 · Mesra branch, Ranchi</div></div><span class="badge badge-green">NPCI active</span></div>
+          <div class="keyline" style="padding:13px 0"><span class="k" style="width:172px">Aadhaar vault ref</span><div class="grow"><div class="v mono">•••• •••• 4921</div><div class="micro" style="margin-top:2px">NPCI mandate ID NPCI-MOTA-2026-991204</div></div><span class="badge badge-gray">Tokenised</span></div>
+          <div class="keyline" style="padding:13px 0"><span class="k" style="width:172px">Deduction</span><div class="grow"><div class="v">Zero intermediary deduction</div><div class="micro" style="margin-top:2px">Direct central treasury release to the scholar account</div></div><span class="badge badge-green">Direct</span></div>
+
+          <div class="callout info mt16">
+            <svg class="i"><use href="#i-shield"/></svg>
+            <div><b>Statutory responsibility.</b> Signing confirms you have checked the four evidence records and that this application meets the scheme requirements.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">PFMS treasury pipeline</h2></div>
+        <div class="card-b">
+          <div class="pipe3">
+            <div class="done"><div class="n">✓</div><div class="h4">DWO concurrence</div><div class="micro" style="margin-top:2px">Dr. K. Soren</div></div>
+            <div class="now"><div class="n">2</div><div class="h4">DSC token sign</div><div class="micro" style="margin-top:2px">Hardware FIPS</div></div>
+            <div><div class="n">3</div><div class="h4">PFMS XML push</div><div class="micro" style="margin-top:2px">Direct SFTP</div></div>
+            <div><div class="n">4</div><div class="h4">RBI NEFT / DBT</div><div class="micro" style="margin-top:2px">Bank of India</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Immutable audit record</h2><span class="badge badge-gray">SHA-256</span></div>
+        <div class="card-b">
+          <div class="mono-block">
+<span class="k">prev_hash</span>  0x3f11e9a40821049281a049182904812a…<br>
+<span class="k">signer_cert</span> CN=Dr. K. Soren, O=MoTA, C=IN<br>
+<span class="k">token_serial</span> 0x7F82A091<br>
+<span class="k">payload</span>     MOTA/SANCT/2026/JH-88194 · ₹1,32,000<br>
+<span class="k">status</span>      <span class="v">awaiting_signature</span>
+          </div>
+          <p class="micro" style="margin-top:10px">Your decision is recorded in the audit history. Signing and payment are simulated in this design preview.</p>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sign-aside stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Confirm your approval</h2><span class="badge badge-blue">DSC</span></div>
+        <div class="card-b">
+          <div style="border:1px solid var(--line);border-radius:9px;padding:12px;background:var(--surface-2)">
+            <div class="flex center gap8">
+              <svg class="i-sm" style="stroke:var(--green)"><use href="#i-lock"/></svg>
+              <span class="micro" style="font-weight:600;color:var(--ink-2)">Hardware crypto token detected</span>
+            </div>
+            <div class="micro" style="margin-top:7px;line-height:1.65">eMudhra Class 3 DSC · officer token<br>Owner: Dr. K. Soren<br>Serial 0x7F82A091 · valid till 14 Dec 2027</div>
+          </div>
+
+          <div class="field" style="margin-top:16px">
+            <label for="pin1">Enter 6-digit token security PIN</label>
+            <div class="pin" id="pinGroup">
+              <input id="pin1" inputmode="numeric" maxlength="1" aria-label="PIN digit 1" autocomplete="one-time-code">
+              <input inputmode="numeric" maxlength="1" aria-label="PIN digit 2">
+              <input inputmode="numeric" maxlength="1" aria-label="PIN digit 3">
+              <input inputmode="numeric" maxlength="1" aria-label="PIN digit 4">
+              <input inputmode="numeric" maxlength="1" aria-label="PIN digit 5">
+              <input inputmode="numeric" maxlength="1" aria-label="PIN digit 6">
+            </div>
+            <span class="hint">Enter any six digits in this design preview.</span>
+          </div>
+
+          <label class="check" style="margin-top:14px">
+            <input type="checkbox" id="attest">
+            <span>I have checked the evidence and confirm this application meets the requirements.</span>
+          </label>
+
+          <button class="btn btn-primary btn-block" type="button" id="recordApproval" disabled style="margin-top:16px" data-od-id="sanction-signing-primary-cta">
+            <svg class="i"><use href="#i-signature"/></svg>Record approval</button>
+          <button class="btn btn-secondary btn-block" type="button" style="margin-top:8px" data-toast="Draft saved to the officer workspace">Save draft</button>
+
+          <p class="micro" style="margin-top:12px;text-align:center">Approval is irreversible once the DSC signature is recorded.</p>
+        </div>
+      </section>
+
+      <div class="callout warn">
+        <svg class="i"><use href="#i-alert"/></svg>
+        <div><b>Check the bank account.</b> Changing a seeded account after approval requires district treasury re-concurrence.</div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="modal-backdrop" id="signModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="sign-title" style="max-width:480px">
+      <div class="modal-h">
+        <div class="flex center gap12">
+          <span style="width:38px;height:38px;border-radius:10px;background:var(--green-soft);border:1px solid var(--green-border);display:grid;place-items:center">
+            <svg class="i" style="stroke:var(--green)"><use href="#i-check"/></svg>
+          </span>
+          <div><h2 class="h2" id="sign-title" style="font-size:17px">Approval recorded</h2><p class="micro" style="margin-top:2px">Signed 18 Oct 2026 · 16:04 IST</p></div>
+        </div>
+        <button class="iconlink" type="button" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="modal-b">
+        <p class="small mut">The sanction order is queued for district concurrence and PFMS release.</p>
+        <div class="keyline" style="margin-top:10px"><span class="k">Order</span><span class="v mono" style="font-size:10.5px">MOTA/SANCT/2026/JH-88194</span></div>
+        <div class="keyline"><span class="k">Amount</span><span class="v num">₹1,32,000</span></div>
+        <div class="keyline"><span class="k">Audit block</span><span class="v mono" style="font-size:10.5px">0x7c49…a420</span></div>
+      </div>
+      <div class="modal-f">
+        <a class="btn btn-secondary" href="officer-review-queue.html">Back to queue</a>
+        <a class="btn btn-primary" href="audit-log.html">View audit record</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample sanction · Signature and payment are simulated · Tribe Saarthi design preview</p>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var inputs = Array.prototype.slice.call(document.querySelectorAll('#pinGroup input'));
+  var attest = document.getElementById('attest');
+  var btn = document.getElementById('recordApproval');
+  function filled(){ return inputs.every(function(i){ return i.value.length === 1; }); }
+  function sync(){ btn.disabled = !(filled() && attest.checked); }
+  inputs.forEach(function(inp, i){
+    inp.addEventListener('input', function(){
+      inp.value = inp.value.replace(/\D/g,'').slice(0,1);
+      if (inp.value && i < inputs.length-1) inputs[i+1].focus();
+      sync();
+    });
+    inp.addEventListener('keydown', function(e){
+      if (e.key === 'Backspace' && !inp.value && i > 0) inputs[i-1].focus();
+    });
+  });
+  attest.addEventListener('change', sync);
+  btn.addEventListener('click', function(){
+    var m = document.getElementById('signModal');
+    m.hidden = false; document.body.classList.add('modal-open');
+    var f = m.querySelector('a.btn'); if (f) f.focus();
+  });
+})();
+</script>
+</body>
+</html>

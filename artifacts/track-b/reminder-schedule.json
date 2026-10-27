@@ -1,0 +1,6 @@
+﻿{
+    "jobid":  1,
+    "jobname":  "pilot-deficiency-reminders",
+    "schedule":  "0 3 * * *",
+    "active":  true
+}

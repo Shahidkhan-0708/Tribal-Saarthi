@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="screen-title screen-description"><title id="screen-title">Officer review queue</title><desc id="screen-description">Prioritise applications, find pending evidence, and open a case for inspection.</desc>
+  
+  <defs>
+    <style>
+      * { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        text-rendering: geometricPrecision; 
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .mono { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        font-feature-settings: "tnum" 1; 
+      }
+      .stat-anchor { font-weight: 700; font-variant-numeric: tabular-nums; }
+      .badge { font-weight: 700; text-anchor: middle; }
+    </style>
+
+    <!-- USWDS Gradients -->
+    <linearGradient id="govPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+    <linearGradient id="govOchreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A4F13" />
+      <stop offset="100%" stop-color="#8A4F13" />
+    </linearGradient>
+    <linearGradient id="govHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+
+    <!-- Elevation is reserved for dialogs. -->
+    <filter id="modalShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="28" flood-color="#152E35" flood-opacity="0.32" />
+    </filter>
+
+  </defs>
+  <rect width="100%" height="100%" fill="#EEF3F3" />
+  
+  <!-- USWDS Official Government Banner -->
+  <g class="usa-banner">
+    <rect width="1440" height="32" fill="#EEF3F3" stroke="#CFDADD" />
+    <g transform="translate(48, 6)">
+      <!-- Government Seal / Ashoka Emblem Vector Graphic -->
+      <circle cx="10" cy="10" r="9" fill="#075A46" />
+      <circle cx="10" cy="10" r="5" fill="#FFFFFF" />
+      <circle cx="10" cy="10" r="2.5" fill="#075A46" />
+      
+      <text x="26" y="14" font-size="11" font-weight="600" fill="#152E35">
+        Tribe Saarthi · Scholarship support for tribal students
+      </text>
+
+      <!-- Security HTTPS Seal -->
+      <g transform="translate(1120, 1)">
+        
+    <g transform="translate(0, 2) scale(0.5833333333333334)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </g>
+        <text x="18" y="13" font-size="11" font-weight="600" fill="#075A46">Design preview · Sample records</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- USWDS Header &amp; Navigation -->
+  <g transform="translate(0, 32)">
+    <rect width="1440" height="72" fill="#FFFFFF" stroke="#CFDADD" />
+    <rect width="1440" height="3" fill="url(#govPrimaryGrad)" />
+
+    <g transform="translate(48, 16)">
+      <!-- Logo &amp; Brand -->
+      <circle cx="20" cy="20" r="20" fill="url(#govPrimaryGrad)" />
+      <text x="20" y="26" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">TS</text>
+
+      <text x="50" y="18" font-size="20" font-weight="700" fill="#152E35">Tribe Saarthi</text>
+      <text x="50" y="32" font-size="10.5" font-weight="700" fill="#075A46">Officer Verification Desk · MoTA</text>
+
+      <!-- Search Bar -->
+      <g transform="translate(260, 0)">
+        <rect width="320" height="40" rx="8" fill="#EEF3F3" stroke="#CBD5E1" />
+        
+    <g transform="translate(12, 11) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </g>
+        <text x="38" y="25" font-size="12" fill="#52666D">Search scholarships, schemes, records...</text>
+      </g>
+
+      <!-- Language Selector -->
+      <g transform="translate(620, 6)">
+        <rect width="110" height="28" rx="6" fill="#EEF3F3" stroke="#CFDADD" />
+        <text x="55" y="18" font-size="10.5" font-weight="700" fill="#152E35" text-anchor="middle">English / हिंदी ▾</text>
+      </g>
+
+      <!-- Right User Controls -->
+      <g transform="translate(1060, 0)">
+        <!-- Bell Notification -->
+        <circle cx="16" cy="20" r="18" fill="#EEF3F3" stroke="#CFDADD" />
+        
+    <g transform="translate(7, 11) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+    </g>
+        <circle cx="23" cy="12" r="4.5" fill="#DC2626" />
+
+        <!-- User Profile Pill -->
+        <g transform="translate(50, 0)">
+          <rect width="240" height="40" rx="20" fill="#EEF3F3" stroke="#CFDADD" />
+          <circle cx="20" cy="20" r="16" fill="url(#govPrimaryGrad)" />
+          <text x="20" y="25" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">DKS</text>
+          
+          <text x="44" y="18" font-size="13" font-weight="700" fill="#152E35">Dr. K. Soren</text>
+          <text x="44" y="33" font-size="11" fill="#52666D">BIT Mesra Nodal Officer</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- USWDS Left Navigation Rail -->
+  <g transform="translate(0, 104)">
+    <rect width="240" height="856" fill="#FFFFFF" stroke="#CFDADD" />
+    
+    <g transform="translate(16, 24)">
+      
+          <g transform="translate(0, 0)">
+            <rect x="-16" y="0" width="4" height="42" fill="#075A46" rx="2" />
+            <rect width="208" height="42" rx="8" fill="#E8F2EE" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <path d="m9 15 2 2 4-4"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="800" fill="#075A46">Review Queue</text>
+            <circle cx="194" cy="21" r="3" fill="#075A46" />
+          </g>
+        
+
+          <g transform="translate(0, 48)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Case Inspection</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 96)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <polyline points="9 12 11 14 15 10"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Approve scholarship</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 144)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/>
+      <polyline points="1 20 1 14 7 14"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Service testing</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 192)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+      <polyline points="2 17 12 22 22 17"/>
+      <polyline points="2 12 12 17 22 12"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Coverage gaps</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 240)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m21 2-2 2m-1.5 1.5L12 11m0 0a5 5 0 1 0-7 7 5 5 0 0 0 7-7zm0 0 4-4m-2 6 2-2m-1-1 2-2"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Decision history</text>
+            
+          </g>
+        
+
+      <!-- Bottom System Resilience Indicator -->
+      <g transform="translate(0, 680)">
+        <rect width="208" height="74" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+        <circle cx="20" cy="24" r="6" fill="#075A46" />
+        <text x="34" y="27" font-size="12" font-weight="700" fill="#075A46">Your work is saved</text>
+        <text x="34" y="44" font-size="11" fill="#52666D">Last sync: 18 Oct, 15:45</text>
+        <text x="14" y="62" font-size="11" fill="#52666D">Need help? Open Saarthi.</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(268, 126)">
+    <!-- Top Hero KPI &amp; Caseload Donut -->
+    <g>
+      <rect width="1144" height="150" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+      <rect width="1144" height="4" rx="2" fill="url(#govPrimaryGrad)" />
+
+      <!-- Left KPI Stats -->
+      <g transform="translate(28, 24)">
+        <text x="0" y="16" font-size="16" font-weight="700" fill="#152E35">Applications to review · Latehar</text>
+        <text x="0" y="34" font-size="11.5" fill="#52666D">Supervising Officer: <tspan font-weight="700" fill="#075A46">Dr. K. Soren, DWO Latehar</tspan> · Review target: 48 hours</text>
+
+        <g transform="translate(0, 52)">
+          <!-- Stat 1 -->
+          <g transform="translate(0, 0)">
+            <text x="0" y="12" font-size="10" font-weight="700" fill="#52666D">Active caseload</text>
+            <text x="0" y="38" font-size="26" font-weight="700" fill="#152E35" class="mono">145</text>
+            <text x="0" y="54" font-size="10.5" fill="#075A46" font-weight="600">84 Verified / Approved</text>
+          </g>
+
+          <!-- Stat 2 -->
+          <g transform="translate(180, 0)">
+            <text x="0" y="12" font-size="10" font-weight="700" fill="#8A4F13">SLA at risk (&lt;24h)</text>
+            <text x="0" y="38" font-size="26" font-weight="700" fill="#8A4F13" class="mono">12</text>
+            <text x="0" y="54" font-size="10.5" fill="#8A4F13" font-weight="600">Expedited Action Needed</text>
+          </g>
+
+          <!-- Stat 3 -->
+          <g transform="translate(370, 0)">
+            <text x="0" y="12" font-size="10" font-weight="700" fill="#DC2626">Discrepancies</text>
+            <text x="0" y="38" font-size="26" font-weight="700" fill="#DC2626" class="mono">14</text>
+            <text x="0" y="54" font-size="10.5" fill="#DC2626" font-weight="600">Notice Dispatched</text>
+          </g>
+
+          <!-- Stat 4 -->
+          <g transform="translate(540, 0)">
+            <text x="0" y="12" font-size="10" font-weight="700" fill="#075A46">Sanction pipeline</text>
+            <text x="0" y="38" font-size="26" font-weight="700" fill="#075A46" class="mono">₹1.92 Cr</text>
+            <text x="0" y="54" font-size="10.5" fill="#52666D">PFMS Ready</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Right Donut: Caseload Distribution -->
+      <g transform="translate(730, 16)">
+        <rect width="390" height="118" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+        <g transform="translate(10, 10)">
+          
+    <g class="donut-chart-component">
+      <path d="M 48.00 6.00 A 42 42 0 1 1 27.80 84.83 L 35.50 70.80 A 26 26 0 1 0 48.00 22.00 Z" fill="#075A46" stroke="#FFFFFF" stroke-width="2" />
+<path d="M 27.80 84.83 A 42 42 0 0 1 9.97 30.17 L 24.46 36.96 A 26 26 0 0 0 35.50 70.80 Z" fill="#225F81" stroke="#FFFFFF" stroke-width="2" />
+<path d="M 9.97 30.17 A 42 42 0 0 1 27.71 11.23 L 35.44 25.24 A 26 26 0 0 0 24.46 36.96 Z" fill="#8A4F13" stroke="#FFFFFF" stroke-width="2" />
+<path d="M 27.71 11.23 A 42 42 0 0 1 47.93 6.00 L 47.95 22.00 A 26 26 0 0 0 35.44 25.24 Z" fill="#DC2626" stroke="#FFFFFF" stroke-width="2" />
+      
+    <text x="48" y="46" font-size="14" font-weight="700" fill="#152E35" text-anchor="middle" class="stat-anchor">145</text>
+    <text x="48" y="61" font-size="8.5" font-weight="700" fill="#52666D" text-anchor="middle">Cases</text>
+  
+      <g transform="translate(106, 10)">
+      
+          <g transform="translate(0, 0)">
+            <rect x="0" y="2" width="9" height="9" rx="2.5" fill="#075A46" />
+            <text x="14" y="10" font-size="10.5" font-weight="600" fill="#152E35">Approved</text>
+            <text x="256" y="10" font-size="10.5" font-weight="700" fill="#075A46" text-anchor="end">58% · 84</text>
+          </g>
+        
+
+          <g transform="translate(0, 22)">
+            <rect x="0" y="2" width="9" height="9" rx="2.5" fill="#225F81" />
+            <text x="14" y="10" font-size="10.5" font-weight="600" fill="#152E35">Under Review</text>
+            <text x="256" y="10" font-size="10.5" font-weight="700" fill="#225F81" text-anchor="end">24% · 35</text>
+          </g>
+        
+
+          <g transform="translate(0, 44)">
+            <rect x="0" y="2" width="9" height="9" rx="2.5" fill="#8A4F13" />
+            <text x="14" y="10" font-size="10.5" font-weight="600" fill="#152E35">Discrepancy</text>
+            <text x="256" y="10" font-size="10.5" font-weight="700" fill="#8A4F13" text-anchor="end">10% · 14</text>
+          </g>
+        
+
+          <g transform="translate(0, 66)">
+            <rect x="0" y="2" width="9" height="9" rx="2.5" fill="#DC2626" />
+            <text x="14" y="10" font-size="10.5" font-weight="600" fill="#152E35">SLA Escalated</text>
+            <text x="256" y="10" font-size="10.5" font-weight="700" fill="#DC2626" text-anchor="end">8% · 12</text>
+          </g>
+        
+    </g>
+    </g>
+  
+        </g>
+      </g>
+    </g>
+
+    <!-- Filter Bar -->
+    <g transform="translate(0, 164)">
+      <rect width="1144" height="48" rx="10" fill="#FFFFFF" stroke="#CFDADD" />
+      <g transform="translate(16, 8)">
+        <!-- Search -->
+        <rect x="0" y="0" width="300" height="32" rx="6" fill="#EEF3F3" stroke="#CBD5E1" />
+        <text x="12" y="21" font-size="11.5" fill="#52666D">Search by Scholar Name, Roll # or App ID...</text>
+
+        <!-- Filters -->
+        <g transform="translate(320, 0)">
+          <rect x="0" y="0" width="140" height="32" rx="6" fill="#FEF3C7" stroke="#FDE68A" />
+          <text x="70" y="21" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">★ PVTG Priority (18)</text>
+
+          <rect x="150" y="0" width="130" height="32" rx="6" fill="#EEF3F3" />
+          <text x="215" y="21" font-size="11" font-weight="700" fill="#52666D" text-anchor="middle">SLA Risk &lt;24h (12)</text>
+
+          <rect x="290" y="0" width="150" height="32" rx="6" fill="#EEF3F3" />
+          <text x="365" y="21" font-size="11" font-weight="700" fill="#52666D" text-anchor="middle">BIT Mesra (42)</text>
+
+          <rect x="450" y="0" width="140" height="32" rx="6" fill="#EEF3F3" />
+          <text x="520" y="21" font-size="11" font-weight="700" fill="#52666D" text-anchor="middle">Ranchi Univ (68)</text>
+        </g>
+
+        <!-- Export -->
+        <rect x="990" y="0" width="120" height="32" rx="6" fill="#075A46" />
+        <text x="1050" y="21" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Export CSV ⤓</text>
+      </g>
+    </g>
+
+    <!-- Caseload Table -->
+    <g transform="translate(0, 224)">
+      <rect width="1144" height="570" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+      <g transform="translate(24, 20)">
+        <!-- Table Header -->
+        <rect width="1096" height="38" rx="6" fill="#EEF3F3" />
+        <text x="16" y="24" font-size="10.5" font-weight="700" fill="#52666D">Appl ID &amp; scholar</text>
+        <text x="240" y="24" font-size="10.5" font-weight="700" fill="#52666D">Community &amp; category</text>
+        <text x="440" y="24" font-size="10.5" font-weight="700" fill="#52666D">Institution &amp; course</text>
+        <text x="660" y="24" font-size="10.5" font-weight="700" fill="#52666D">Est. grant</text>
+        <text x="770" y="24" font-size="10.5" font-weight="700" fill="#52666D">SLA timer</text>
+        <text x="890" y="24" font-size="10.5" font-weight="700" fill="#52666D">DigiLocker</text>
+        <text x="1010" y="24" font-size="10.5" font-weight="700" fill="#52666D">Action</text>
+
+        <!-- Row 1: Mohan Birhor (PVTG - Focus Case) -->
+        <g transform="translate(0, 48)">
+          <rect width="1096" height="74" rx="8" fill="#FEF3C7" opacity="0.25" />
+          <line x1="0" y1="74" x2="1096" y2="74" stroke="#FDE68A" />
+          
+          <text x="16" y="26" font-size="13" font-weight="700" fill="#152E35">Mohan Birhor</text>
+          <text x="16" y="44" font-size="11" fill="#52666D" class="mono">#TS-2026-88194</text>
+          <rect x="16" y="50" width="84" height="18" rx="9" fill="#FEF3C7" />
+          <text x="58" y="62" font-size="8" font-weight="700" fill="#92400E" text-anchor="middle">PVTG tier-1</text>
+
+          <text x="240" y="26" font-size="12" font-weight="700" fill="#152E35">Birhor Scheduled Tribe</text>
+          <text x="240" y="44" font-size="11" fill="#52666D">Mahuadanr, Latehar</text>
+
+          <text x="440" y="26" font-size="12" font-weight="700" fill="#152E35">BIT Mesra, Ranchi</text>
+          <text x="440" y="44" font-size="11" fill="#52666D">B.Tech Computer Science (2nd Yr)</text>
+
+          <text x="660" y="32" font-size="15" font-weight="700" fill="#075A46" class="mono">₹132,000</text>
+          <text x="660" y="48" font-size="10" fill="#52666D">100% Grant</text>
+
+          <rect x="770" y="18" width="94" height="24" rx="8" fill="#FEF3C7" />
+          <text x="817" y="34" font-size="9" font-weight="700" fill="#92400E" text-anchor="middle">⏱ 24H left</text>
+
+          <rect x="890" y="18" width="90" height="24" rx="8" fill="#E8F2EE" />
+          <text x="935" y="34" font-size="9" font-weight="700" fill="#075A46" text-anchor="middle">4/4 Verified ✓</text>
+
+          <rect x="1000" y="14" width="86" height="34" rx="6" fill="url(#govPrimaryGrad)" />
+          <text x="1043" y="35" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Inspect Case</text>
+        </g>
+
+        <!-- Row 2: Anita Oraon -->
+        <g transform="translate(0, 126)">
+          <line x1="0" y1="74" x2="1096" y2="74" stroke="#EEF3F3" />
+          
+          <text x="16" y="26" font-size="13" font-weight="700" fill="#152E35">Anita Oraon</text>
+          <text x="16" y="44" font-size="11" fill="#52666D" class="mono">#TS-2026-88201</text>
+
+          <text x="240" y="26" font-size="12" font-weight="700" fill="#152E35">Oraon Scheduled Tribe</text>
+          <text x="240" y="44" font-size="11" fill="#52666D">Mandar, Ranchi</text>
+
+          <text x="440" y="26" font-size="12" font-weight="700" fill="#152E35">Ranchi University</text>
+          <text x="440" y="44" font-size="11" fill="#52666D">M.Sc Botany (1st Yr)</text>
+
+          <text x="660" y="32" font-size="15" font-weight="700" fill="#152E35" class="mono">₹68,000</text>
+          <text x="660" y="48" font-size="10" fill="#52666D">Tuition + Maint</text>
+
+          <rect x="770" y="18" width="94" height="24" rx="8" fill="#EFF6FF" />
+          <text x="817" y="34" font-size="9" font-weight="700" fill="#225F81" text-anchor="middle">⏱ 72H left</text>
+
+          <rect x="890" y="18" width="90" height="24" rx="8" fill="#E8F2EE" />
+          <text x="935" y="34" font-size="9" font-weight="700" fill="#075A46" text-anchor="middle">3/3 Verified ✓</text>
+
+          <rect x="1000" y="14" width="86" height="34" rx="6" fill="#EEF3F3" />
+          <text x="1043" y="35" font-size="11" font-weight="700" fill="#075A46" text-anchor="middle">Review</text>
+        </g>
+
+        <!-- Row 3: Ramesh Munda (Discrepancy) -->
+        <g transform="translate(0, 204)">
+          <line x1="0" y1="74" x2="1096" y2="74" stroke="#EEF3F3" />
+          
+          <text x="16" y="26" font-size="13" font-weight="700" fill="#152E35">Ramesh Munda</text>
+          <text x="16" y="44" font-size="11" fill="#52666D" class="mono">#TS-2026-88210</text>
+
+          <text x="240" y="26" font-size="12" font-weight="700" fill="#152E35">Munda Scheduled Tribe</text>
+          <text x="240" y="44" font-size="11" fill="#52666D">Murhu, Khunti</text>
+
+          <text x="440" y="26" font-size="12" font-weight="700" fill="#152E35">St. Xavier&apos;s College, Ranchi</text>
+          <text x="440" y="44" font-size="11" fill="#52666D">B.Com Honors (3rd Yr)</text>
+
+          <text x="660" y="32" font-size="15" font-weight="700" fill="#152E35" class="mono">₹45,000</text>
+          <text x="660" y="48" font-size="10" fill="#52666D">Tuition Only</text>
+
+          <rect x="770" y="18" width="94" height="24" rx="8" fill="#FEE2E2" />
+          <text x="817" y="34" font-size="9" font-weight="700" fill="#DC2626" text-anchor="middle">⚠ 14H SLA risk</text>
+
+          <rect x="890" y="18" width="90" height="24" rx="8" fill="#FEF3C7" />
+          <text x="935" y="34" font-size="9" font-weight="700" fill="#8A4F13" text-anchor="middle">Doc mismatch</text>
+
+          <rect x="1000" y="14" width="86" height="34" rx="6" fill="#FEF3C7" stroke="#FDE68A" />
+          <text x="1043" y="35" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">Notice Req</text>
+        </g>
+
+        <!-- Row 4: Sunita Kharia -->
+        <g transform="translate(0, 282)">
+          <line x1="0" y1="74" x2="1096" y2="74" stroke="#EEF3F3" />
+          
+          <text x="16" y="26" font-size="13" font-weight="700" fill="#152E35">Sunita Kharia</text>
+          <text x="16" y="44" font-size="11" fill="#52666D" class="mono">#TS-2026-88215</text>
+          <rect x="16" y="50" width="84" height="18" rx="9" fill="#FEF3C7" />
+          <text x="58" y="62" font-size="8" font-weight="700" fill="#92400E" text-anchor="middle">PVTG tier-1</text>
+
+          <text x="240" y="26" font-size="12" font-weight="700" fill="#152E35">Kharia Scheduled Tribe</text>
+          <text x="240" y="44" font-size="11" fill="#52666D">Simdega District</text>
+
+          <text x="440" y="26" font-size="12" font-weight="700" fill="#152E35">Central University Jharkhand</text>
+          <text x="440" y="44" font-size="11" fill="#52666D">M.A. Tribal Folklore (1st Yr)</text>
+
+          <text x="660" y="32" font-size="15" font-weight="700" fill="#075A46" class="mono">₹84,000</text>
+          <text x="660" y="48" font-size="10" fill="#52666D">100% Grant</text>
+
+          <rect x="770" y="18" width="94" height="24" rx="8" fill="#EFF6FF" />
+          <text x="817" y="34" font-size="9" font-weight="700" fill="#225F81" text-anchor="middle">⏱ 48H left</text>
+
+          <rect x="890" y="18" width="90" height="24" rx="8" fill="#E8F2EE" />
+          <text x="935" y="34" font-size="9" font-weight="700" fill="#075A46" text-anchor="middle">4/4 Verified ✓</text>
+
+          <rect x="1000" y="14" width="86" height="34" rx="6" fill="#EEF3F3" />
+          <text x="1043" y="35" font-size="11" font-weight="700" fill="#075A46" text-anchor="middle">Review</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "scholarship-discovery.html",
+  "entry": "scholarship-discovery.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-10-24T05:43:04.410Z",
+  "updatedAt": "2026-10-24T05:43:04.410Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

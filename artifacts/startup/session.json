@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-18T14:35:09.939Z",
+  "frontend": "http://localhost:5173",
+  "projectRef": "axegexiaofxdmmizilri",
+  "passed": true,
+  "checks": [
+    "Local frontend serves pilot mode",
+    "Exact localhost Edge CORS allowed",
+    "Real admin sign-in and database workspace loaded",
+    "Authenticated Edge account read succeeded",
+    "Operations status RPC and UI refreshed"
+  ],
+  "runtimeErrors": 0,
+  "failedRequests": 0
+}

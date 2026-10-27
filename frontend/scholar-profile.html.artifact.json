@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "scholar-profile.html",
+  "entry": "scholar-profile.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-10-24T05:43:04.399Z",
+  "updatedAt": "2026-10-24T05:43:04.399Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

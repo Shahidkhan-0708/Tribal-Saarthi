@@ -1,0 +1,8 @@
+{
+    "requiresSignedInOwner":  true,
+    "copiesRemainEncrypted":  true,
+    "nextRunUtc":  "2026-10-19T02:30:00.0000000Z",
+    "lastRunUtc":  "2026-10-18T14:09:30.0000000Z",
+    "lastTaskResult":  0,
+    "task":  "TribeSaarthiEncryptedBackupPull"
+}

@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-18T13:33:19.929Z",
+  "passed": true,
+  "checks": [
+    "Hosted consent owner boundary",
+    "Hosted document consent revokes",
+    "Hosted consent history is visible and bounded",
+    "Hosted processing record excludes owner email",
+    "Hosted metrics count the complete authorized cohort",
+    "Hosted application page is bounded",
+    "Server search cannot reveal another institution application",
+    "Hosted mode is chosen by the server and cannot auto-pass",
+    "Hosted human review preserves provider mode and reviewer identity",
+    "Hosted adapter writer is service-only"
+  ],
+  "concurrency": 10,
+  "scenario": "Ten simultaneous clients using one synthetic administrator; current small staging cohort; warm services. Not a forecast for production scale.",
+  "targets": "Provisional engineering budgets; owner agreement and expected cohort size are still required.",
+  "performance": {
+    "login": {
+      "samplesMs": [
+        153,
+        159,
+        393,
+        490,
+        492,
+        501,
+        513,
+        530,
+        548,
+        762
+      ],
+      "p95Ms": 762,
+      "budgetMs": 5000,
+      "withinProvisionalBudget": true
+    },
+    "snapshot": {
+      "samplesMs": [
+        1527,
+        1814,
+        1816,
+        1852,
+        1890,
+        1891,
+        1912,
+        1934,
+        1953,
+        1962
+      ],
+      "p95Ms": 1962,
+      "budgetMs": 5000,
+      "withinProvisionalBudget": true
+    },
+    "preview": {
+      "samplesMs": [
+        609,
+        610,
+        611,
+        648,
+        688,
+        705,
+        728,
+        742,
+        743,
+        745
+      ],
+      "p95Ms": 745,
+      "budgetMs": 3000,
+      "withinProvisionalBudget": true
+    },
+    "workflow": {
+      "samplesMs": [
+        1341,
+        1362,
+        1371,
+        1423,
+        1423,
+        1478,
+        1500,
+        1536,
+        1536,
+        1539
+      ],
+      "p95Ms": 1539,
+      "budgetMs": 5000,
+      "withinProvisionalBudget": true
+    }
+  }
+}

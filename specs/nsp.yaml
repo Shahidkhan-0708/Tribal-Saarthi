@@ -1,0 +1,61 @@
+openapi: 3.0.3
+info:
+  title: NSP Scholarship Eligibility (mock spec)
+  version: "1.0.0"
+servers:
+  - url: https://nsp-sandbox.gov.in/api/v1
+paths:
+  /eligibility:
+    post:
+      operationId: checkScholarshipEligibility
+      summary: Check scholarship eligibility for a student
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EligibilityRequest'
+      responses:
+        '200':
+          description: Eligibility result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EligibilityResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    EligibilityRequest:
+      type: object
+      required: [studentId, schemeId]
+      properties:
+        studentId:
+          type: string
+          example: "STU-2024-00123"
+        schemeId:
+          type: string
+          example: "POST_MATRIC_TRIBAL"
+    EligibilityResponse:
+      type: object
+      required: [eligible, amount]
+      properties:
+        eligible:
+          type: boolean
+        amount:
+          type: number
+          format: double
+        remarks:
+          type: string
+    ErrorResponse:
+      type: object
+      required: [errorCode, errorMessage]
+      properties:
+        errorCode:
+          type: string
+        errorMessage:
+          type: string

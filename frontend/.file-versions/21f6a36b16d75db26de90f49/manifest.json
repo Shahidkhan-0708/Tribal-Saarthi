@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "document-wallet.html",
+  "currentVersionId": "73e3e775-46ae-48ed-9bc3-c6d25eb854d7",
+  "entries": [
+    {
+      "id": "73e3e775-46ae-48ed-9bc3-c6d25eb854d7",
+      "fileName": "document-wallet.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1792820816549,
+      "source": "ai",
+      "prompt": "continue",
+      "size": 11813,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-73e3e775-46ae-48ed-9bc3-c6d25eb854d7.html",
+      "contentDigest": "bb7b2cff83da2e7a5f06450b27c1d70616636524e6c3327930bbe410e061a75d",
+      "promptSource": "message"
+    }
+  ]
+}

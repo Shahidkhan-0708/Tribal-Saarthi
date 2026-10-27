@@ -1,0 +1,68 @@
+openapi: 3.0.3
+info:
+  title: PFMS Direct Benefit Transfer (mock spec)
+  version: "1.0.0"
+servers:
+  - url: https://pfms-sandbox.gov.in/api/v1
+paths:
+  /payment:
+    post:
+      operationId: initiateDbtPayment
+      summary: Initiate a DBT payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'
+      responses:
+        '200':
+          description: Payment initiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    PaymentRequest:
+      type: object
+      required: [beneficiaryId, amount, purpose]
+      properties:
+        beneficiaryId:
+          type: string
+          example: "BEN-987654"
+        amount:
+          type: number
+          format: double
+          example: 15000
+        purpose:
+          type: string
+          example: "POST_MATRIC_SCHOLARSHIP"
+    PaymentResponse:
+      type: object
+      required: [txnRef, status]
+      properties:
+        txnRef:
+          type: string
+          example: "TXN-20240815-00123"
+        status:
+          type: string
+          enum: [INITIATED, FAILED]
+        errorCode:
+          type: string
+        errorMessage:
+          type: string
+    ErrorResponse:
+      type: object
+      required: [errorCode, errorMessage]
+      properties:
+        errorCode:
+          type: string
+        errorMessage:
+          type: string

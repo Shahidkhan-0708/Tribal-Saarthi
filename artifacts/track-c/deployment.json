@@ -1,0 +1,36 @@
+{
+    "at":  "2026-10-18T10:14:35.8535426Z",
+    "projects":  [
+                     {
+                         "ref":  "axegexiaofxdmmizilri",
+                         "status":  "ACTIVE_HEALTHY"
+                     },
+                     {
+                         "ref":  "feoqfkznfiirrsmlqgfk",
+                         "status":  "INACTIVE"
+                     },
+                     {
+                         "ref":  "ahhjlqarkalaffqmnywu",
+                         "status":  "INACTIVE"
+                     }
+                 ],
+    "open":  [
+                 "C5",
+                 "B1",
+                 "B4",
+                 "B5"
+             ],
+    "deploymentId":  "dpl_HLDVsWWqzbxP4xyT3B6jjwmxvPtL",
+    "frontend":  "https://tribe-saarthi-staging.vercel.app",
+    "smtpConfigured":  false,
+    "trackCComplete":  [
+                           "C1",
+                           "C2",
+                           "C3",
+                           "C4",
+                           "C6",
+                           "C7",
+                           "C8",
+                           "C9"
+                       ]
+}

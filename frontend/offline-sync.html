@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saved changes · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .pipeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .pipe{padding:14px 14px 16px;background:var(--surface-2);position:relative;min-width:0}
+  .pipe + .pipe{border-left:1px solid var(--line)}
+  .pipe .pn{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:620;background:#F1F5F9;color:var(--muted);border:1px solid var(--line-strong);margin-bottom:10px}
+  .pipe.done .pn{background:var(--green);border-color:var(--green);color:#fff}
+  .pipe.now{background:var(--blue-soft)}
+  .pipe.now .pn{background:var(--blue);border-color:var(--blue);color:#fff}
+  .pipe .pt{font-size:11.5px;font-weight:560;line-height:1.4}
+  .pipe .ps{font-size:9.5px;color:var(--meta);margin-top:3px;line-height:1.45}
+  @media (max-width:760px){.pipeline{grid-template-columns:repeat(2,minmax(0,1fr))}.pipe:nth-child(3){border-left:0;border-top:1px solid var(--line)}.pipe:nth-child(4){border-top:1px solid var(--line)}}
+</style>
+</head>
+<body data-role="scholar" data-page="offline-sync">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page" id="main" data-od-id="offline-sync-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><span>Scholar workspace</span><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Saved changes</span></div>
+      <h1 class="page-title" data-od-id="offline-sync-title">Saved changes</h1>
+      <p class="page-sub">Changes stay on this device until they reach the server. Nothing is lost while you are offline.</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn btn-secondary" type="button" data-toast="Encrypted backup exported to this device">
+        <svg class="i"><use href="#i-download"/></svg>Export encrypted backup</button>
+      <button class="btn btn-primary" type="button" id="forceSync" data-od-id="offline-sync-primary-cta">
+        <svg class="i"><use href="#i-refresh"/></svg>Force sync queue</button>
+    </div>
+  </div>
+
+  <div class="notice warn" style="margin-bottom:16px">
+    <svg class="i"><use href="#i-wifioff"/></svg>
+    <div><b style="font-weight:560;color:var(--ink)">You are offline.</b> 2 changes are waiting to send. They will sync automatically when the connection returns.</div>
+    <span class="micro mono" style="margin-left:auto;color:var(--amber);white-space:nowrap">LAST TRY 14:15</span>
+  </div>
+
+  <div class="grid g-main" style="align-items:start">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">Changes waiting to send</h2><p class="micro" style="margin-top:3px">Ordered by local capture time. Each operation carries an integrity hash.</p></div>
+          <span class="badge badge-amber">2 queued · 1 synced</span>
+        </div>
+        <div class="card-b flush">
+          <div class="tablewrap">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th class="nowrap">Op ID</th>
+                  <th>Action type</th>
+                  <th>Payload summary</th>
+                  <th class="nowrap">Local time</th>
+                  <th>Status</th>
+                  <th class="nowrap">Integrity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono" style="color:var(--meta)">OP-104</td>
+                  <td class="strong" style="white-space:nowrap">Address update</td>
+                  <td>Domicile hamlet: Belta, Mahuadanr, Latehar</td>
+                  <td class="mono nowrap" style="color:var(--meta)">14:12:05 IST</td>
+                  <td><span class="badge badge-amber"><span class="bdot"></span>Queued</span></td>
+                  <td class="mono nowrap" style="color:var(--meta)">SHA a89f3b…</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="color:var(--meta)">OP-105</td>
+                  <td class="strong" style="white-space:nowrap">Upload document</td>
+                  <td>bit_mesra_fee_receipt.pdf · 1.2 MB</td>
+                  <td class="mono nowrap" style="color:var(--meta)">14:15:30 IST</td>
+                  <td><span class="badge badge-amber"><span class="bdot"></span>Queued</span></td>
+                  <td class="mono nowrap" style="color:var(--meta)">SHA c7219e…</td>
+                </tr>
+                <tr>
+                  <td class="mono" style="color:var(--meta)">OP-103</td>
+                  <td class="strong" style="white-space:nowrap">Draft step 2</td>
+                  <td>Document slot confirmations and seals</td>
+                  <td class="mono nowrap" style="color:var(--meta)">10:02:11 IST</td>
+                  <td><span class="badge badge-green"><span class="bdot"></span>Synced &amp; acked</span></td>
+                  <td class="mono nowrap" style="color:var(--meta)">ACK #9921</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-ft">
+          <span class="micro" style="color:var(--meta)">Deterministic last-write-wins pipeline · no overwrites between device and officer decisions</span>
+          <button class="btn btn-ghost btn-sm" type="button" data-toast="All three operations were checked for conflicts">Check for conflicts</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Sync pipeline</h2><span class="badge badge-gray">Deterministic</span></div>
+        <div class="card-b">
+          <div class="pipeline">
+            <div class="pipe done">
+              <div class="pn">✓</div>
+              <div class="pt">Saved on device</div>
+              <div class="ps">Written to local vault with hash.</div>
+            </div>
+            <div class="pipe now">
+              <div class="pn">2</div>
+              <div class="pt">Waiting for internet</div>
+              <div class="ps">Retry runs automatically every 30s.</div>
+            </div>
+            <div class="pipe">
+              <div class="pn">3</div>
+              <div class="pt">Resolve differences</div>
+              <div class="ps">CRDT rules compare both versions.</div>
+            </div>
+            <div class="pipe">
+              <div class="pn">4</div>
+              <div class="pt">Server confirmation</div>
+              <div class="ps">Ack written back to this device.</div>
+            </div>
+          </div>
+          <p class="micro" style="margin-top:12px">Mathematical CRDT rules ensure zero data loss and eliminate overwrites between the offline client and officer decisions.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Queue status</h2><span class="badge badge-gray">3 operations</span></div>
+        <div class="card-b">
+          <div class="flex center gap16">
+            <div class="donut">
+              <svg viewBox="0 0 118 118" aria-hidden="true">
+                <circle class="track" cx="59" cy="59" r="50"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--amber)" stroke-dasharray="210 314"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--green)" stroke-dasharray="105 314" stroke-dashoffset="-210"></circle>
+              </svg>
+              <div class="ctr"><div class="pct">67%</div><div class="cap">Queued</div></div>
+            </div>
+            <ul class="legend">
+              <li><span class="lk" style="background:var(--amber)"></span><span class="ln">Queued locally</span><span class="lv">2</span></li>
+              <li><span class="lk" style="background:var(--green)"></span><span class="ln">Synced &amp; acked</span><span class="lv">1</span></li>
+            </ul>
+          </div>
+
+          <div style="border-top:1px solid var(--line);margin:16px 0 8px"></div>
+
+          <div class="keyline"><svg class="i" style="stroke:var(--amber)"><use href="#i-wifioff"/></svg><span class="k">Connection</span><span class="v">Waiting for internet</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-lock"/></svg><span class="k">Local vault</span><span class="v">Encrypted at rest</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-clock"/></svg><span class="k">Retry policy</span><span class="v">Exponential backoff</span></div>
+        </div>
+      </section>
+
+      <div class="callout info">
+        <svg class="i"><use href="#i-shield"/></svg>
+        <div><b>Safe to close this tab.</b> Your two changes are held in the encrypted device vault until the server acknowledges them. Do not clear browser storage.</div>
+      </div>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Last successful sync</h2></div>
+        <div class="card-b">
+          <div class="h4">18 Oct 2026 · 10:02 IST</div>
+          <p class="micro" style="margin-top:4px">1 operation acknowledged · ACK #9921 · server time offset 0.4s</p>
+          <div class="mono-block" style="margin-top:12px"><span class="k">last_ack</span> = <span class="v">#9921</span><br><span class="k">vector_clock</span> = [device:5, server:4]<br><span class="k">payload_sha</span> = c7219e…</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample offline session · Changes shown are illustrative and not sent to a live server</p>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+document.getElementById('forceSync').addEventListener('click', function(){
+  window.Saarthi.toast('Still offline — 2 changes remain saved on this device');
+});
+</script>
+</body>
+</html>

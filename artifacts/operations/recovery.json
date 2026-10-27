@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-18T13:51:15.875Z",
+  "passed": true,
+  "backupPrefix": "2026-10-18/24a852ea-f25d-44a1-8a6f-7f677fe61767",
+  "tables": 52,
+  "objects": 15,
+  "bytes": 1399514,
+  "checks": [
+    "Scheduled worker completed a real backup",
+    "Authenticated AES-GCM recovery verified database/Auth and all private bytes",
+    "Failure history retained and successful recovery notified administrator"
+  ]
+}

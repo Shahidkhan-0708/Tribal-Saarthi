@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify a receipt · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .verify-hero{text-align:left;margin-bottom:24px}
+  .verify-hero h1{font-size:clamp(28px,3.6vw,38px);line-height:1.12;letter-spacing:-.035em;font-weight:700;max-width:20ch}
+  .verify-hero p{font-size:13.5px;color:var(--muted);margin-top:10px;max-width:62ch;line-height:1.7}
+  .searchcard{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow-1)}
+  .searchcard .field{flex:1;min-width:240px}
+  .searchcard .input{height:48px;font-family:var(--mono);font-size:13px;letter-spacing:.01em}
+  .verify-status{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600;color:var(--green)}
+  .trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .trust > div{padding:12px 14px;background:var(--surface-2);position:relative;min-width:0}
+  .trust > div + div{border-left:1px solid var(--line)}
+  .trust .tn{display:flex;align-items:center;gap:6px;font-size:9px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--meta)}
+  .trust .tv{font-size:11px;font-weight:600;margin-top:5px;line-height:1.4}
+  .trust .td{font-size:9.5px;color:var(--meta);margin-top:2px;line-height:1.4}
+  .trust svg{width:10px;height:10px;stroke:var(--green);fill:none;stroke-width:2.5}
+  .qr-box{width:104px;height:104px;border:1px solid var(--line);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:var(--surface-2);flex:none}
+  .qr-box svg{width:34px;height:34px;stroke:var(--ink);fill:none;stroke-width:1.5}
+  .qr-box span{font-size:8px;color:var(--meta);text-align:center;line-height:1.3;max-width:76px}
+  @media (max-width:860px){.trust{grid-template-columns:repeat(2,minmax(0,1fr))}.trust>div:nth-child(3){border-left:0;border-top:1px solid var(--line)}.trust>div:nth-child(4){border-top:1px solid var(--line)}}
+  @media (max-width:620px){.publicbar{padding:0 18px}.publicwrap{padding:26px 18px 48px}.searchcard .field{min-width:100%}.searchcard .btn{width:100%}}
+</style>
+</head>
+<body>
+<div class="publicbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">TS</span>
+    <span><span class="brand-name">Tribe Saarthi</span><span class="brand-sub">Public receipt verification</span></span>
+  </a>
+  <div class="flex center gap12">
+    <span class="badge badge-green"><svg class="i-sm" style="width:10px;height:10px"><use href="#i-lock"/></svg>Public record</span>
+    <a class="btn btn-ghost btn-sm" href="sign-in.html">Portal sign in</a>
+  </div>
+</div>
+
+<main class="publicwrap" id="main" data-od-id="receipt-verification-main">
+  <div class="verify-hero">
+    <div class="eyebrow">Statutory scholarship receipt · Public verification</div>
+    <h1 style="margin-top:12px" data-od-id="receipt-verification-title">Verify a sanction receipt</h1>
+    <p>Enter a sanction receipt ID or scan the QR code on a scholarship order to confirm that it was issued through the Ministry of Tribal Affairs and paid to the named scholar.</p>
+  </div>
+
+  <form class="searchcard" id="verifyForm">
+    <div class="field">
+      <label for="receiptId">Sanction receipt ID</label>
+      <input class="input" id="receiptId" value="TS-2026-88194" spellcheck="false" aria-describedby="receiptHint">
+      <span class="hint" id="receiptHint">Format: TS-YYYY-NNNNN · Sample receipt shown</span>
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit" data-od-id="receipt-verification-primary-cta"><svg class="i"><use href="#i-shield"/></svg>Verify receipt</button>
+    <div class="verify-status" id="verifyStatus" style="padding-bottom:14px"><svg class="i-sm" style="stroke:var(--green)"><use href="#i-check"/></svg>Last verified 18 Oct, 15:45</div>
+  </form>
+
+  <div class="grid verify-grid" id="resultGrid">
+    <section class="card" data-od-id="verified-receipt-card">
+      <div class="card-h">
+        <div class="flex center gap12">
+          <span style="width:38px;height:38px;border-radius:10px;background:var(--green-soft);border:1px solid var(--green-border);display:grid;place-items:center;flex:none">
+            <svg class="i" style="stroke:var(--green)"><use href="#i-check"/></svg>
+          </span>
+          <div>
+            <h2 class="h2" style="font-size:17px">Authentic &amp; sealed</h2>
+            <p class="micro" style="margin-top:2px">Sample receipt · Reference MOTA/2026/88194</p>
+          </div>
+        </div>
+        <span class="badge badge-green"><span class="bdot"></span>Valid hash</span>
+      </div>
+
+      <div class="card-b">
+        <div class="flex between center wrap gap12" style="padding-bottom:16px;border-bottom:1px solid var(--line)">
+          <div>
+            <div class="eyebrow">Scholarship approval receipt</div>
+            <div class="h2" style="margin-top:6px">Post-Matric Scholarship for ST Students</div>
+            <div class="micro" style="margin-top:3px">Scholarship cycle 2026–27 · Latehar district, Jharkhand</div>
+          </div>
+          <div class="right">
+            <div class="eyebrow">Total sanction</div>
+            <div class="price" style="font-size:22px;margin-top:4px">₹1,32,000</div>
+          </div>
+        </div>
+
+        <div class="keyline" style="padding:12px 0"><span class="k" style="width:150px">Scholar name</span><span class="v">Mohan Birhor (PVTG Tier-1 Birhor Tribe)</span></div>
+        <div class="keyline" style="padding:12px 0"><span class="k" style="width:150px">Domicile residence</span><span class="v" style="font-weight:500;color:var(--muted)">Village Belta, Block Mahuadanr, District Latehar, Jharkhand</span></div>
+        <div class="keyline" style="padding:12px 0"><span class="k" style="width:150px">Institution &amp; roll</span><span class="v" style="font-weight:500;color:var(--muted)">BIT Mesra, Ranchi · Roll #2024-CSE-104 (B.Tech CSE)</span></div>
+        <div class="keyline" style="padding:12px 0"><span class="k" style="width:150px">Grant components</span><span class="v" style="font-weight:500;color:var(--muted)">Tuition ₹98,000 · Maintenance ₹24,000 · Book ₹10,000</span></div>
+        <div class="keyline" style="padding:12px 0"><span class="k" style="width:150px">Target DBT account</span><span class="v mono" style="font-size:11px">Bank of India · ••••9012 · Aadhaar seeded</span></div>
+        <div class="keyline" style="padding:12px 0"><span class="k" style="width:150px">Signing authority</span><div class="v">Dr. K. Soren, DWO Latehar</div><span class="micro mono" style="margin-left:auto;color:var(--meta)">DSC 0x7F82A091</span></div>
+
+        <div class="trust" style="margin-top:18px">
+          <div><div class="tn"><svg><use href="#i-check"/></svg>College</div><div class="tv">BIT Mesra</div><div class="td">Nodal desk verified</div></div>
+          <div><div class="tn"><svg><use href="#i-check"/></svg>District</div><div class="tv">Latehar DWO</div><div class="td">DSC signed</div></div>
+          <div><div class="tn"><svg><use href="#i-check"/></svg>Central</div><div class="tv">MoTA treasury</div><div class="td">Sanction sealed</div></div>
+          <div><div class="tn"><svg><use href="#i-check"/></svg>Payment</div><div class="tv">Bank of India</div><div class="td">PFMS direct credit</div></div>
+        </div>
+      </div>
+
+      <div class="card-ft">
+        <span class="micro" style="color:var(--meta)">Block #1842 verified · 14 Oct 2026, 14:32 IST</span>
+        <div class="flex gap8">
+          <button class="btn btn-secondary btn-sm" type="button" id="copyHash"><svg class="i-sm"><use href="#i-copy"/></svg>Copy hash</button>
+          <button class="btn btn-secondary btn-sm" type="button" id="downloadReceipt"><svg class="i-sm"><use href="#i-download"/></svg>Download PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-b" style="text-align:center;padding:22px">
+          <div class="qr-box" style="margin:0 auto">
+            <svg><use href="#i-qr"/></svg>
+            <span>Sample QR · opens the NIC validator</span>
+          </div>
+          <h2 class="h4" style="margin-top:14px">Receipt reference</h2>
+          <div class="mono" style="font-size:12px;font-weight:600;margin-top:4px">TS-2026-88194</div>
+          <p class="micro" style="margin-top:8px;line-height:1.55">Scan with any smartphone to open the live validator ledger.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Cryptographic evidence</h2><span class="badge badge-gray">Merkle</span></div>
+        <div class="card-b">
+          <div class="keyline"><span class="k">Algorithm</span><span class="v mono" style="font-size:10.5px">SHA-256</span></div>
+          <div class="keyline"><span class="k">Hash</span><span class="v mono" style="font-size:10.5px">0x7c49…a420</span></div>
+          <div class="keyline"><span class="k">Merkle root</span><span class="v mono" style="font-size:10.5px">0x19a0…33bd</span></div>
+          <div class="keyline"><span class="k">Validators</span><span class="v">4 of 4 nodes</span></div>
+          <div class="callout ok mt16">
+            <svg class="i"><use href="#i-shield"/></svg>
+            <div><b>Public evidence guarantee.</b> Any change to this record would break the hash and fail verification.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta);max-width:70ch;line-height:1.65">This is a design preview. Receipt data is illustrative, the QR code is not scannable, and no live government registry is queried. For an official check, use the NIC scholarship portal.</p>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var form = document.getElementById('verifyForm');
+  var status = document.getElementById('verifyStatus');
+  var grid = document.getElementById('resultGrid');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var id = document.getElementById('receiptId').value.trim();
+    if (!id) { document.getElementById('receiptId').focus(); return; }
+    grid.style.opacity = '.45';
+    status.innerHTML = '<svg class="i-sm" style="stroke:var(--muted)"><use href="#i-refresh"/></svg>Checking the ledger…';
+    status.style.color = 'var(--muted)';
+    setTimeout(function(){
+      grid.style.opacity = '1';
+      status.style.color = 'var(--green)';
+      status.innerHTML = '<svg class="i-sm" style="stroke:var(--green)"><use href="#i-check"/></svg>Verified just now · hash matches';
+    }, 700);
+  });
+  document.getElementById('copyHash').addEventListener('click', function(){
+    var h = '0x7c49a420';
+    if (navigator.clipboard) navigator.clipboard.writeText(h).catch(function(){});
+    this.innerHTML = '<svg class="i-sm"><use href="#i-check"/></svg>Copied';
+  });
+  document.getElementById('downloadReceipt').addEventListener('click', function(){
+    this.innerHTML = '<svg class="i-sm"><use href="#i-check"/></svg>Sample only';
+  });
+})();
+</script>
+</body>
+</html>
+

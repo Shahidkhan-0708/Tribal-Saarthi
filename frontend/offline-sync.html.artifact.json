@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "offline-sync.html",
+  "entry": "offline-sync.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-10-24T05:43:04.337Z",
+  "updatedAt": "2026-10-24T05:43:04.337Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

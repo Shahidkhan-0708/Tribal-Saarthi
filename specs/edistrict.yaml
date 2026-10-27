@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: e-District Beneficiary Lookup (mock spec)
+  version: "1.0.0"
+servers:
+  - url: https://edistrict-sandbox.gov.in/api/v1
+paths:
+  /beneficiary/{aadhaar}:
+    get:
+      operationId: getBeneficiary
+      summary: Fetch beneficiary details by Aadhaar
+      parameters:
+        - name: aadhaar
+          in: path
+          required: true
+          schema:
+            type: string
+            pattern: '^\d{12}$'
+      responses:
+        '200':
+          description: Beneficiary record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BeneficiaryResponse'
+        '404':
+          description: Not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    BeneficiaryResponse:
+      type: object
+      required: [aadhaar, name, caste, income]
+      properties:
+        aadhaar:
+          type: string
+        name:
+          type: string
+        caste:
+          type: string
+        income:
+          type: number
+          format: double
+        address:
+          type: string
+    ErrorResponse:
+      type: object
+      required: [errorCode, errorMessage]
+      properties:
+        errorCode:
+          type: string
+        errorMessage:
+          type: string

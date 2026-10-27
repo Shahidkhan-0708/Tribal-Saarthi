@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New application · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .flow-split{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
+  .flow-aside{position:sticky;top:calc(var(--gov) + var(--hdr) + 24px)}
+  .stepline{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--surface-2);border-radius:var(--r-card) var(--r-card) 0 0}
+  .stepline .sn{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:560;color:var(--meta);white-space:nowrap}
+  .stepline .sn i{width:19px;height:19px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:9.5px;font-weight:620;background:#F1F5F9;color:var(--muted);border:1px solid var(--line-strong)}
+  .stepline .sn.done i{background:var(--ink);border-color:var(--ink);color:#fff}
+  .stepline .sn.now{color:var(--blue)}
+  .stepline .sn.now i{background:var(--surface);border-color:var(--ink);color:var(--ink);box-shadow:0 0 0 3px #E2E8F0}
+  .stepline .sl{flex:1;height:1px;background:var(--line-strong);min-width:16px}
+  .stepline .sl.done{background:var(--ink-2)}
+  @media (max-width:980px){.flow-split{grid-template-columns:minmax(0,1fr)}.flow-aside{position:static}}
+  @media (max-width:600px){.stepline{padding:12px 14px;gap:8px}.stepline .sn span{display:none}.stepline .sn.now span{display:inline}}
+</style>
+</head>
+<body data-role="scholar" data-page="application-tracker">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page" id="main" data-od-id="application-flow-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><a href="scholarship-discovery.html">Scholarships</a><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>New application</span></div>
+      <h1 class="page-title" id="stepTitle" data-od-id="application-flow-title">Step 1 of 3: Your profile</h1>
+      <p class="page-sub">Post-Matric Scholarship for Scheduled Tribe Students (2026–27). Details are pulled from your verified DigiLocker records.</p>
+    </div>
+    <div class="page-actions">
+      <a class="btn btn-ghost" href="scholarship-discovery.html">Save and exit</a>
+    </div>
+  </div>
+
+  <div class="flow-split">
+    <div>
+      <div class="card">
+        <div class="stepline" aria-label="Application steps">
+          <span class="sn now" data-sn="1"><i>1</i><span>Profile</span></span>
+          <span class="sl" data-sl="1"></span>
+          <span class="sn" data-sn="2"><i>2</i><span>Documents</span></span>
+          <span class="sl" data-sl="2"></span>
+          <span class="sn" data-sn="3"><i>3</i><span>Check answers</span></span>
+        </div>
+
+        <!-- STEP 1 -->
+        <section class="flow-step" data-step="1">
+          <div class="card-b" style="padding:24px">
+            <div class="flex between center" style="margin-bottom:20px">
+              <h2 class="h3">Identity and study details</h2>
+              <span class="badge badge-green"><svg class="i-sm" style="width:10px;height:10px"><use href="#i-lock"/></svg>DigiLocker verified</span>
+            </div>
+
+            <div class="form-grid">
+              <div class="field full">
+                <label for="f-name">Your name, as shown on Aadhaar</label>
+                <input class="input readonly" id="f-name" value="Mohan Birhor" readonly>
+                <span class="hint">Matched against Aadhaar ending 4921 · Cannot be edited here.</span>
+              </div>
+
+              <div class="field">
+                <label for="f-community">ST community</label>
+                <input class="input readonly" id="f-community" value="Birhor (PVTG Tier-1 Priority Group)" readonly>
+                <span class="hint">Certificate JH/ST/2023/88194 · 100% fee waiver</span>
+              </div>
+
+              <div class="field">
+                <label for="f-income">Yearly family income</label>
+                <input class="input readonly" id="f-income" value="₹1,20,000 / year" readonly>
+                <span class="hint">Revenue Cert #REV/2026/84920 · Within ceiling</span>
+              </div>
+
+              <div class="field full">
+                <label for="f-college">Your college or institution</label>
+                <input class="input readonly" id="f-college" value="Birla Institute of Technology, Mesra · Roll #2024-CSE-104" readonly>
+                <span class="hint">Bonafide letter BIT/ACAD/2026/104 is attached to this application.</span>
+              </div>
+
+              <div class="field">
+                <label for="f-phone">Parent or guardian phone <span style="color:var(--meta);font-weight:400">(optional)</span></label>
+                <div class="input-group">
+                  <input class="input" id="f-phone" value="+91 94311 02914">
+                  <span class="addon">FATHER</span>
+                </div>
+                <span class="hint">Only used for delivery updates on this application.</span>
+              </div>
+
+              <div class="field">
+                <label for="f-bank">Disbursement account</label>
+                <input class="input readonly" id="f-bank" value="Bank of India · A/C ••••9012" readonly>
+                <span class="hint">Aadhaar-seeded and NPCI validated.</span>
+              </div>
+            </div>
+
+            <div class="callout info mt20">
+              <svg class="i"><use href="#i-shield"/></svg>
+              <div><b>Editing a verified detail?</b> Request a data update from your profile. Changes to community, income or college must be re-attested by the issuing authority.</div>
+            </div>
+          </div>
+          <div class="card-ft">
+            <span class="micro" style="color:var(--meta)">All fields are saved automatically</span>
+            <button class="btn btn-primary" type="button" data-next="2" data-od-id="application-flow-primary-cta">Continue to documents
+              <svg class="i"><use href="#i-arrowRight"/></svg></button>
+          </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="flow-step" data-step="2" hidden>
+          <div class="card-b" style="padding:24px">
+            <div class="flex between center" style="margin-bottom:6px">
+              <h2 class="h3">Your documents</h2>
+              <span class="badge badge-green"><svg class="i-sm" style="width:10px;height:10px"><use href="#i-check"/></svg>4 of 4 ready</span>
+            </div>
+            <p class="micro" style="margin-bottom:20px">Instant cryptographic sync via the DigiLocker government vault. Sealed copies are reused — do not upload duplicates.</p>
+
+            <div class="doc-row">
+              <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+              <div class="doc-main">
+                <div class="doc-title">Scheduled Tribe Caste Certificate (Birhor PVTG)</div>
+                <div class="doc-meta mono">JH/ST/2023/88194 · DigiLocker SHA-256 verified</div>
+              </div>
+              <div class="doc-state"><span class="badge badge-green"><span class="bdot"></span>Auto-sealed</span></div>
+            </div>
+
+            <div class="doc-row">
+              <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+              <div class="doc-main">
+                <div class="doc-title">Income Certificate</div>
+                <div class="doc-meta mono">REV/2026/84920 · Valid till March 2027</div>
+              </div>
+              <div class="doc-state"><span class="badge badge-green"><span class="bdot"></span>Auto-sealed</span></div>
+            </div>
+
+            <div class="doc-row">
+              <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+              <div class="doc-main">
+                <div class="doc-title">Institution Bonafide &amp; Fee Schedule</div>
+                <div class="doc-meta mono">BIT/ACAD/2026/104 · B.Tech 2nd Year</div>
+              </div>
+              <div class="doc-state"><span class="badge badge-green"><span class="bdot"></span>Auto-sealed</span></div>
+            </div>
+
+            <div class="doc-row">
+              <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+              <div class="doc-main">
+                <div class="doc-title">Previous Year Marksheet <span class="badge badge-plain">CGPA 8.84</span></div>
+                <div class="doc-meta mono">JAC/DEG/2025/9012 · Clean disciplinary record</div>
+              </div>
+              <div class="doc-state"><span class="badge badge-green"><span class="bdot"></span>Auto-sealed</span></div>
+            </div>
+
+            <button class="btn btn-secondary btn-sm" type="button" style="margin-top:16px" data-toast="Opening DigiLocker document picker">
+              <svg class="i"><use href="#i-plus"/></svg>Add another document</button>
+          </div>
+          <div class="card-ft">
+            <button class="btn btn-ghost" type="button" data-prev="1"><svg class="i"><use href="#i-arrowLeft"/></svg>Back to your profile</button>
+            <button class="btn btn-primary" type="button" data-next="3">Check your answers
+              <svg class="i"><use href="#i-arrowRight"/></svg></button>
+          </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="flow-step" data-step="3" hidden>
+          <div class="card-b" style="padding:24px">
+            <div class="flex between center" style="margin-bottom:4px">
+              <h2 class="h3">Review before submission</h2>
+              <span class="badge badge-blue">Final step</span>
+            </div>
+            <p class="micro" style="margin-bottom:18px">Review your details before final cryptographic submission. A sealed receipt is issued immediately.</p>
+
+            <div class="metric-strip metric-3">
+              <div><div class="m-lab">Scholar</div><div class="m-val">Mohan Birhor</div></div>
+              <div><div class="m-lab">Community</div><div class="m-val">Birhor (PVTG Tier-1)</div></div>
+              <div><div class="m-lab">Institute</div><div class="m-val">BIT Mesra, Ranchi</div></div>
+            </div>
+
+            <div class="keyline" style="margin-top:16px"><span class="k">Annual income</span><span class="v">₹1,20,000 / yr</span><span class="micro" style="margin-left:auto;color:var(--green)">Within ceiling</span></div>
+            <div class="keyline"><span class="k">Documents</span><span class="v">4 / 4 DigiLocker verified</span><span class="badge badge-green" style="margin-left:auto">Sealed</span></div>
+            <div class="keyline"><span class="k">Claimed sanction</span><span class="v num" style="font-size:15px">₹1,32,000.00</span><span class="micro" style="margin-left:auto;color:var(--meta)">Subject to approval</span></div>
+
+            <div style="margin-top:20px;border:1px solid var(--line);border-radius:8px;padding:16px">
+              <div class="h4">Statutory Tribal Beneficiary Declaration</div>
+              <p class="micro" style="margin-top:6px;line-height:1.65">I declare that all submitted records are authentic. I understand that a false declaration is an offence under the Scheduled Castes and the Scheduled Tribes (Prevention of Atrocities) Act, and that my sanction may be cancelled and recovered.</p>
+              <label class="check" style="margin-top:12px">
+                <input type="checkbox" id="declare">
+                <span>I have read and accept the declaration, and consent to the verification of these records.</span>
+              </label>
+            </div>
+          </div>
+          <div class="card-ft">
+            <button class="btn btn-ghost" type="button" data-prev="2"><svg class="i"><use href="#i-arrowLeft"/></svg>Back to documents</button>
+            <div class="flex center gap12">
+              <span class="micro" style="color:var(--meta)">Sealed with SHA-256</span>
+              <button class="btn btn-primary" type="button" id="submitApp" disabled>Submit application
+                <svg class="i"><use href="#i-shield"/></svg></button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <p class="micro" style="margin-top:14px;color:var(--meta)">Your progress is saved on this device. If the connection drops, changes sync when you return.</p>
+    </div>
+
+    <aside class="flow-aside stack">
+      <section class="card">
+        <div class="card-b" style="padding:18px">
+          <div class="eyebrow">Applying for</div>
+          <h2 class="h3" style="margin-top:7px;font-size:14px;line-height:1.4">Post-Matric Scholarship for Scheduled Tribe Students</h2>
+          <div class="micro mono" style="margin-top:5px;color:var(--meta)">MOTA-PMS-ST-2026 · 2026–27</div>
+
+          <div style="border-top:1px solid var(--line);margin:16px 0"></div>
+
+          <div class="flex between center"><span class="micro">Estimated support</span><span class="price" style="font-size:15px">₹1,32,000</span></div>
+          <div class="flex between center" style="margin-top:8px"><span class="micro">Family contribution</span><span class="price" style="font-size:15px;color:var(--green)">₹0</span></div>
+          <div class="flex between center" style="margin-top:8px"><span class="micro">Documents</span><span class="micro" style="font-weight:560">4 of 4 ready</span></div>
+        </div>
+        <div class="card-ft" style="display:block">
+          <div class="flex center gap8 micro" style="color:var(--muted)">
+            <svg class="i-sm" style="stroke:var(--green)"><use href="#i-shield"/></svg>
+            Reviewed by BIT Mesra nodal desk
+          </div>
+        </div>
+      </section>
+
+      <div class="callout">
+        <svg class="i"><use href="#i-help"/></svg>
+        <div><b>Unsure about a document?</b> Ask Saarthi before you submit. <a href="help-saarthi.html" style="font-weight:560">Open help</a></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="modal-backdrop" id="submitted" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="submitted-title" style="max-width:480px">
+      <div class="modal-h">
+        <div class="flex center gap12">
+          <span style="width:38px;height:38px;border-radius:8px;background:var(--green-soft);border:1px solid var(--green-border);display:grid;place-items:center">
+            <svg class="i" style="stroke:var(--green)"><use href="#i-check"/></svg>
+          </span>
+          <div><h2 class="h2" id="submitted-title" style="font-size:17px">Application submitted</h2><p class="micro" style="margin-top:2px">Sealed 18 Oct 2026 · 15:52 IST</p></div>
+        </div>
+        <button class="iconlink" type="button" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+      </div>
+      <div class="modal-b">
+        <p class="small mut">Your application has a reference number. Keep it for calls with the college or welfare office.</p>
+        <div class="notice" style="margin-top:14px;justify-content:space-between">
+          <span class="mono" style="font-size:12px;font-weight:560">JH-ST-2026-90123</span>
+          <button class="btn btn-secondary btn-sm" type="button" data-copy="JH-ST-2026-90123"><svg class="i-sm"><use href="#i-copy"/></svg>Copy</button>
+        </div>
+      </div>
+      <div class="modal-f">
+        <a class="btn btn-secondary" href="dashboard.html">Back to dashboard</a>
+        <a class="btn btn-primary" href="application-tracker.html">Track application</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var steps = Array.prototype.slice.call(document.querySelectorAll('.flow-step'));
+  var title = document.getElementById('stepTitle');
+  var labels = {1:'Step 1 of 3: Your profile',2:'Step 2 of 3: Your documents',3:'Step 3 of 3: Check your answers'};
+  function go(n){
+    steps.forEach(function(s){ s.hidden = Number(s.dataset.step) !== n; });
+    document.querySelectorAll('[data-sn]').forEach(function(el){
+      var i = Number(el.dataset.sn);
+      el.classList.toggle('done', i < n);
+      el.classList.toggle('now', i === n);
+      el.querySelector('i').textContent = i < n ? '✓' : String(i);
+    });
+    document.querySelectorAll('[data-sl]').forEach(function(el){
+      el.classList.toggle('done', Number(el.dataset.sl) < n);
+    });
+    title.textContent = labels[n];
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.querySelectorAll('[data-next]').forEach(function(b){ b.addEventListener('click',function(){ go(Number(b.dataset.next)); }); });
+  document.querySelectorAll('[data-prev]').forEach(function(b){ b.addEventListener('click',function(){ go(Number(b.dataset.prev)); }); });
+  var d = document.getElementById('declare');
+  var submit = document.getElementById('submitApp');
+  d.addEventListener('change', function(){ submit.disabled = !d.checked; });
+  submit.addEventListener('click', function(){
+    var m = document.getElementById('submitted');
+    m.hidden = false; document.body.classList.add('modal-open');
+    var f = m.querySelector('a.btn'); if (f) f.focus();
+  });
+})();
+</script>
+</body>
+</html>
+
+

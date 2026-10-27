@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {randomUUID} from 'node:crypto';
+import {staging,value,deniedResult} from './staging-helpers.mjs';
+const {config,admin,client}=await staging(),actors=JSON.parse(await readFile('.staging/actors.json','utf8')),student=JSON.parse(await readFile('.staging/track-c-actor.json','utf8')),previous=JSON.parse(await readFile('.staging/track-c-fixture.json','utf8'));
+const checks=[],timings={login:[],snapshot:[],preview:[],workflow:[]};
+const ok=(condition,label)=>{assert.ok(condition,label);checks.push(label);};
+const login=async actor=>{const c=client();value(await c.auth.signInWithPassword({email:actor.email,password:actor.password}),'Synthetic login');return c;};
+const timed=async(kind,work)=>{const start=performance.now();const result=await work();timings[kind].push(Math.round(performance.now()-start));return result;};
+const me=await login(student),operator=await login(actors.admin),outside=await login(actors.otherInstitute);
+const privacy=async(c,action,payload={},target)=>value(await c.rpc('pilot_privacy',{action,payload,target:target?{id:target.id,version:target.version}:null,operation_id:randomUUID()}),action);
+await mkdir('artifacts/track-de',{recursive:true});let fixture;
+try{
+ const consent=await privacy(me,'grant_document_consent',{provider:'digilocker',policyVersion:'2026-10-18'});
+ deniedResult(await outside.rpc('pilot_privacy',{action:'revoke_consent',payload:{},target:{id:consent.id,version:consent.version},operation_id:randomUUID()}),'Non-owner consent revocation');checks.push('Hosted consent owner boundary');
+ const revoked=await privacy(me,'revoke_consent',{},consent);ok(!revoked.data.active,'Hosted document consent revokes');
+ const events=value(await me.rpc('pilot_page',{dataset:'consent_events',page_number:0,search_text:student.id}),'Consent history');ok(events.items.length>=2 && events.items.length<=50,'Hosted consent history is visible and bounded');
+ deniedResult(await me.rpc('pilot_processing_record'),'Student processing-record access');
+ const processing=value(await operator.rpc('pilot_processing_record'),'Processing record');ok(processing.noticeVersion==='2026-10-18' && !JSON.stringify(processing).includes(config.adminEmail),'Hosted processing record excludes owner email');
+ const metrics=value(await operator.rpc('pilot_metrics'),'Full metrics');
+ const exact=await admin.from('pilot_applications').select('id',{count:'exact',head:true});if(exact.error)throw exact.error;ok(metrics.allApplications===exact.count,'Hosted metrics count the complete authorized cohort');
+ const page=value(await operator.rpc('pilot_page',{dataset:'applications',page_number:0,search_text:''}),'Application page');ok(page.items.length<=50,'Hosted application page is bounded');
+ const hidden=value(await outside.rpc('pilot_page',{dataset:'applications',page_number:0,search_text:previous.applicationId}),'Other institution search');ok(hidden.items.length===0,'Server search cannot reveal another institution application');
+ const source=value(await admin.from('pilot_applications').select('data').eq('id',previous.applicationId).single(),'Synthetic source application');
+ try{fixture=JSON.parse(await readFile('.staging/track-de-fixture.json','utf8'));}catch(error){if(error.code!=='ENOENT')throw error;fixture={applicationId:randomUUID()};value(await admin.from('pilot_applications').insert({id:fixture.applicationId,data:{...source.data,status:'institute_stage',academicYear:'2076-77',receiptToken:undefined,receiptHash:undefined,signaturePath:undefined}}),'Create synthetic adapter fixture');await writeFile('.staging/track-de-fixture.json',JSON.stringify(fixture),{mode:0o600});}
+ const target=value(await admin.from('pilot_applications').select('id,version').eq('id',fixture.applicationId).single(),'Adapter target');
+ const verification=value(await operator.functions.invoke('pilot-workflow',{body:{action:'run_verification',operationId:randomUUID(),target,payload:{source:'income',mode:'live'}}}),'Explicit adapter mode');
+ ok(verification.data.adapter.mode==='simulated' && verification.data.state==='manual_review','Hosted mode is chosen by the server and cannot auto-pass');
+ const reviewed=value(await operator.functions.invoke('pilot-workflow',{body:{action:'review_verification',operationId:randomUUID(),target:{id:verification.id,version:verification.version},payload:{state:'verified',reason:'Synthetic authorized human review; not government verification'}}}),'Human review provenance');
+ ok(reviewed.data.adapter.mode==='simulated' && reviewed.data.reviewerId===actors.admin.id,'Hosted human review preserves provider mode and reviewer identity');
+ deniedResult(await me.rpc('pilot_verify',{actor:student.id,payload:{source:'income'},target,operation_id:randomUUID(),adapter_result:{}}),'Direct adapter writer');checks.push('Hosted adapter writer is service-only');
+ const docs=value(await admin.from('pilot_documents').select('data').eq('data->>studentId',student.id).limit(1),'Synthetic preview fixture');assert.ok(docs[0],'Preview fixture exists');
+ const workers=await Promise.all(Array.from({length:10},()=>timed('login',()=>login(actors.admin))));
+ await Promise.all(workers.map(c=>timed('snapshot',async()=>{value(await c.from('pilot_accounts').select('*').eq('id',actors.admin.id).single(),'Current account');const requests=Object.fromEntries(['applications','documents','notifications','schemes','institutions','students','deficiencies','verifications','grievances','accounts','notes','consents','consent_events','privacy_policies','grievance_categories','deliveries','scheme_drafts','configuration_history','family_grants','payments','baselines'].map(dataset=>[dataset,{page:0,search:''}]));const batch=value(await c.rpc('pilot_snapshot',{requests}),'Bounded snapshot');assert.ok(Object.values(batch.pages).every(p=>p.items.length<=50));})));
+ await Promise.all(workers.map(c=>timed('preview',async()=>{const file=value(await c.storage.from('pilot-documents').download(docs[0].data.objectPath),'Private preview');assert.ok(file.size>0);})));
+ await Promise.all(workers.map(c=>timed('workflow',async()=>value(await c.functions.invoke('pilot-workflow',{body:{action:'add_note',payload:{body:'Synthetic Track E concurrency check'},target:{id:fixture.applicationId,version:1},operationId:randomUUID()}}),'Concurrent workflow'))));
+ const budgets={login:5000,snapshot:5000,preview:3000,workflow:5000};
+ const performanceResult=Object.fromEntries(Object.entries(timings).map(([kind,samples])=>{const ordered=[...samples].sort((a,b)=>a-b),p95=ordered[Math.ceil(.95*ordered.length)-1];return [kind,{samplesMs:samples,p95Ms:p95,budgetMs:budgets[kind],withinProvisionalBudget:p95<=budgets[kind]}];}));
+ await writeFile('artifacts/track-de/hosted.json',JSON.stringify({at:new Date().toISOString(),passed:true,checks,concurrency:10,scenario:'Ten simultaneous clients using one synthetic administrator; current small staging cohort; warm services. Not a forecast for production scale.',targets:'Provisional engineering budgets; owner agreement and expected cohort size are still required.',performance:performanceResult},null,2));
+ console.log(`PASS ${checks.length} hosted Track D/E checks; concurrency 10; p95 ms ${Object.entries(performanceResult).map(([k,v])=>`${k}=${v.p95Ms}`).join(', ')}`);
+}catch(error){await writeFile('artifacts/track-de/hosted.json',JSON.stringify({at:new Date().toISOString(),passed:false,checks,error:error.message},null,2));console.error('FAIL Track D/E staging:',error.message);process.exitCode=1;}

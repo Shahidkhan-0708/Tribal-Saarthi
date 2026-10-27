@@ -1,0 +1,141 @@
+{
+  "screens": [
+    {
+      "id": "01",
+      "route": "/student",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "02",
+      "route": "/student",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "id": "03",
+      "route": "/student/discovery",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "04",
+      "route": "/student/application/new?step=1",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "05",
+      "route": "/student/application/new?step=2",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "06",
+      "route": "/student/application/new?step=3",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "07",
+      "route": "/student/application",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "08",
+      "route": "/student/wallet",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "09",
+      "route": "/student/grievance",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "10",
+      "route": "/student/profile",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "11",
+      "route": "/student/family",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "12",
+      "route": "/student/offline",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "13",
+      "route": "/officer",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "14",
+      "route": "/officer/inspection",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "15",
+      "route": "/officer/inspection?notice=1",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "16",
+      "route": "/officer/sanction",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "17",
+      "route": "/officer/testing",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "18",
+      "route": "/officer/coverage",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "19",
+      "route": "/officer/audit",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "20",
+      "route": "/login",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "21",
+      "route": "/recover",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "id": "22",
+      "route": "/receipt",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "mobileWidths": [
+    375,
+    320
+  ],
+  "errors": []
+}

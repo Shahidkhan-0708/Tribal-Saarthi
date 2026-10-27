@@ -1,0 +1,26 @@
+[
+    {
+        "jobid":  1,
+        "jobname":  "pilot-deficiency-reminders",
+        "schedule":  "0 3 * * *",
+        "active":  true
+    },
+    {
+        "jobid":  4,
+        "jobname":  "pilot-email-processor",
+        "schedule":  "*/5 * * * *",
+        "active":  true
+    },
+    {
+        "jobid":  2,
+        "jobname":  "pilot-encrypted-backup",
+        "schedule":  "15 2 * * *",
+        "active":  true
+    },
+    {
+        "jobid":  3,
+        "jobname":  "pilot-health-monitor",
+        "schedule":  "*/5 * * * *",
+        "active":  true
+    }
+]

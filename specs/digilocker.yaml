@@ -1,0 +1,52 @@
+openapi: 3.0.3
+info:
+  title: DigiLocker Document Retrieval (mock spec)
+  version: "1.0.0"
+servers:
+  - url: https://digilocker-sandbox.gov.in/api/v1
+paths:
+  /document/{docId}:
+    get:
+      operationId: fetchDocument
+      summary: Retrieve a stored document (PDF / image) as base64
+      parameters:
+        - name: docId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Document payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          description: Document not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    DocumentResponse:
+      type: object
+      required: [docId, mimeType, contentBase64]
+      properties:
+        docId:
+          type: string
+        mimeType:
+          type: string
+          enum: [application/pdf, image/png, image/jpeg]
+        contentBase64:
+          type: string
+          format: byte
+    ErrorResponse:
+      type: object
+      required: [errorCode, errorMessage]
+      properties:
+        errorCode:
+          type: string
+        errorMessage:
+          type: string

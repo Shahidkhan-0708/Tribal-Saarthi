@@ -1,0 +1,30 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+!.env.pilot
+!.env.development
+.pilot-browser-dist/
+.vercel/
+supabase/.temp/
+supabase/.branches/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.staging/
+.backend/
+
+# IDE & Editor files (OAuth tokens, workspace configs)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db

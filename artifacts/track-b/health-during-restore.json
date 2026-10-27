@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-18T08:51:40.068Z",
+  "projectRef": "axegexiaofxdmmizilri",
+  "healthy": false,
+  "alerts": [
+    "Database health failed (521)"
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "requestId": null,
+      "ms": 246
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_schemes",
+      "status": 521,
+      "requestId": "01a14e35-a46a-7595-9b77-787148645e4e",
+      "ms": 372
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family access · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .perm{display:grid;grid-template-columns:minmax(0,1fr) 96px;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
+  .perm:last-child{border-bottom:0}
+  .perm .pn{display:flex;align-items:center;gap:9px;color:var(--ink-2)}
+  .perm .pn svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;flex:none}
+  .otp-steps{list-style:none;display:flex;gap:0;margin:4px 0 20px}
+  .otp-steps li{flex:1;font-size:9.5px;font-weight:600;color:var(--meta);position:relative;padding-top:14px;text-align:center}
+  .otp-steps li::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:var(--line-strong)}
+  .otp-steps li::after{content:"";position:absolute;top:3px;left:calc(50% + 8px);right:calc(-50% + 8px);height:1px;background:var(--line)}
+  .otp-steps li:last-child::after{display:none}
+  .otp-steps li.on{color:var(--blue)}
+  .otp-steps li.on::before{background:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+</style>
+</head>
+<body data-role="scholar" data-page="family-access">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page" id="main" data-od-id="family-access-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><span>Scholar workspace</span><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Family access</span></div>
+      <h1 class="page-title" data-od-id="family-access-title">Family access &amp; nominee consent</h1>
+      <p class="page-sub">Give a family member permission to view your application status. They never gain edit rights.</p>
+    </div>
+    <div class="page-actions">
+      <span class="badge badge-green"><span class="bdot"></span>Consent active</span>
+    </div>
+  </div>
+
+  <div class="metric-strip" style="margin-bottom:16px">
+    <div><div class="m-lab">Active nominees</div><div class="m-val">1 of 2 slots</div></div>
+    <div><div class="m-lab">Free slot</div><div class="m-val">1 remaining</div></div>
+    <div><div class="m-lab">Consent expiry</div><div class="m-val">01 Sep 2027</div></div>
+    <div><div class="m-lab">Access type</div><div class="m-val">Read-only status</div></div>
+  </div>
+
+  <div class="grid g-main" style="align-items:start">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">Active authorised guardians</h2><p class="micro" style="margin-top:3px">Authorised to receive disbursal status alerts and application progress.</p></div>
+          <span class="badge badge-green">1 active</span>
+        </div>
+        <div class="card-b">
+          <div class="flex between center wrap gap14">
+            <div class="flex center gap14">
+              <span class="avatar avatar-lg">SB</span>
+              <div>
+                <div class="flex center gap8"><h3 class="h3">Somra Birhor</h3><span class="badge badge-green"><span class="bdot"></span>Active</span></div>
+                <div class="micro" style="margin-top:3px">Relationship: Father · Mobile +91 94311 ••••14</div>
+                <div class="micro mono" style="margin-top:2px;color:var(--meta)">Consent granted 01 Sep 2026 · Aadhaar OTP</div>
+              </div>
+            </div>
+            <div class="flex gap8">
+              <button class="btn btn-secondary btn-sm" type="button" data-toast="Test SMS dispatched to the registered mobile">Resend SMS test</button>
+              <button class="btn btn-danger btn-sm" type="button" data-confirm="Revoke Somra Birhor's access? They will stop receiving status alerts.">Revoke consent</button>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--line);margin:18px 0 4px"></div>
+
+          <div class="flex between center" style="margin-bottom:4px">
+            <div class="h4">Guardian permissions</div>
+            <span class="micro" style="color:var(--meta)">Read-only by policy</span>
+          </div>
+
+          <div class="perm">
+            <div class="pn"><svg class="i-sm"><use href="#i-eye"/></svg><span>View application SLA and stage</span></div>
+            <span class="badge badge-green" style="justify-self:start"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-check"/></svg>Allowed</span>
+          </div>
+          <div class="perm">
+            <div class="pn"><svg class="i-sm"><use href="#i-bell"/></svg><span>PFMS bank credit SMS alerts</span></div>
+            <span class="badge badge-green" style="justify-self:start"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-check"/></svg>Allowed</span>
+          </div>
+          <div class="perm">
+            <div class="pn"><svg class="i-sm"><use href="#i-edit"/></svg><span>Edit bank details or scholarship terms</span></div>
+            <span class="badge badge-gray" style="justify-self:start"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-x"/></svg>Blocked</span>
+          </div>
+
+          <div class="callout mt16">
+            <svg class="i"><use href="#i-mail"/></svg>
+            <div><b>Last SMS dispatched:</b> “Application forwarded to the Latehar DWO on 14 Oct 2026.” Delivery confirmed to the registered number.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">What your family can see</h2><span class="badge badge-gray">Policy</span></div>
+        <div class="card-b" style="padding-top:8px">
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Status only</span><span class="v" style="font-weight:400;color:var(--muted)">Nominees have strictly read-only access to application stage.</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Fully logged</span><span class="v" style="font-weight:400;color:var(--muted)">Every access is recorded in the immutable MoTA audit ledger.</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Revocable</span><span class="v" style="font-weight:400;color:var(--muted)">You may revoke authorisation at any time, with instant effect.</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">365 days</span><span class="v" style="font-weight:400;color:var(--muted)">Consent expires automatically unless explicitly renewed.</span></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card">
+      <div class="card-h">
+        <div><h2 class="h3">Authorise a new nominee</h2><p class="micro" style="margin-top:3px">Authenticate the guardian by Aadhaar OTP.</p></div>
+        <span class="badge badge-blue">1 slot free</span>
+      </div>
+
+      <div class="card-b">
+        <ol class="otp-steps" aria-label="Authorisation steps">
+          <li class="on">Nominee</li>
+          <li>Aadhaar</li>
+          <li>OTP</li>
+          <li>Token</li>
+        </ol>
+
+        <form id="nomineeForm" class="stack-sm">
+          <div class="field">
+            <label for="n-name">Nominee legal full name</label>
+            <input class="input" id="n-name" value="Sita Birhor" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="n-rel">Relationship to scholar</label>
+            <select class="select" id="n-rel">
+              <option>Mother</option>
+              <option>Father</option>
+              <option>Legal guardian</option>
+              <option>Sibling (adult)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="n-aadhaar">Guardian Aadhaar number</label>
+            <input class="input mono" id="n-aadhaar" inputmode="numeric" value="•••• •••• 7182" autocomplete="off">
+            <span class="hint">Masked after entry. Raw numbers are never stored.</span>
+          </div>
+          <div class="field">
+            <label for="n-mobile">Aadhaar-linked mobile for OTP</label>
+            <div class="input-group">
+              <input class="input" id="n-mobile" inputmode="tel" value="+91 94312 ••••">
+              <span class="addon">OTP</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit" style="margin-top:4px" data-od-id="family-access-primary-cta">Dispatch Aadhaar OTP
+            <svg class="i"><use href="#i-arrowRight"/></svg></button>
+          <p class="micro" style="text-align:center;color:var(--meta)">The nominee must approve the request on their own device.</p>
+        </form>
+
+        <div class="callout info mt16">
+          <svg class="i"><use href="#i-shield"/></svg>
+          <div><b>Read-only by design.</b> A nominee can never change bank details, revoke scholarship terms, or submit documents.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample consent record · Aadhaar numbers are masked · Tribe Saarthi design preview</p>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var f = document.getElementById('nomineeForm');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    window.Saarthi.toast('Aadhaar OTP dispatched to the nominee');
+    document.querySelectorAll('.otp-steps li').forEach(function(li,i){ li.classList.toggle('on', i < 3); });
+    f.querySelector('button[type=submit]').textContent = 'OTP sent — awaiting approval';
+  });
+})();
+</script>
+</body>
+</html>

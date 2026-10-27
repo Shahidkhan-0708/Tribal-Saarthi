@@ -1,0 +1,13 @@
+.gitignore
+.npmignore
+api.ts
+base.ts
+common.ts
+configuration.ts
+docs/AadhaarOtpRequest.md
+docs/AadhaarOtpResponse.md
+docs/AadhaarOtpResponseData.md
+docs/DefaultApi.md
+docs/ErrorResponse.md
+git_push.sh
+index.ts

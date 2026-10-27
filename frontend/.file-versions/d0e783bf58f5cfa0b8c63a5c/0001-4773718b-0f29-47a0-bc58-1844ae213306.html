@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision history · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .evt{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;white-space:nowrap}
+  .evt svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2}
+  .evt.sign{color:#006B47}
+  .evt.seal{color:var(--blue)}
+  .evt.submit{color:var(--muted)}
+  .hashpill{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:9.5px;color:var(--muted);background:var(--canvas);border:1px solid var(--line);padding:3px 6px;border-radius:4px}
+  .chain{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .chain .node{font-family:var(--mono);font-size:9px;padding:5px 7px;border:1px solid var(--line);border-radius:5px;background:var(--surface)}
+  .chain .node.link{border-color:var(--green-border);background:var(--green-soft);color:#006B47}
+</style>
+</head>
+<body data-role="officer" data-page="audit-log">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page wide" id="main" data-od-id="audit-log-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><span>Verification desk</span><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Decision history</span></div>
+      <h1 class="page-title" data-od-id="audit-log-title">Decision history</h1>
+      <p class="page-sub">Review decisions, document checks and the officer responsible. Cryptographically authenticated and append-only.</p>
+    </div>
+    <div class="page-actions">
+      <a class="btn btn-secondary" href="receipt-verification.html"><svg class="i"><use href="#i-download"/></svg>Export audit pack</a>
+      <button class="btn btn-primary" type="button" data-toast="All 1,842 blocks verified · no gaps found" data-od-id="audit-log-primary-cta">
+        <svg class="i"><use href="#i-shield"/></svg>Verify all blocks</button>
+    </div>
+  </div>
+
+  <div class="kpi-row" style="margin-bottom:16px">
+    <div class="kpi">
+      <div class="lab">Total audited blocks</div>
+      <div class="val num">1,842</div>
+      <div class="foot"><span class="delta up"><svg><use href="#i-check"/></svg>Validated</span> all blocks</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Cryptographic events</div>
+      <div class="val num">14,921</div>
+      <div class="foot">Tamper-proof SHA-256</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Active validator nodes</div>
+      <div class="val num">4<em>/ 4</em></div>
+      <div class="foot">NIC · MoTA · PFMS · UIDAI</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Record integrity</div>
+      <div class="val">100<em>%</em></div>
+      <div class="foot"><span class="badge badge-green" style="padding:2px 5px;font-size:9px">Clean</span> no breaks detected</div>
+    </div>
+  </div>
+
+  <div class="grid g-main" style="align-items:start">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">Review and approval events</h2><p class="micro" style="margin-top:3px">Records linked to DSC public keys. Sample events shown.</p></div>
+          <span class="badge badge-gray">Live ledger</span>
+        </div>
+        <div class="tablewrap">
+          <table class="tbl">
+            <thead>
+              <tr><th class="nowrap">Timestamp</th><th>Event type</th><th>Actor &amp; credential</th><th>Target entity</th><th>Block hash</th><th style="text-align:right">Verify</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nowrap"><div class="strong mono" style="font-size:10.5px">14 Oct · 14:32:10</div><div class="sub">IST (+05:30)</div></td>
+                <td><span class="evt sign"><svg><use href="#i-signature"/></svg>DSC sanction endorsed</span></td>
+                <td><div class="strong" style="font-size:11.5px">Dr. K. Soren (DWO Latehar)</div><div class="sub mono">DSC 0x7F82A091</div></td>
+                <td><div class="strong" style="font-size:11.5px">Case #TS-2026-88194</div><div class="sub">Mohan Birhor · ₹1,32,000</div></td>
+                <td><span class="hashpill"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-lock"/></svg>0x7c49…a420</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="DAG verified · block 1842 is intact">Verify</button></td>
+              </tr>
+              <tr>
+                <td class="nowrap"><div class="strong mono" style="font-size:10.5px">14 Oct · 11:15:44</div><div class="sub">IST (+05:30)</div></td>
+                <td><span class="evt seal"><svg><use href="#i-shield"/></svg>DigiLocker caste seal</span></td>
+                <td><div class="strong" style="font-size:11.5px">SDO Mahuadanr, Latehar</div><div class="sub mono">e-Sign 0x1049AB12</div></td>
+                <td><div class="strong" style="font-size:11.5px">Cert #JH/ST/2023/88194</div><div class="sub">Birhor Scheduled Tribe</div></td>
+                <td><span class="hashpill"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-lock"/></svg>0x3f11…99bc</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="DAG verified · sealing event is intact">Verify</button></td>
+              </tr>
+              <tr>
+                <td class="nowrap"><div class="strong mono" style="font-size:10.5px">12 Oct · 09:12:08</div><div class="sub">IST (+05:30)</div></td>
+                <td><span class="evt submit"><svg><use href="#i-upload"/></svg>Application submitted</span></td>
+                <td><div class="strong" style="font-size:11.5px">Mohan Birhor (Scholar)</div><div class="sub mono">Aadhaar vault ••••4921</div></td>
+                <td><div class="strong" style="font-size:11.5px">BIT Mesra scholarship</div><div class="sub">B.Tech CSE · year 2</div></td>
+                <td><span class="hashpill"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-lock"/></svg>0x8a92…11ef</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="DAG verified · submission event is intact">Verify</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-ft">
+          <span class="micro" style="color:var(--meta)">Showing 3 of 1,842 blocks · newest first</span>
+          <div class="flex gap8">
+            <button class="btn btn-secondary btn-sm" type="button" disabled>Previous</button>
+            <button class="btn btn-secondary btn-sm" type="button" data-toast="Loading older audit blocks">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Linked review chain</h2><span class="badge badge-green">Unbroken</span></div>
+        <div class="card-b">
+          <div class="chain">
+            <span class="node link">#1840 submit</span>
+            <svg class="i-sm" style="stroke:var(--meta)"><use href="#i-arrowRight"/></svg>
+            <span class="node link">#1841 docs</span>
+            <svg class="i-sm" style="stroke:var(--meta)"><use href="#i-arrowRight"/></svg>
+            <span class="node link">#1842 approval</span>
+            <svg class="i-sm" style="stroke:var(--meta)"><use href="#i-arrowRight"/></svg>
+            <span class="node">#1843 PFMS</span>
+          </div>
+          <p class="micro" style="margin-top:12px">Each block stores the hash of the previous block. Any alteration breaks the chain and fails verification at all four validator nodes.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Record types</h2><span class="badge badge-gray">14.9K</span></div>
+        <div class="card-b">
+          <div class="bars" style="--max:100">
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 68px;row-gap:5px">
+              <span class="bar-label">Sanction endorsements</span><span class="bar-value">52%</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar" style="--v:52"></div></div>
+            </div>
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 68px;row-gap:5px">
+              <span class="bar-label">DigiLocker seals</span><span class="bar-value">28%</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar green" style="--v:28"></div></div>
+            </div>
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 68px;row-gap:5px">
+              <span class="bar-label">PFMS disbursals</span><span class="bar-value">14%</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar" style="--v:14;background:#7FA6E8"></div></div>
+            </div>
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 68px;row-gap:5px">
+              <span class="bar-label">Discrepancy notices</span><span class="bar-value">6%</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar amber" style="--v:6"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Audit health</h2><span class="badge badge-green"><span class="bdot"></span>Operational</span></div>
+        <div class="card-b" style="padding-top:10px">
+          <div class="keyline"><span class="k">Chain integrity</span><span class="v">100%</span></div>
+          <div class="keyline"><span class="k">Validator quorum</span><span class="v">4 of 4</span></div>
+          <div class="keyline"><span class="k">Last block</span><span class="v mono">#1842</span></div>
+          <div class="keyline"><span class="k">Median finality</span><span class="v num">2.4s</span></div>
+          <div class="keyline"><span class="k">Retention</span><span class="v">Permanent</span></div>
+        </div>
+      </section>
+
+      <div class="callout info">
+        <svg class="i"><use href="#i-shield"/></svg>
+        <div><b>Evidence, not a score.</b> This history supports review decisions; it does not replace the statutory authority of the signing officer.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample audit history · Illustrative cryptographic records · Tribe Saarthi design preview</p>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

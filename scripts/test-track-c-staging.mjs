@@ -1,0 +1,96 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {randomUUID} from 'node:crypto';
+import {staging,value,deniedResult} from './staging-helpers.mjs';
+const {config,admin,client,requests}=await staging();
+const actors=JSON.parse(await readFile('.staging/actors.json','utf8'));
+const original=JSON.parse(await readFile('.staging/restore-student.json','utf8'));
+const clients={},checks=[];
+const ok=(condition,label)=>{assert.ok(condition,label);checks.push(label);};
+const record=async(table,id)=>value(await admin.from(`pilot_${table}`).select('*').eq('id',id).single(),`Read ${table}`);
+const signIn=async actor=>{const c=client();value(await c.auth.signInWithPassword({email:actor.email,password:actor.password}),'Synthetic login');return c;};
+const command=async(who,action,payload={},target)=>value(await clients[who].functions.invoke('pilot-workflow',{body:{action,payload,target:target?{id:target.id,version:target.version}:undefined,operationId:randomUUID()}}),action);
+const manage=async(payload,target)=>value(await clients.admin.functions.invoke('pilot-accounts',{body:{action:'manage_account',payload,target:{id:target.id,version:target.version},operationId:randomUUID()}}),'Manage synthetic access');
+let probe;
+try{
+ for(const who of ['admin','student','institute','nodal'])clients[who]=await signIn(actors[who]);
+ try{probe=JSON.parse(await readFile('.staging/track-c-actor.json','utf8'));}catch(error){if(error.code!=='ENOENT')throw error;
+  probe={id:randomUUID(),email:`track-c-${randomUUID()}@example.invalid`,password:`Staging!${randomUUID()}`};
+  const created=value(await admin.auth.admin.createUser({email:probe.email,password:probe.password,email_confirm:true}),'Create synthetic lifecycle actor');probe.id=created.user.id;
+  value(await admin.from('pilot_accounts').insert({id:probe.id,email:probe.email,name:'Synthetic Track C student',role:'student'}),'Provision synthetic lifecycle actor');
+  await writeFile('.staging/track-c-actor.json',JSON.stringify(probe,null,2),{mode:0o600});
+ }
+ let account=await record('accounts',probe.id);
+ if(!account.active || account.role!=='student')account=await manage({role:'student',active:true},account);
+ clients.probe=await signIn(probe);
+ const sourceApp=await record('applications',original.applicationId),sourceProfile=await record('students',actors.student.id);
+ const profile={...sourceProfile.data,name:'Synthetic Track C student'};delete profile.id;delete profile.familyViewConsent;
+ const existing=await admin.from('pilot_students').select('*').eq('id',probe.id).maybeSingle();
+ await command('probe','save_profile',profile,existing.data ?? undefined);
+ const path=`${probe.id}/${randomUUID()}.pdf`,pdf=Buffer.from('%PDF-1.7\nSynthetic grievance evidence\n%%EOF');
+ value(await clients.probe.storage.from('pilot-documents').upload(path,pdf,{contentType:'application/pdf'}),'Upload actual grievance evidence');
+ const document=await command('probe','register_document',{type:'income_certificate',title:'Synthetic grievance evidence',objectPath:path});
+ account=await record('accounts',probe.id);
+ account=await manage({role:'student',active:false},account);
+ const blocked=await client().auth.signInWithPassword({email:probe.email,password:probe.password});deniedResult(blocked,'Deactivated sign-in');checks.push('Deactivated account cannot sign in');
+ const read=value(await clients.probe.from('pilot_students').select('id'),'Inactive read');ok(read.length===0,'Deactivated existing JWT cannot read records');
+ deniedResult(await clients.probe.storage.from('pilot-documents').download(path),'Inactive Storage download');checks.push('Deactivated existing JWT cannot download private bytes');
+ account=await manage({role:'student',active:true},account);
+ ok(value(await clients.probe.from('pilot_students').select('id'),'Revoked JWT read').length===0,'Reactivation does not revive prior JWT');
+ await new Promise(resolve=>setTimeout(resolve,1200));clients.probe=await signIn(probe);
+ ok(value(await clients.probe.storage.from('pilot-documents').download(path),'Reactivated download').size===pdf.length,'A fresh session restores authorized private access');
+ account=await manage({role:'family',active:true},account);
+ ok(value(await clients.probe.from('pilot_students').select('id'),'Changed-role read').length===0,'Role changes immediately remove old access');
+ account=await manage({role:'student',active:true},account);await command('probe','save_profile',profile,await record('students',probe.id));
+ value(await clients.probe.functions.invoke('pilot-accounts',{body:{action:'request_erasure',payload:{reason:'Synthetic retention review exercise'},operationId:randomUUID()}}),'Erasure request');
+ ok((await record('accounts',probe.id)).lifecycle.erasureStatus==='requested','Self-service erasure request is recorded without deleting history');
+ deniedResult(await clients.probe.functions.invoke('pilot-accounts',{body:{action:'list'}}),'Student account list');checks.push('Non-admin account list denied');
+ const listed=value(await clients.admin.functions.invoke('pilot-accounts',{body:{action:'list',search:'Track C'}}),'Administrator account list');ok(listed.items.some(a=>a.id===probe.id) && listed.items.every(a=>typeof a.pendingInvite==='boolean'),'Administrator list includes lifecycle and pending invitation status');
+
+ let g=await command('probe','create_grievance',{category:'Help',subject:'Synthetic Track C grievance',body:'Please review this private evidence',priority:'high',evidenceIds:[document.id]});
+ ok(!!g.data.assignedTo && !!g.data.dueAt && g.data.evidenceIds[0]===document.id,'Grievance has an owner, SLA and real private evidence');
+ ok(value(await admin.from('pilot_notifications').select('id').eq('data->>userId',g.data.assignedTo).eq('data->>category','grievance'),'Assignment notices').length>0,'Assigned officer receives an in-app notice');
+ g=await command('nodal','update_grievance',{status:'resolved',resolutionReason:'Synthetic evidence reviewed and explained',body:'Resolution details recorded'},g);
+ g=await command('probe','update_grievance',{event:'appeal',body:'Please reconsider this resolution with the evidence'},g);
+ ok(g.data.status==='open' && g.data.events.length===3,'Grievance appeal retains a visible full timeline');
+
+ const run=randomUUID().slice(0,8),schemeId=`track-c-${run}`;
+ const cfg={...sourceApp.data.ruleSnapshot,id:schemeId,name:`Synthetic Track C ${run}`,academicYear:'2026-27',deadline:'2099-12-31'};
+ let draft=await command('admin','draft_scheme',{schemeId,config:cfg});
+ ok(value(await clients.student.from('pilot_schemes').select('id').eq('id',schemeId),'Draft catalogue check').length===0,'Unpublished scheme draft is absent from student catalogue');
+ let scheme=await command('admin','publish_scheme',{},draft);
+ let app=await command('student','save_draft',{schemeId,academicYear:'2026-27',documentIds:sourceApp.data.documentIds,evidence:sourceApp.data.evidence ?? {}});
+ app=await command('student','submit_application',{},app);
+ const receiptBefore=value(await client().functions.invoke('pilot-receipt',{body:{token:app.data.receiptToken}}),'Submission receipt');
+ for(const source of ['academic','institution','identity','st_certificate','income']){const who=['academic','institution'].includes(source)?'institute':'nodal';const v=await command(who,'run_verification',{source},app);await command(who,'review_verification',{state:'verified',reason:'Synthetic Track C human review'},v);}
+ app=await command('institute','approve_institute',{},app);app=await command('nodal','approve_department',{},app);
+ const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=','base64'),signaturePath=`${actors.nodal.id}/${randomUUID()}.png`;
+ value(await clients.nodal.storage.from('pilot-signatures').upload(signaturePath,png,{contentType:'image/png'}),'Signature bytes');
+ const unrelated=await command('probe','save_draft',{schemeId,academicYear:'2026-27',documentIds:[]});
+ const results=await command('nodal','bulk_sanction',{signaturePath,targets:[{id:app.id,version:app.version},{id:unrelated.id,version:unrelated.version}]});
+ ok(results.length===2 && results[0].ok && !results[1].ok,'Bulk sanction independently reports a validated success and blocked record');
+ app=await record('applications',app.id);
+ const receipt=value(await client().functions.invoke('pilot-receipt',{body:{token:app.data.receiptToken}}),'Decision receipt');
+ ok(receipt.valid && receipt.hash!==receiptBefore.hash && Object.keys(receipt).sort().join(',')==='hash,issuedAt,reference,valid','Public receipt updates its decision digest without leaking personal data');
+
+ draft=await command('admin','draft_scheme',{schemeId,config:{...scheme.data,academicYear:'2027-28'}},await record('scheme_drafts',schemeId));
+ scheme=await command('admin','publish_scheme',{},draft);
+ let renewal=await command('student','renew_application',{academicYear:'2027-28'},app);
+ ok(renewal.data.previousApplicationId===app.id && renewal.data.documentIds.length===app.data.documentIds.length && renewal.data.eligibilityDelta.current.eligible,'Renewal creates a linked draft with reused evidence and server eligibility delta');
+ renewal=await command('student','submit_application',{},renewal);
+ renewal=await command('institute','reject_application',{reason:'Synthetic rejection for appeal exercise'},renewal);
+ renewal=await command('student','appeal_application',{reason:'Synthetic request for corrected review'},renewal);
+ renewal=await command('nodal','resolve_appeal',{decision:'reopen',reason:'Synthetic fresh review granted'},renewal);
+ ok(renewal.data.status==='institute_stage','Application rejection appeal reopens an authorized review path');
+ const withdrawal=await command('probe','withdraw_application',{reason:'Synthetic application no longer required'},unrelated);ok(withdrawal.data.status==='withdrawn','Withdrawal persists a reasoned state');
+ const previousHistory=value(await admin.from('pilot_configuration_history').select('id').eq('data->>entityId',schemeId).eq('data->>configurationVersion',String(scheme.version)).single(),'Historical scheme version');
+ draft=await command('admin','draft_scheme',{schemeId,config:{...scheme.data,rules:[{id:'income',label:'Income',field:'familyIncome',param:'0',op:'max',threshold:0}]}},await record('scheme_drafts',schemeId));
+ const preview=await command('admin','dry_run_scheme',{},draft);ok(preview.cohort.find(s=>s.studentId===actors.student.id).eligibility.eligible===false,'Rule dry-run uses actual scoped student evidence');
+ const changed=await command('admin','publish_scheme',{},draft);scheme=await command('admin','rollback_scheme',{historyId:previousHistory.id},changed);ok(scheme.version>changed.version && scheme.data.academicYear==='2027-28','Rollback records a new published configuration version');
+ const revoked=await command('nodal','revoke_receipt',{reason:'Synthetic receipt revocation policy drill'},app);ok(value(await client().functions.invoke('pilot-receipt',{body:{token:revoked.data.receiptToken}}),'Revoked receipt').valid===false,'Receipt revocation is visible and audited');
+ const status=value(await clients.admin.functions.invoke('pilot-notifications',{body:{}}),'Delivery worker');ok(Number.isInteger(status.processed),'Delivery worker records blocked attempts without claiming mail was sent');
+ const attempts=value(await admin.from('pilot_deliveries').select('data').eq('data->>status','blocked'),'Blocked delivery attempts');ok(attempts.some(d=>d.data.code==='provider_not_configured'),'Missing Brevo credentials produce a visible blocked status');
+ await writeFile('.staging/track-c-fixture.json',JSON.stringify({applicationId:app.id,renewalId:renewal.id,grievanceId:g.id,schemeId,probeId:probe.id},null,2));
+ console.log(`PASS ${checks.length} hosted Track C assertions; SMTP/provider delivery remains unverified`);
+}catch(error){await writeFile('.staging/track-c-error.log',error.stack ?? String(error));console.error(error instanceof assert.AssertionError || error instanceof TypeError ? error.message:'Hosted Track C failed; inspect private logs and saved request IDs');process.exitCode=1;}
+finally{await mkdir('artifacts/track-c',{recursive:true});await writeFile('artifacts/track-c/hosted.json',JSON.stringify({at:new Date().toISOString(),projectRef:config.projectRef,passed:!process.exitCode,checks,requests,pending:['Real invitation/email delivery with owner-supplied Brevo credentials','Automatic protected backups and alert drill from Track B']},null,2));}

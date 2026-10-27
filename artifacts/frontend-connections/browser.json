@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-26T20:06:51.743Z",
+  "passed": true,
+  "checks": [
+    "Versioned officer note persists on the server, survives reload and opens its parent from the paged list",
+    "Recorded private signature downloads actual PNG bytes with modal focus return",
+    "UI institution creation, reasoned deactivation, explicit reactivation and persisted configuration history",
+    "Account save refreshes the shared version before a successful privacy review without a page reload",
+    "Baseline CSV imports through the UI and its persisted provenance has a paged frontend view",
+    "Record browser fits 320 CSS pixels",
+    "Family interface exposes supported summary paging without fake search or private signature access"
+  ],
+  "errors": []
+}

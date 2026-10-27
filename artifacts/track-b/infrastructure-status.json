@@ -1,0 +1,22 @@
+﻿{
+    "checkedAt":  "2026-10-18T09:03:48.3996104Z",
+    "stagingProjectRef":  "axegexiaofxdmmizilri",
+    "stagingStatus":  "ACTIVE_HEALTHY",
+    "frontendUrl":  "https://tribe-saarthi-staging.vercel.app",
+    "frontendDeployed":  true,
+    "restoreProjectRef":  "feoqfkznfiirrsmlqgfk",
+    "restoreProjectStatus":  "INACTIVE",
+    "ownerSelectedOldProjectStatus":  "INACTIVE",
+    "ownerAdminLoginVerified":  true,
+    "smtpPrepared":  true,
+    "smtpConfigured":  false,
+    "hostedAuthorizationPassed":  true,
+    "separateRestorePassed":  true,
+    "liveQuotaRoutesPassed":  true,
+    "remaining":  [
+                      "Brevo credentials and invitation delivery",
+                      "Scheduled protected backups",
+                      "Delivered alert and failed-job drill",
+                      "Malware scanning/risk decision"
+                  ]
+}

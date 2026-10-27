@@ -1,0 +1,568 @@
+{
+  "at": "2026-10-26T20:04:31.819Z",
+  "projectRef": "axegexiaofxdmmizilri",
+  "passed": true,
+  "checks": [
+    "Deactivated account cannot sign in",
+    "Deactivated existing JWT cannot read records",
+    "Deactivated existing JWT cannot download private bytes",
+    "Reactivation does not revive prior JWT",
+    "A fresh session restores authorized private access",
+    "Role changes immediately remove old access",
+    "Self-service erasure request is recorded without deleting history",
+    "Non-admin account list denied",
+    "Administrator list includes lifecycle and pending invitation status",
+    "Grievance has an owner, SLA and real private evidence",
+    "Assigned officer receives an in-app notice",
+    "Grievance appeal retains a visible full timeline",
+    "Unpublished scheme draft is absent from student catalogue",
+    "Bulk sanction independently reports a validated success and blocked record",
+    "Public receipt updates its decision digest without leaking personal data",
+    "Renewal creates a linked draft with reused evidence and server eligibility delta",
+    "Application rejection appeal reopens an authorized review path",
+    "Withdrawal persists a reasoned state",
+    "Rule dry-run uses actual scoped student evidence",
+    "Rollback records a new published configuration version",
+    "Receipt revocation is visible and audited",
+    "Delivery worker records blocked attempts without claiming mail was sent",
+    "Missing Brevo credentials produce a visible blocked status"
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a179cf-e465-7275-8dec-ae113218a2a7",
+      "ms": 422
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a179cf-e577-77f5-b0e9-774f7fa954f1",
+      "ms": 191
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a179cf-e63e-7d41-8af1-4ca97ecf1652",
+      "ms": 199
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a179cf-e707-7799-9fb8-41210982d6d0",
+      "ms": 252
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a179cf-e831-77fe-baa8-12b2603c6eab",
+      "ms": 159
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a179cf-e8da-7f6c-9821-18cc959979e1",
+      "ms": 194
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_applications",
+      "status": 200,
+      "requestId": "01a179cf-e9a3-7204-acbf-fb945009eac5",
+      "ms": 221
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a179cf-ea7c-7cfd-92cf-4fa90d992d1b",
+      "ms": 221
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a179cf-eb53-7da9-b134-b700e6f356f4",
+      "ms": 119
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "6dc60dc2-c5f8-469b-b058-afe7769870cb",
+      "ms": 2369
+    },
+    {
+      "method": "POST",
+      "path": "/storage/v1/[redacted]",
+      "status": 200,
+      "requestId": "01a179cf-f520-729b-9510-ad0d9bce5d0d",
+      "ms": 323
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "4bfa93b0-83f2-4228-b391-6983606549fe",
+      "ms": 2867
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a179d0-019f-7d90-bd96-0c17e528f19e",
+      "ms": 132
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 200,
+      "requestId": "8e5537f1-6ac5-408b-addf-727fb1a2374f",
+      "ms": 3665
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 400,
+      "requestId": "01a179d0-106a-7086-bdee-0dec6f5a813b",
+      "ms": 121
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a179d0-1136-7ab5-a451-57ca2bc17410",
+      "ms": 239
+    },
+    {
+      "method": "GET",
+      "path": "/storage/v1/[redacted]",
+      "status": 400,
+      "requestId": "01a179d0-11d9-7409-b462-aec5e62d2fbc",
+      "ms": 456
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 200,
+      "requestId": "fd463c00-fb89-4942-a934-2b532b074709",
+      "ms": 3058
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a179d0-1f95-7099-89a6-7598afa82ad0",
+      "ms": 117
+    },
+    {
+      "method": "POST",
+      "path": "/auth/v1/token",
+      "status": 200,
+      "requestId": "01a179d0-24d1-7a99-bf02-3fe3f18f4327",
+      "ms": 421
+    },
+    {
+      "method": "GET",
+      "path": "/storage/v1/[redacted]",
+      "status": 200,
+      "requestId": "01a179d0-2670-7d0d-a061-4c2537015cd8",
+      "ms": 112
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 200,
+      "requestId": "84936121-018b-49e6-91e3-ef39043e2f51",
+      "ms": 682
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a179d0-29d5-71bd-889b-7a95e8335fc3",
+      "ms": 195
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 200,
+      "requestId": "9565195e-3359-4f7f-8d58-783b9d5138a3",
+      "ms": 799
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_students",
+      "status": 200,
+      "requestId": "01a179d0-2d88-74de-b82d-70f225a49abc",
+      "ms": 113
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "77524eb9-f398-48c3-91a7-1fb0cb98f794",
+      "ms": 419
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 200,
+      "requestId": "53f44c9c-f2bd-4d98-9554-fd1d8e2f19dc",
+      "ms": 775
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_accounts",
+      "status": 200,
+      "requestId": "01a179d0-32bf-783d-9f2d-0a7b300a6c48",
+      "ms": 123
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 403,
+      "requestId": "30718cf6-3abb-408b-b3f8-60f7d3b9e7ad",
+      "ms": 719
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-accounts",
+      "status": 200,
+      "requestId": "360850a3-b37a-49ae-b14c-77899ffc1a68",
+      "ms": 508
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "71b65b28-5b4e-4e94-85db-cdb60e80e58e",
+      "ms": 823
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_notifications",
+      "status": 200,
+      "requestId": "01a179d0-3b44-7eff-97b8-e89307158cee",
+      "ms": 126
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "73b9df48-c47d-474f-a60e-8cbac3a0b480",
+      "ms": 425
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "5c2c3c43-a739-4c2f-b814-e2c69ebbf94e",
+      "ms": 449
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "d6d3c77d-e6ef-4287-ab7c-886bf07d141a",
+      "ms": 632
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_schemes",
+      "status": 200,
+      "requestId": "01a179d0-41a6-7882-b2b3-3c17326c1e3f",
+      "ms": 200
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "90a7386b-4082-4637-893c-de9a105af326",
+      "ms": 435
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "398cc19a-7cd4-4732-bfb1-6082128e3503",
+      "ms": 428
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "29d5ccfa-99e6-4677-9e7f-4b213bf5472b",
+      "ms": 415
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-receipt",
+      "status": 200,
+      "requestId": "72f46719-07d1-42c8-a0b5-2194d65c4f94",
+      "ms": 2490
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "569b1880-3248-4907-aacd-8deba3fa34f3",
+      "ms": 677
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "6fb1c0b5-5e54-479a-b586-60e1a77ce635",
+      "ms": 397
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "31e780c0-0a3e-4517-9c34-54776cb9ebae",
+      "ms": 525
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "356afd13-92b0-4954-b872-7a4b23007add",
+      "ms": 438
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "4eb93cbd-722e-4c5a-9167-d314528c167c",
+      "ms": 315
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "2088b356-ab22-454a-9057-32203f482566",
+      "ms": 462
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "082d07b5-8045-4f4b-9a36-9a9e2d297d3f",
+      "ms": 567
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "3886ffd0-887a-4cd3-9bbb-cb3748aab56d",
+      "ms": 608
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "6a83dd5e-8fed-4158-997f-853438afdb70",
+      "ms": 513
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "d6be0ae0-aded-4b76-8e76-1b6455263d8d",
+      "ms": 446
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "9f49926e-dd93-46d1-b5b0-8c5a9fe999f9",
+      "ms": 444
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "9d424aea-5b04-439b-93fa-239a6cf548ac",
+      "ms": 392
+    },
+    {
+      "method": "POST",
+      "path": "/storage/v1/[redacted]",
+      "status": 200,
+      "requestId": "01a179d0-67df-7479-9c50-956c9defb4fb",
+      "ms": 247
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "e312744b-37a4-4e6f-9157-697f1228e86b",
+      "ms": 407
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "c913691a-c084-4df3-b538-1c4e5ac7a05f",
+      "ms": 860
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_applications",
+      "status": 200,
+      "requestId": "01a179d0-6dc5-746e-8dea-77c3438dbd52",
+      "ms": 108
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-receipt",
+      "status": 200,
+      "requestId": "d5018f80-cf58-459f-b5dd-b61102c3a646",
+      "ms": 357
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_scheme_drafts",
+      "status": 200,
+      "requestId": "01a179d0-6fa0-771a-8aae-125d97512640",
+      "ms": 112
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "7e7a9428-3798-42c5-912a-b0c5ace625c7",
+      "ms": 413
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "d0dd13a8-e6f3-4d59-8d28-b2f1a5c51885",
+      "ms": 468
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "61fed861-9bd4-4d97-8bde-a0e219777696",
+      "ms": 383
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "3745e0a3-a0e8-42ba-b507-555456077497",
+      "ms": 356
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "bee93216-ec31-4477-853b-6adb471f72fb",
+      "ms": 406
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "8a17e9aa-e48a-4729-848b-f05c73205be0",
+      "ms": 502
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "03eb1b28-f066-44ef-ace3-e229f1c24ed7",
+      "ms": 432
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "bdd6baa8-5bef-4241-926f-94e34b22894e",
+      "ms": 411
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_configuration_history",
+      "status": 200,
+      "requestId": "01a179d0-7d54-775f-8ed7-a3f50f27eb69",
+      "ms": 117
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_scheme_drafts",
+      "status": 200,
+      "requestId": "01a179d0-7e2a-797f-9b8e-f9247a1db46b",
+      "ms": 210
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "9bfa8ccc-9611-4d1f-a760-aa6759b39169",
+      "ms": 467
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "6f17e44b-d80e-490e-b21d-9e60b22e8a84",
+      "ms": 509
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "3574eafa-f236-48d5-a2c3-3705604bbff5",
+      "ms": 411
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "654f6827-cfcf-485a-b54b-d758ba15f929",
+      "ms": 425
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-workflow",
+      "status": 200,
+      "requestId": "9308dc28-5e36-4c63-b2e6-8ff742e117a5",
+      "ms": 466
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-receipt",
+      "status": 200,
+      "requestId": "f1cc0610-2d23-4f90-a11c-a4e64381e28e",
+      "ms": 328
+    },
+    {
+      "method": "POST",
+      "path": "/functions/v1/pilot-notifications",
+      "status": 200,
+      "requestId": "26008690-2d23-4c7a-aea3-d89f71b68c8a",
+      "ms": 2190
+    },
+    {
+      "method": "GET",
+      "path": "/rest/v1/pilot_deliveries",
+      "status": 200,
+      "requestId": "01a179d0-9164-721f-80bb-c73b803d5799",
+      "ms": 116
+    }
+  ],
+  "pending": [
+    "Real invitation/email delivery with owner-supplied Brevo credentials",
+    "Automatic protected backups and alert drill from Track B"
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "at": "2026-10-18T15:04:48.483Z",
+  "scope": "Representative current demo and pilot task screens; no proposed UI rendered",
+  "screens": [
+    {
+      "name": "demo-student-home",
+      "url": "http://localhost:5174/student",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "pageHeight": 1938,
+      "overflow": false,
+      "headings": [
+        "Namaste, Asha Kiran Ekka",
+        "APAAR Digital ID · One Nation, One Student ID",
+        "2 Action Items Requiring Attention",
+        "National Top-Class ST Scholarship · AY 2026-27"
+      ],
+      "buttons": [
+        "Sign out",
+        "Dark",
+        "Reset",
+        "Tour",
+        "Copy",
+        "View demo academic card",
+        "Dismiss",
+        "Dismiss",
+        "SaarthiEnglish/Hindi · voice preview"
+      ],
+      "navigation": [
+        "Dashboard",
+        "Scholarship Discovery",
+        "Document Wallet",
+        "Application & Tracker",
+        "Scholarship History",
+        "Help & Grievance"
+      ]
+    },
+    {
+      "name": "demo-scholarships",
+      "url": "http://localhost:5174/student/discovery",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "pageHeight": 1066,
+      "overflow": false,
+      "headings": [
+        "Scholarship Discovery & Live Eligibility",
+        "Post-Matric Scholarship for ST Students",
+        "National Top-Class ST Scholarship",
+        "National Fellowship for ST Students",
+        "National Overseas Scholarship for ST Students"
+      ],
+      "buttons": [
+        "Sign out",
+        "Dark",
+        "Reset",
+        "Tour",
+        "NSP · SIMULATED",
+        "Audit trail (Why?)",
+        "Apply with Pre-filled Profile",
+        "NSP · SIMULATED",
+        "Audit trail (Why?)",
+        "Apply with Pre-filled Profile",
+        "SFMP · SIMULATED",
+        "Audit trail (Why?)",
+        "NOS · SIMULATED",
+        "Audit trail (Why?)",
+        "SaarthiEnglish/Hindi · voice preview"
+      ],
+      "navigation": [
+        "Dashboard",
+        "Scholarship Discovery",
+        "Document Wallet",
+        "Application & Tracker",
+        "Scholarship History",
+        "Help & Grievance"
+      ]
+    },
+    {
+      "name": "demo-application",
+      "url": "http://localhost:5174/student/application",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "pageHeight": 1587,
+      "overflow": false,
+      "headings": [
+        "Application & DBT Status",
+        "Application documents",
+        "Multi-level verification trail"
+      ],
+      "buttons": [
+        "Sign out",
+        "Dark",
+        "Reset",
+        "Tour",
+        "View Acknowledgement Slip",
+        "Top-Class · 2026-27",
+        "PMS-ST · 2025-26",
+        "PMS-ST · 2024-25",
+        "View Acknowledgement Slip",
+        "Save attachments & verify",
+        "Gov sources · SIMULATED",
+        "⟳ Re-run verification pipeline",
+        "Aadhaar/Organ Config (SIMULATED)",
+        "State ST Cert DB (SIMULATED)",
+        "State e-District (SIMULATED)",
+        "AISHE (SIMULATED)",
+        "Institution SSO (SIMULATED)",
+        "State Welfare Dept (SIMULATED)",
+        "SaarthiEnglish/Hindi · voice preview"
+      ],
+      "navigation": [
+        "Dashboard",
+        "Scholarship Discovery",
+        "Document Wallet",
+        "Application & Tracker",
+        "Scholarship History",
+        "Help & Grievance"
+      ]
+    },
+    {
+      "name": "demo-officer-queue",
+      "url": "http://localhost:5174/officer",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "pageHeight": 1867,
+      "overflow": false,
+      "headings": [
+        "National Officer Review Queue",
+        "Live \"Kill-A-Source\" Sabotage Switchboard"
+      ],
+      "buttons": [
+        "Sign out",
+        "Dark",
+        "Reset",
+        "Tour",
+        "Kill Income API",
+        "Kill Aadhaar e-KYC",
+        "Restore All Sources",
+        "Sabotage / Kill",
+        "Sabotage / Kill",
+        "Sabotage / Kill",
+        "Sabotage / Kill",
+        "Sabotage / Kill",
+        "Application queue (3)",
+        "Audit log (0)",
+        "Inspect & Review",
+        "Re-run verification",
+        "Complete department verification",
+        "Inspect & Review",
+        "Approve",
+        "Reject",
+        "Re-run verification",
+        "Inspect & Review",
+        "Re-run verification"
+      ],
+      "navigation": [
+        "Review Queue",
+        "Coverage Analytics",
+        "Broadcasts & SMS",
+        "Forensic Audit Log",
+        "Help & Grievance"
+      ]
+    },
+    {
+      "name": "demo-student-mobile",
+      "url": "http://localhost:5174/student",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageHeight": 3229,
+      "overflow": true,
+      "headings": [
+        "Namaste, Asha Kiran Ekka",
+        "APAAR Digital ID · One Nation, One Student ID",
+        "2 Action Items Requiring Attention",
+        "National Top-Class ST Scholarship · AY 2026-27"
+      ],
+      "buttons": [
+        "Dark",
+        "Reset",
+        "Tour",
+        "Copy",
+        "View demo academic card",
+        "Dismiss",
+        "Dismiss",
+        "SaarthiEnglish/Hindi · voice preview"
+      ],
+      "navigation": []
+    },
+    {
+      "name": "pilot-login",
+      "url": "http://localhost:5173/",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "pageHeight": 960,
+      "overflow": false,
+      "headings": [
+        "Tribe Saarthi · Working pilot"
+      ],
+      "buttons": [
+        "English / हिन्दी",
+        "Sign in",
+        "Send password reset"
+      ],
+      "navigation": []
+    },
+    {
+      "name": "pilot-student-home",
+      "url": "http://localhost:5173/",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "pageHeight": 960,
+      "overflow": false,
+      "headings": [
+        "Account overview",
+        "Record",
+        "Record",
+        "Record",
+        "Your pilot workspace"
+      ],
+      "buttons": [
+        "Sign out",
+        "overview",
+        "profile",
+        "schemes",
+        "documents",
+        "applications",
+        "grievances",
+        "notifications",
+        "family",
+        "assistant",
+        "offline",
+        "account",
+        "Search selected list",
+        "Previous record page",
+        "Next record page",
+        "Open applications section",
+        "Open application",
+        "Open application",
+        "Open application",
+        "Open application",
+        "Refresh catalogue now"
+      ],
+      "navigation": [
+        "overview",
+        "profile",
+        "schemes",
+        "documents",
+        "applications",
+        "grievances",
+        "notifications",
+        "family",
+        "assistant",
+        "offline",
+        "account"
+      ]
+    },
+    {
+      "name": "pilot-student-mobile",
+      "url": "http://localhost:5173/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pageHeight": 1045,
+      "overflow": false,
+      "headings": [
+        "Account overview",
+        "Record",
+        "Record",
+        "Record",
+        "Record",
+        "Your pilot workspace"
+      ],
+      "buttons": [
+        "Sign out",
+        "overview",
+        "profile",
+        "schemes",
+        "documents",
+        "applications",
+        "grievances",
+        "notifications",
+        "family",
+        "assistant",
+        "offline",
+        "account",
+        "Search selected list",
+        "Previous record page",
+        "Next record page",
+        "Open applications section",
+        "Open application",
+        "Open application",
+        "Open application",
+        "Open application",
+        "Refresh catalogue now"
+      ],
+      "navigation": [
+        "overview",
+        "profile",
+        "schemes",
+        "documents",
+        "applications",
+        "grievances",
+        "notifications",
+        "family",
+        "assistant",
+        "offline",
+        "account"
+      ]
+    }
+  ]
+}

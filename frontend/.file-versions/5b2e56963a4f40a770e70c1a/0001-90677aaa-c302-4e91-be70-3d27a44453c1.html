@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coverage gaps · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .sat{display:flex;align-items:center;gap:10px;min-width:150px}
+  .sat .track{height:6px;background:#EDF1F5;border-radius:3px;flex:1;overflow:hidden;min-width:60px}
+  .sat .fill{height:100%;border-radius:3px;background:var(--green)}
+  .sat .fill.mid{background:var(--amber)}
+  .sat .fill.low{background:var(--red)}
+  .sat b{font-size:11px;font-variant-numeric:tabular-nums;min-width:38px;text-align:right}
+  .camp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .camp > div{padding:14px;background:var(--surface-2)}
+  .camp > div + div{border-left:1px solid var(--line)}
+  .camp .n{width:18px;height:18px;border-radius:50%;background:#E8EDF3;border:1px solid var(--line-strong);display:grid;place-items:center;font-size:8.5px;font-weight:700;color:var(--muted);margin-bottom:8px}
+  .camp .done .n{background:var(--green);border-color:var(--green);color:#fff}
+  @media (max-width:760px){.camp{grid-template-columns:repeat(2,minmax(0,1fr))}.camp>div:nth-child(3){border-left:0;border-top:1px solid var(--line)}.camp>div:nth-child(4){border-top:1px solid var(--line)}}
+</style>
+</head>
+<body data-role="officer" data-page="coverage-analytics">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page wide" id="main" data-od-id="coverage-analytics-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><span>Coverage gaps</span><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Jharkhand saturation</span></div>
+      <h1 class="page-title" data-od-id="coverage-analytics-title">Tribal saturation &amp; coverage gaps</h1>
+      <p class="page-sub">Jharkhand State Tribal Welfare Directorate · targeted PVTG saturation campaign 2026.</p>
+    </div>
+    <div class="page-actions">
+      <a class="btn btn-secondary" href="audit-log.html"><svg class="i"><use href="#i-download"/></svg>Export report</a>
+      <button class="btn btn-primary" type="button" data-toast="Outreach camp dispatched to Simdega · Bolba block" data-od-id="coverage-analytics-primary-cta">
+        <svg class="i"><use href="#i-pin"/></svg>Dispatch outreach camp</button>
+    </div>
+  </div>
+
+  <div class="kpi-row" style="margin-bottom:16px">
+    <div class="kpi">
+      <div class="lab">Total target ST scholars</div>
+      <div class="val num">86,450</div>
+      <div class="foot">Census mapped · 24 districts</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Enrolled beneficiaries</div>
+      <div class="val num">53,820</div>
+      <div class="foot"><span class="delta up">62.2%</span> saturation</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">PVTG Birhor coverage</div>
+      <div class="val num">78.0<em>%</em></div>
+      <div class="foot"><span class="badge badge-blue" style="padding:2px 5px;font-size:9px">Tier-1</span> intensive</div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Unreached gap</div>
+      <div class="val num" style="color:var(--amber)">8,410</div>
+      <div class="foot"><span class="badge badge-amber" style="padding:2px 5px;font-size:9px">Action</span> mobile CSC deployment</div>
+    </div>
+  </div>
+
+  <div class="grid g-main" style="align-items:start">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">District saturation index</h2><p class="micro" style="margin-top:3px">Prioritised deployment of mobile CSC enrolment vans.</p></div>
+          <span class="badge badge-gray">4 districts</span>
+        </div>
+        <div class="tablewrap">
+          <table class="tbl">
+            <thead>
+              <tr><th>District</th><th class="tdnum">Target ST</th><th class="tdnum">Enrolled</th><th>Saturation</th><th>Gap status</th><th style="text-align:right">Action</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="strong">Latehar</div><div class="sub">PVTG focus · Birhor</div></td>
+                <td class="tdnum num">24,000</td>
+                <td class="tdnum num">18,720</td>
+                <td><div class="sat"><span class="track"><span class="fill" style="width:78%"></span></span><b>78.0%</b></div></td>
+                <td><span class="badge badge-green">High sat.</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="Opening the Latehar district map">View map</button></td>
+              </tr>
+              <tr>
+                <td><div class="strong">Gumla</div><div class="sub">PVTG · Asur, Birhor</div></td>
+                <td class="tdnum num">28,000</td>
+                <td class="tdnum num">16,800</td>
+                <td><div class="sat"><span class="track"><span class="fill mid" style="width:60%"></span></span><b>60.0%</b></div></td>
+                <td><span class="badge badge-amber">Moderate</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="Deployment request drafted for Gumla">Deploy van</button></td>
+              </tr>
+              <tr>
+                <td><div class="strong">Khunti</div><div class="sub">Tribal focus · Munda</div></td>
+                <td class="tdnum num">18,500</td>
+                <td class="tdnum num">11,100</td>
+                <td><div class="sat"><span class="track"><span class="fill mid" style="width:60%"></span></span><b>60.0%</b></div></td>
+                <td><span class="badge badge-amber">Moderate</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="Deployment request drafted for Khunti">Deploy van</button></td>
+              </tr>
+              <tr>
+                <td><div class="strong">Simdega</div><div class="sub">Critical gap · Kharia</div></td>
+                <td class="tdnum num">15,950</td>
+                <td class="tdnum num">7,200</td>
+                <td><div class="sat"><span class="track"><span class="fill low" style="width:45%"></span></span><b>45.1%</b></div></td>
+                <td><span class="badge badge-red">Critical</span></td>
+                <td class="right"><button class="btn btn-secondary btn-sm" type="button" data-toast="Camp scheduled for Simdega · Bolba block">Camp now</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-ft">
+          <span class="micro" style="color:var(--meta)">Saturation = enrolled beneficiaries ÷ census-mapped target scholars</span>
+          <span class="micro mono" style="color:var(--meta)">Updated 18 OCT 2026</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Rapid outreach camp protocol</h2><span class="badge badge-blue">Active</span></div>
+        <div class="card-b">
+          <div class="camp">
+            <div class="done"><div class="n">✓</div><div class="h4">Gap pinpointed</div><div class="micro" style="margin-top:2px">Census mapping · Simdega Bolba</div></div>
+            <div><div class="n">2</div><div class="h4">Mobile CSC van</div><div class="micro" style="margin-top:2px">Aadhaar e-KYC + iris scanner</div></div>
+            <div><div class="n">3</div><div class="h4">Spot sanction</div><div class="micro" style="margin-top:2px">Document check on site</div></div>
+            <div><div class="n">4</div><div class="h4">Treasury push</div><div class="micro" style="margin-top:2px">PFMS direct credit</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">Latehar vs state saturation</h2><p class="micro" style="margin-top:3px">Detailed breakdown of Latehar district.</p></div>
+          <span class="badge badge-green">Above state</span>
+        </div>
+        <div class="card-b">
+          <div class="bars" style="--max:100">
+            <div class="bar-row" style="grid-template-columns:170px minmax(0,1fr) 92px">
+              <span class="bar-label">Latehar overall</span>
+              <div class="bar-track"><div class="bar green" style="--v:78"></div></div>
+              <span class="bar-value">78.0%</span>
+            </div>
+            <div class="bar-row" style="grid-template-columns:170px minmax(0,1fr) 92px">
+              <span class="bar-label">Jharkhand overall</span>
+              <div class="bar-track"><div class="bar" style="--v:62.2"></div></div>
+              <span class="bar-value">62.2%</span>
+            </div>
+            <div class="bar-row" style="grid-template-columns:170px minmax(0,1fr) 92px">
+              <span class="bar-label">Birhor PVTG · Latehar</span>
+              <div class="bar-track"><div class="bar green" style="--v:78"></div></div>
+              <span class="bar-value">78.0%</span>
+            </div>
+            <div class="bar-row" style="grid-template-columns:170px minmax(0,1fr) 92px">
+              <span class="bar-label">Unreached hamlets</span>
+              <div class="bar-track"><div class="bar amber" style="--v:22"></div></div>
+              <span class="bar-value">22.0%</span>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--line);margin:18px 0 4px"></div>
+
+          <div class="keyline"><svg class="i" style="stroke:var(--amber)"><use href="#i-pin"/></svg><span class="k">Belta · Mahuadanr</span><span class="v" style="font-weight:400;color:var(--muted)">42 eligible Birhor scholars · offline sync van arriving 22 Oct</span></div>
+          <div class="keyline"><svg class="i" style="stroke:var(--amber)"><use href="#i-pin"/></svg><span class="k">Netarhat foothills</span><span class="v" style="font-weight:400;color:var(--muted)">18 Asur scholars · biometric iris camp operational</span></div>
+          <div class="keyline"><svg class="i" style="stroke:var(--green)"><use href="#i-check"/></svg><span class="k">Chandwa North</span><span class="v" style="font-weight:400;color:var(--muted)">100% saturation achieved 12 Oct 2026</span></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Coverage composition</h2><span class="badge badge-gray">State</span></div>
+        <div class="card-b">
+          <div class="flex center gap16">
+            <div class="donut">
+              <svg viewBox="0 0 118 118" aria-hidden="true">
+                <circle class="track" cx="59" cy="59" r="50"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--green)" stroke-dasharray="195 314"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--amber)" stroke-dasharray="88 314" stroke-dashoffset="-195"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--red)" stroke-dasharray="31 314" stroke-dashoffset="-283"></circle>
+              </svg>
+              <div class="ctr"><div class="pct">62%</div><div class="cap">Saturated</div></div>
+            </div>
+            <ul class="legend">
+              <li><span class="lk" style="background:var(--green)"></span><span class="ln">Enrolled &amp; paid</span><span class="lv">53.8K</span></li>
+              <li><span class="lk" style="background:var(--amber)"></span><span class="ln">Eligible, unapplied</span><span class="lv">24.2K</span></li>
+              <li><span class="lk" style="background:var(--red)"></span><span class="ln">Document deficient</span><span class="lv">8.4K</span></li>
+            </ul>
+          </div>
+          <div class="callout info mt16">
+            <svg class="i"><use href="#i-alert"/></svg>
+            <div><b>Simdega is the priority.</b> 45.1% saturation and the largest concentration of Kharia PVTG households.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Deployment readiness</h2></div>
+        <div class="card-b" style="padding-top:10px">
+          <div class="keyline"><span class="k">Mobile vans</span><span class="v">3 available</span></div>
+          <div class="keyline"><span class="k">Iris scanners</span><span class="v">6 calibrated</span></div>
+          <div class="keyline"><span class="k">Offline kits</span><span class="v">12 synced</span></div>
+          <div class="keyline"><span class="k">Field officers</span><span class="v">9 assigned</span></div>
+          <div class="keyline"><span class="k">Next camp</span><span class="v">22 Oct · Belta</span></div>
+        </div>
+      </section>
+
+      <div class="callout warn">
+        <svg class="i"><use href="#i-wifioff"/></svg>
+        <div><b>Remote hamlets have no mobile tower.</b> Outreach kits must carry the offline vault; do not rely on live DigiLocker access.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample saturation data · Illustrative campaign metrics · Tribe Saarthi design preview</p>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "at":  "2026-10-18T10:15:21.7899460Z",
+    "findings":  [
+                     {
+                         "name":  "rls_enabled_no_policy",
+                         "entity":  "rate_limits",
+                         "level":  "INFO"
+                     },
+                     {
+                         "name":  "rls_enabled_no_policy",
+                         "entity":  "receipt_events",
+                         "level":  "INFO"
+                     },
+                     {
+                         "name":  "authenticated_security_definer_function_executable",
+                         "entity":  "family_summary",
+                         "level":  "WARN"
+                     },
+                     {
+                         "name":  "auth_leaked_password_protection",
+                         "entity":  null,
+                         "level":  "WARN"
+                     }
+                 ]
+}

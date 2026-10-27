@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tribe Saarthi · Screen library</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #152E35; background: #EEF3F3; font: 16px/1.5 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif; }
+    .container { max-width: 1440px; margin: auto; padding: 32px; }
+    header { background: #FFFFFF; border-top: 6px solid #075A46; border-bottom: 1px solid #CFDADD; }
+    header .container { padding-block: 40px; }
+    .brand { margin: 0 0 12px; font-size: 19px; font-weight: 700; color: #075A46; }
+    h1 { margin: 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.2; letter-spacing: -.025em; }
+    header p:last-child { max-width: 65ch; margin-bottom: 0; color: #52666D; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    button, .btn { font: inherit; font-size: 14px; border-radius: 4px; min-height: 44px; padding: 10px 16px; border: 1px solid #52666D; background: #FFFFFF; color: #152E35; cursor: pointer; }
+    button[aria-pressed="true"], .btn-primary { color: #FFFFFF; background: #075A46; border-color: #075A46; }
+    :focus-visible { outline: 3px solid #8A4F13; outline-offset: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 24px; }
+    .card { display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid #CFDADD; border-radius: 8px; overflow: hidden; min-width: 0; }
+    .card[hidden] { display: none; }
+    .preview-box { height: 280px; padding: 12px; background: #DEE7E7; border-bottom: 1px solid #CFDADD; }
+    .preview-box img { width: 100%; height: 100%; object-fit: contain; }
+    .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .category { margin: 0 0 8px; font-size: 12px; color: #52666D; }
+    h2 { margin: 0 0 8px; font-size: 20px; line-height: 1.3; }
+    .card-desc { margin: 0 0 20px; font-size: 14px; color: #52666D; flex: 1; max-width: 65ch; }
+    .card-footer { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn { display: inline-flex; align-items: center; text-decoration: none; }
+    .note { color: #52666D; font-size: 14px; max-width: 75ch; margin: 32px 0 0; }
+    @media (max-width: 600px) { .container { padding: 20px 16px; } header .container { padding-block: 28px; } .preview-box { height: 220px; } }
+  </style>
+</head>
+<body>
+  <header><div class="container">
+    <p class="brand">Tribe Saarthi</p>
+    <h1>A clearer path to a scholarship.</h1>
+    <p>22 screens for scholars, families, and officers. Open any screen to inspect the full vector design or download its SVG.</p>
+  </div></header>
+  <main class="container">
+    <nav class="filters" aria-label="Filter screens">
+      <button type="button" aria-pressed="true" onclick="filterCategory('all', this)">All screens (22)</button>
+      <button type="button" aria-pressed="false" onclick="filterCategory('Scholar Portal', this)">Scholar portal (12)</button>
+      <button type="button" aria-pressed="false" onclick="filterCategory('Officer Portal', this)">Officer portal (7)</button>
+      <button type="button" aria-pressed="false" onclick="filterCategory('System &amp; Auth', this)">Sign-in and receipts (3)</button>
+    </nav>
+    <div class="grid" id="screensGrid">
+      <article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/01-scholar-dashboard-desktop.svg" alt="Preview: Scholar dashboard" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 01</p>
+          <h2>Scholar dashboard</h2><p class="card-desc">College review status, the next action, a document checklist, and recent application updates.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/01-scholar-dashboard-desktop.svg" target="_blank" rel="noopener" aria-label="Open Scholar dashboard in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/01-scholar-dashboard-desktop.svg" download aria-label="Download Scholar dashboard SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/02-scholar-dashboard-mobile.svg" alt="Preview: Scholar dashboard on mobile" loading="lazy" width="375" height="812"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 02</p>
+          <h2>Scholar dashboard on mobile</h2><p class="card-desc">A 375px scholar dashboard with application progress, documents, help, and bottom navigation.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/02-scholar-dashboard-mobile.svg" target="_blank" rel="noopener" aria-label="Open Scholar dashboard on mobile in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/02-scholar-dashboard-mobile.svg" download aria-label="Download Scholar dashboard on mobile SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/03-scholarship-discovery.svg" alt="Preview: Find a scholarship" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 03</p>
+          <h2>Find a scholarship</h2><p class="card-desc">Compare schemes, filter requirements, and check the information needed before applying.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/03-scholarship-discovery.svg" target="_blank" rel="noopener" aria-label="Open Find a scholarship in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/03-scholarship-discovery.svg" download aria-label="Download Find a scholarship SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/04-application-flow-step1-profile.svg" alt="Preview: Application: your profile" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 04</p>
+          <h2>Application: your profile</h2><p class="card-desc">Step 1 of 3. Review personal details, community information, and college enrolment.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/04-application-flow-step1-profile.svg" target="_blank" rel="noopener" aria-label="Open Application: your profile in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/04-application-flow-step1-profile.svg" download aria-label="Download Application: your profile SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/05-application-flow-step2-documents.svg" alt="Preview: Application: your documents" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 05</p>
+          <h2>Application: your documents</h2><p class="card-desc">Step 2 of 3. Check required documents and see which still need attention.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/05-application-flow-step2-documents.svg" target="_blank" rel="noopener" aria-label="Open Application: your documents in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/05-application-flow-step2-documents.svg" download aria-label="Download Application: your documents SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/06-application-flow-step3-check-answers.svg" alt="Preview: Application: check your answers" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 06</p>
+          <h2>Application: check your answers</h2><p class="card-desc">Step 3 of 3. Review the application and declaration before submitting.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/06-application-flow-step3-check-answers.svg" target="_blank" rel="noopener" aria-label="Open Application: check your answers in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/06-application-flow-step3-check-answers.svg" download aria-label="Download Application: check your answers SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/07-application-lifecycle-tracker.svg" alt="Preview: Follow your application" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 07</p>
+          <h2>Follow your application</h2><p class="card-desc">Follow college review, approval, and payment, with a breakdown of scholarship support.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/07-application-lifecycle-tracker.svg" target="_blank" rel="noopener" aria-label="Open Follow your application in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/07-application-lifecycle-tracker.svg" download aria-label="Download Follow your application SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/08-digilocker-document-wallet.svg" alt="Preview: My documents" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 08</p>
+          <h2>My documents</h2><p class="card-desc">Keep certificates together and inspect document checks before reusing them.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/08-digilocker-document-wallet.svg" target="_blank" rel="noopener" aria-label="Open My documents in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/08-digilocker-document-wallet.svg" download aria-label="Download My documents SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/09-help-and-saarthi-assistant.svg" alt="Preview: Help and Saarthi" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 09</p>
+          <h2>Help and Saarthi</h2><p class="card-desc">Ask about an application, contact support, or follow a help request.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/09-help-and-saarthi-assistant.svg" target="_blank" rel="noopener" aria-label="Open Help and Saarthi in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/09-help-and-saarthi-assistant.svg" download aria-label="Download Help and Saarthi SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/10-student-profile-and-pvtg.svg" alt="Preview: My profile and community details" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 10</p>
+          <h2>My profile and community details</h2><p class="card-desc">Review masked identity details, community information, college, and bank status.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/10-student-profile-and-pvtg.svg" target="_blank" rel="noopener" aria-label="Open My profile and community details in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/10-student-profile-and-pvtg.svg" download aria-label="Download My profile and community details SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/11-family-access-consent.svg" alt="Preview: Family access" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 11</p>
+          <h2>Family access</h2><p class="card-desc">Choose what a family member can view and revoke their access when needed.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/11-family-access-consent.svg" target="_blank" rel="noopener" aria-label="Open Family access in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/11-family-access-consent.svg" download aria-label="Download Family access SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Scholar Portal">
+        <div class="preview-box"><img src="../01-scholar-portal/12-offline-sync-queue.svg" alt="Preview: Saved changes" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Scholar Portal · Screen 12</p>
+          <h2>Saved changes</h2><p class="card-desc">Review changes saved on this device and resolve updates that need attention.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../01-scholar-portal/12-offline-sync-queue.svg" target="_blank" rel="noopener" aria-label="Open Saved changes in a new tab">Open screen</a>
+            <a class="btn" href="../01-scholar-portal/12-offline-sync-queue.svg" download aria-label="Download Saved changes SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/13-officer-review-queue.svg" alt="Preview: Officer review queue" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 13</p>
+          <h2>Officer review queue</h2><p class="card-desc">Prioritise applications, find pending evidence, and open a case for inspection.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/13-officer-review-queue.svg" target="_blank" rel="noopener" aria-label="Open Officer review queue in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/13-officer-review-queue.svg" download aria-label="Download Officer review queue SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/14-officer-case-detail-inspection.svg" alt="Preview: Inspect an application" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 14</p>
+          <h2>Inspect an application</h2><p class="card-desc">Compare a document with the declared information and record the review decision.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/14-officer-case-detail-inspection.svg" target="_blank" rel="noopener" aria-label="Open Inspect an application in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/14-officer-case-detail-inspection.svg" download aria-label="Download Inspect an application SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/15-deficiency-notice-modal.svg" alt="Preview: Request a correction" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 15</p>
+          <h2>Request a correction</h2><p class="card-desc">Explain which document needs correcting and give the scholar a clear deadline.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/15-deficiency-notice-modal.svg" target="_blank" rel="noopener" aria-label="Open Request a correction in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/15-deficiency-notice-modal.svg" download aria-label="Download Request a correction SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/16-digital-sanction-signing.svg" alt="Preview: Approve a scholarship" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 16</p>
+          <h2>Approve a scholarship</h2><p class="card-desc">Review the proposed scholarship amount and record an approval. Signing and payment are illustrative.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/16-digital-sanction-signing.svg" target="_blank" rel="noopener" aria-label="Open Approve a scholarship in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/16-digital-sanction-signing.svg" download aria-label="Download Approve a scholarship SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/17-sabotage-switchboard.svg" alt="Preview: Service testing" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 17</p>
+          <h2>Service testing</h2><p class="card-desc">Illustrative testing controls for upstream service failures and review fallbacks.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/17-sabotage-switchboard.svg" target="_blank" rel="noopener" aria-label="Open Service testing in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/17-sabotage-switchboard.svg" download aria-label="Download Service testing SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/18-coverage-gap-analytics.svg" alt="Preview: Coverage gaps" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 18</p>
+          <h2>Coverage gaps</h2><p class="card-desc">Compare sample district coverage and identify where more students need support.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/18-coverage-gap-analytics.svg" target="_blank" rel="noopener" aria-label="Open Coverage gaps in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/18-coverage-gap-analytics.svg" download aria-label="Download Coverage gaps SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="Officer Portal">
+        <div class="preview-box"><img src="../02-officer-portal/19-forensic-audit-log.svg" alt="Preview: Decision history" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Officer Portal · Screen 19</p>
+          <h2>Decision history</h2><p class="card-desc">Inspect sample review events, document references, and the person responsible.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../02-officer-portal/19-forensic-audit-log.svg" target="_blank" rel="noopener" aria-label="Open Decision history in a new tab">Open screen</a>
+            <a class="btn" href="../02-officer-portal/19-forensic-audit-log.svg" download aria-label="Download Decision history SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="System & Auth">
+        <div class="preview-box"><img src="../03-system-auth/20-pilot-signin-portal.svg" alt="Preview: Sign in" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Sign-in and receipts · Screen 20</p>
+          <h2>Sign in</h2><p class="card-desc">Invitation-based email and password sign-in for the pilot.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../03-system-auth/20-pilot-signin-portal.svg" target="_blank" rel="noopener" aria-label="Open Sign in in a new tab">Open screen</a>
+            <a class="btn" href="../03-system-auth/20-pilot-signin-portal.svg" download aria-label="Download Sign in SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="System & Auth">
+        <div class="preview-box"><img src="../03-system-auth/21-password-recovery-flow.svg" alt="Preview: Recover account access" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Sign-in and receipts · Screen 21</p>
+          <h2>Recover account access</h2><p class="card-desc">An illustrative account-recovery sequence with clear next steps.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../03-system-auth/21-password-recovery-flow.svg" target="_blank" rel="noopener" aria-label="Open Recover account access in a new tab">Open screen</a>
+            <a class="btn" href="../03-system-auth/21-password-recovery-flow.svg" download aria-label="Download Recover account access SVG">Download SVG</a>
+          </div>
+        </div>
+      </article><article class="card" data-category="System & Auth">
+        <div class="preview-box"><img src="../03-system-auth/22-public-receipt-verification.svg" alt="Preview: Check a receipt" loading="lazy" width="1440" height="960"></div>
+        <div class="card-body">
+          <p class="category">Sign-in and receipts · Screen 22</p>
+          <h2>Check a receipt</h2><p class="card-desc">An illustrative public receipt lookup using sample application and verification details.</p>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="../03-system-auth/22-public-receipt-verification.svg" target="_blank" rel="noopener" aria-label="Open Check a receipt in a new tab">Open screen</a>
+            <a class="btn" href="../03-system-auth/22-public-receipt-verification.svg" download aria-label="Download Check a receipt SVG">Download SVG</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="note">Design previews with sample records. These SVGs show proposed screens; integrations, signing, payments, and recovery steps are illustrative.</p>
+    <p id="filter-status" class="note" role="status" aria-live="polite">Showing 22 screens</p>
+  </main>
+  <script>
+    function filterCategory(category, button) {
+      document.querySelectorAll('.filters button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      let count = 0;
+      document.querySelectorAll('.card').forEach(card => {
+        card.hidden = category !== 'all' && card.dataset.category !== category;
+        if (!card.hidden) count++;
+      });
+      document.getElementById('filter-status').textContent = 'Showing ' + count + ' screens';
+    }
+  </script>
+</body>
+</html>

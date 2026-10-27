@@ -1,0 +1,22 @@
+﻿{
+    "checkedAt":  "2026-10-18T09:00:03.4373403Z",
+    "projectRef":  "axegexiaofxdmmizilri",
+    "errors":  0,
+    "findings":  [
+                     {
+                         "name":  "rls_enabled_no_policy",
+                         "level":  "INFO",
+                         "entity":  "rate_limits"
+                     },
+                     {
+                         "name":  "authenticated_security_definer_function_executable",
+                         "level":  "WARN",
+                         "entity":  "family_summary"
+                     },
+                     {
+                         "name":  "auth_leaked_password_protection",
+                         "level":  "WARN",
+                         "entity":  null
+                     }
+                 ]
+}

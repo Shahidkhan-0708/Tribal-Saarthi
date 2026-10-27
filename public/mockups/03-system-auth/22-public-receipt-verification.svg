@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="screen-title screen-description"><title id="screen-title">Check a receipt</title><desc id="screen-description">An illustrative public receipt lookup using sample application and verification details.</desc>
+  
+  <defs>
+    <style>
+      * { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        text-rendering: geometricPrecision; 
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .mono { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        font-feature-settings: "tnum" 1; 
+      }
+      .stat-anchor { font-weight: 700; font-variant-numeric: tabular-nums; }
+      .badge { font-weight: 700; text-anchor: middle; }
+    </style>
+
+    <!-- USWDS Gradients -->
+    <linearGradient id="govPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+    <linearGradient id="govOchreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A4F13" />
+      <stop offset="100%" stop-color="#8A4F13" />
+    </linearGradient>
+    <linearGradient id="govHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+
+    <!-- Elevation is reserved for dialogs. -->
+    <filter id="modalShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="28" flood-color="#152E35" flood-opacity="0.32" />
+    </filter>
+
+  </defs>
+  <rect width="100%" height="100%" fill="#EEF3F3" />
+  
+  <!-- USWDS Official Government Banner -->
+  <g class="usa-banner">
+    <rect width="1440" height="32" fill="#EEF3F3" stroke="#CFDADD" />
+    <g transform="translate(48, 6)">
+      <!-- Government Seal / Ashoka Emblem Vector Graphic -->
+      <circle cx="10" cy="10" r="9" fill="#075A46" />
+      <circle cx="10" cy="10" r="5" fill="#FFFFFF" />
+      <circle cx="10" cy="10" r="2.5" fill="#075A46" />
+      
+      <text x="26" y="14" font-size="11" font-weight="600" fill="#152E35">
+        Tribe Saarthi · Scholarship support for tribal students
+      </text>
+
+      <!-- Security HTTPS Seal -->
+      <g transform="translate(1120, 1)">
+        
+    <g transform="translate(0, 2) scale(0.5833333333333334)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </g>
+        <text x="18" y="13" font-size="11" font-weight="600" fill="#075A46">Design preview · Sample records</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Brand Header -->
+  <g transform="translate(0, 36)">
+    <rect width="1440" height="70" fill="#FFFFFF" stroke="#CFDADD" />
+    <g transform="translate(48, 16)">
+      <circle cx="20" cy="20" r="18" fill="url(#govPrimaryGrad)" />
+      <text x="20" y="25" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">TS</text>
+
+      <text x="48" y="16" font-size="16" font-weight="700" fill="#152E35">Tribe Saarthi</text>
+      <text x="48" y="32" font-size="10" font-weight="700" fill="#8A4F13">Public statutory scholarship receipt verification portal</text>
+
+      <g transform="translate(1080, 4)">
+        <rect width="280" height="32" rx="8" fill="#E8F2EE" stroke="#A7F3D0" />
+        <text x="140" y="20" font-size="12" fill="#075A46" text-anchor="middle">Sample receipt verification</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Main View -->
+  <rect x="0" y="106" width="1440" height="854" fill="#EEF3F3" />
+
+  <g transform="translate(180, 130)">
+    <!-- Search Query Bar -->
+    <g>
+      <rect width="1080" height="76" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+      <g transform="translate(20, 16)">
+        <text x="0" y="14" font-size="11" font-weight="700" fill="#52666D">Enter sanction receipt ID or scan QR code to verify authenticity</text>
+        <rect x="0" y="20" width="800" height="42" rx="8" fill="#EEF3F3" stroke="#075A46" stroke-width="1.5" />
+        <text x="16" y="47" font-size="14" font-weight="700" fill="#152E35" class="mono">TS-2026-88194</text>
+        <rect x="680" y="26" width="108" height="30" rx="6" fill="#E8F2EE" />
+        <text x="734" y="46" font-size="9.5" font-weight="700" fill="#075A46" text-anchor="middle">Valid hash ✓</text>
+
+        <rect x="820" y="20" width="240" height="42" rx="8" fill="url(#govPrimaryGrad)" />
+        <text x="940" y="47" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Verify Public Integrity Seal</text>
+      </g>
+    </g>
+
+    <!-- Certificate / Receipt Manifest Card -->
+    <g transform="translate(0, 96)" filter="url(#modalShadow)">
+      <rect width="1080" height="690" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+      <rect width="1080" height="6" rx="3" fill="#075A46" />
+
+      <!-- Official Emblem &amp; Header -->
+      <g transform="translate(36, 26)">
+        <circle cx="28" cy="28" r="28" fill="url(#govPrimaryGrad)" />
+        <text x="28" y="34" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle">NIC</text>
+
+        <text x="70" y="22" font-size="18" font-weight="700" fill="#152E35">Scholarship approval receipt</text>
+        <text x="70" y="40" font-size="12" fill="#075A46" font-weight="700">Sample receipt · Reference MOTA/2026/88194</text>
+
+        <rect x="860" y="10" width="180" height="36" rx="8" fill="#E8F2EE" stroke="#A7F3D0" />
+        <text x="950" y="33" font-size="11" font-weight="700" fill="#075A46" text-anchor="middle">Authentic &amp; sealed ✓</text>
+
+        <line x1="0" y1="62" x2="1008" y2="62" stroke="#CFDADD" />
+      </g>
+
+      <!-- Trust Pathway Stepper Component -->
+      <g transform="translate(36, 110)">
+        <text x="0" y="14" font-size="12" font-weight="700" fill="#075A46">End-to-end cryptographic trust pathway</text>
+        <text x="0" y="30" font-size="11" fill="#52666D">Real-time status confirmed across College, District, State and PFMS Central Treasury</text>
+
+        <g transform="translate(0, 44)">
+          <rect width="1008" height="110" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+          <g transform="translate(18, 16)">
+            
+    <g transform="translate(0, 0)" class="pipeline-diagram-component">
+      <line x1="20" y1="14" x2="952" y2="14" stroke="#CFDADD" stroke-width="3" stroke-linecap="round" />
+      
+          <g>
+            
+            <circle cx="20" cy="14" r="12" fill="#075A46" />
+            
+    <g transform="translate(14, 8) scale(0.5)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </g>
+          
+            <text x="20" y="36" font-size="10" font-weight="600" fill="#075A46" text-anchor="middle">College Verified</text>
+            <text x="20" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">BIT Mesra Nodal Desk</text>
+          </g>
+        
+
+          <g>
+            
+            <circle cx="330.6666666666667" cy="14" r="12" fill="#075A46" />
+            
+    <g transform="translate(324.6666666666667, 8) scale(0.5)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </g>
+          
+            <text x="330.6666666666667" y="36" font-size="10" font-weight="600" fill="#075A46" text-anchor="middle">District Concurrence</text>
+            <text x="330.6666666666667" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">Latehar DWO (DSC Sign)</text>
+          </g>
+        
+
+          <g>
+            
+            <circle cx="641.3333333333334" cy="14" r="12" fill="#075A46" />
+            
+    <g transform="translate(635.3333333333334, 8) scale(0.5)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </g>
+          
+            <text x="641.3333333333334" y="36" font-size="10" font-weight="600" fill="#075A46" text-anchor="middle">Central Sanction Order</text>
+            <text x="641.3333333333334" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">MoTA Treasury Seal</text>
+          </g>
+        
+
+          <g>
+            
+            <circle cx="952" cy="14" r="14" fill="url(#govOchreGrad)" />
+            <circle cx="952" cy="14" r="18" fill="none" stroke="#8A4F13" stroke-width="2" stroke-dasharray="3 3" />
+            <circle cx="952" cy="14" r="4.5" fill="#FFFFFF" />
+          
+            <text x="952" y="36" font-size="10" font-weight="700" fill="#8A4F13" text-anchor="middle">PFMS Direct Credit</text>
+            <text x="952" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">Bank of India ••••9012</text>
+          </g>
+        
+    </g>
+  
+          </g>
+        </g>
+      </g>
+
+      <!-- Details Split Row -->
+      <g transform="translate(36, 300)">
+        <!-- Left: Beneficiary &amp; Grant Summary -->
+        <g>
+          <rect width="600" height="260" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+          <g transform="translate(20, 18)">
+            <text x="0" y="14" font-size="13" font-weight="700" fill="#152E35">Scholar and scholarship details</text>
+
+            <text x="0" y="42" font-size="11" font-weight="700" fill="#52666D">Scholar name:</text>
+            <text x="140" y="42" font-size="12" font-weight="700" fill="#152E35">Mohan Birhor (PVTG Tier-1 Birhor Tribe)</text>
+
+            <text x="0" y="66" font-size="11" font-weight="700" fill="#52666D">Domicile residence:</text>
+            <text x="140" y="66" font-size="12" fill="#152E35">Village Belta, Block Mahuadanr, District Latehar, Jharkhand</text>
+
+            <text x="0" y="90" font-size="11" font-weight="700" fill="#52666D">Institution &amp; roll:</text>
+            <text x="140" y="90" font-size="12" fill="#152E35">BIT Mesra, Ranchi · Roll #2024-CSE-104 (B.Tech CSE)</text>
+
+            <line x1="0" y1="108" x2="560" y2="108" stroke="#CFDADD" />
+
+            <text x="0" y="132" font-size="11" font-weight="700" fill="#52666D">Total sanction sum:</text>
+            <text x="140" y="132" font-size="15" font-weight="700" fill="#075A46" class="mono">₹132,000 (One Hundred &amp; Thirty-Two Thousand Rupees)</text>
+
+            <text x="0" y="156" font-size="11" font-weight="700" fill="#52666D">Grant component:</text>
+            <text x="140" y="156" font-size="11.5" fill="#52666D">Tuition: ₹98,000 | Maintenance: ₹24,000 | Book Allowance: ₹10,000</text>
+
+            <text x="0" y="180" font-size="11" font-weight="700" fill="#52666D">Target DBT account:</text>
+            <text x="140" y="180" font-size="11.5" fill="#152E35">Bank of India · ••••••••9012 (Aadhaar Seeded &amp; NPCI Validated)</text>
+
+            <text x="0" y="204" font-size="11" font-weight="700" fill="#52666D">Signing authority:</text>
+            <text x="140" y="204" font-size="11.5" fill="#075A46" font-weight="700">Dr. K. Soren, DWO Latehar (DSC Serial: 0x7F82A091)</text>
+          </g>
+        </g>
+
+        <!-- Right: QR Code &amp; Merkle Anchor Box -->
+        <g transform="translate(624, 0)">
+          <rect width="384" height="260" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+          <g transform="translate(20, 18)">
+            <text x="0" y="14" font-size="12" font-weight="700" fill="#152E35">Receipt reference</text>
+
+            <!-- Simulated QR Code Visual -->
+            <g transform="translate(0, 30)">
+              <rect width="110" height="110" rx="8" fill="#FFFFFF" stroke="#CBD5E1" />
+              <!-- QR Finder Patterns -->
+              <rect x="8" y="8" width="28" height="28" fill="#152E35" />
+              <rect x="12" y="12" width="20" height="20" fill="#FFFFFF" />
+              <rect x="16" y="16" width="12" height="12" fill="#152E35" />
+
+              <rect x="74" y="8" width="28" height="28" fill="#152E35" />
+              <rect x="78" y="12" width="20" height="20" fill="#FFFFFF" />
+              <rect x="82" y="16" width="12" height="12" fill="#152E35" />
+
+              <rect x="8" y="74" width="28" height="28" fill="#152E35" />
+              <rect x="12" y="78" width="20" height="20" fill="#FFFFFF" />
+              <rect x="16" y="82" width="12" height="12" fill="#152E35" />
+
+              <!-- Data Matrix Dots -->
+              <rect x="42" y="12" width="6" height="6" fill="#075A46" />
+              <rect x="54" y="24" width="8" height="8" fill="#152E35" />
+              <rect x="42" y="44" width="24" height="24" rx="4" fill="url(#govPrimaryGrad)" />
+              <text x="54" y="60" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">TS</text>
+              <rect x="76" y="50" width="8" height="8" fill="#152E35" />
+              <rect x="44" y="78" width="10" height="10" fill="#152E35" />
+              <rect x="62" y="86" width="8" height="8" fill="#075A46" />
+            </g>
+
+            <!-- Technical Hash Meta -->
+            <g transform="translate(126, 30)">
+              <text x="0" y="14" font-size="10.5" font-weight="700" fill="#075A46">Block #1842 verified</text>
+              <text x="0" y="32" font-size="10" fill="#52666D">Timestamp: 14 Oct 2026, 14:32 IST</text>
+              <text x="0" y="48" font-size="10" fill="#52666D">Algorithm: SHA-256 Merkle</text>
+              <text x="0" y="70" font-size="9" fill="#075A46" class="mono">Hash: 0x7c49...a420</text>
+              <text x="0" y="86" font-size="9" fill="#52666D" class="mono">Root: 0x19a0...33bd</text>
+            </g>
+
+            <rect x="0" y="160" width="344" height="64" rx="6" fill="#E8F2EE" stroke="#A7F3D0" />
+            <text x="12" y="182" font-size="10.5" font-weight="700" fill="#075A46">Public evidence guarantee</text>
+            <text x="12" y="200" font-size="9.5" fill="#075A46">Scan this QR code with any smartphone to open the live NIC validator ledger.</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Download Button -->
+      <g transform="translate(36, 590)">
+        <rect width="1008" height="48" rx="8" fill="url(#govPrimaryGrad)" />
+        <text x="504" y="30" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Download receipt (PDF)</text>
+      </g>
+    </g>
+  </g>
+</svg>

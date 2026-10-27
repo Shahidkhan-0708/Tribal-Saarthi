@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "application-flow.html",
+  "entry": "application-flow.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-10-24T05:43:04.175Z",
+  "updatedAt": "2026-10-24T05:43:04.175Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

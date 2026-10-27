@@ -1,0 +1,14 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+select plan(9);
+select ok(not has_function_privilege('authenticated','public.pilot_command(uuid,text,jsonb,jsonb,text)','execute'),'browser cannot call mutation RPC');
+select ok(not has_function_privilege('anon','public.pilot_command(uuid,text,jsonb,jsonb,text)','execute'),'anonymous cannot call mutation RPC');
+select ok(has_function_privilege('service_role','public.pilot_command(uuid,text,jsonb,jsonb,text)','execute'),'edge service can call mutation RPC');
+select ok(not has_table_privilege('authenticated','public.pilot_applications','insert'),'no direct application insert');
+select ok(not has_table_privilege('authenticated','public.pilot_accounts','update'),'no account scope escalation');
+select ok(not has_function_privilege('authenticated','public.pilot_reminders()','execute'),'reminder worker is server only');
+select ok(has_function_privilege('authenticated','public.family_summary()','execute'),'family sanitized API available');
+select is((select count(*)::int from pg_tables where schemaname='public' and tablename like 'pilot_%' and not rowsecurity),0,'all exposed pilot tables enforce RLS');
+select ok(not exists(select 1 from storage.buckets where id in ('pilot-documents','pilot-signatures') and public),'files are private');
+select * from finish();
+rollback;

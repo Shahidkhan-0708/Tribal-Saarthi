@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-18T14:05:06.880Z",
+  "passed": true,
+  "checks": [
+    "Deployed operator job status shows actual failure, encrypted recovery metadata and missing mail provider",
+    "Operator panel fits 320 CSS pixels",
+    "Administrator can see actual recovery notifications"
+  ],
+  "errors": []
+}

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="screen-title screen-description"><title id="screen-title">Find a scholarship</title><desc id="screen-description">Compare schemes, filter requirements, and check the information needed before applying.</desc>
+  
+  <defs>
+    <style>
+      * { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        text-rendering: geometricPrecision; 
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .mono { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        font-feature-settings: "tnum" 1; 
+      }
+      .stat-anchor { font-weight: 700; font-variant-numeric: tabular-nums; }
+      .badge { font-weight: 700; text-anchor: middle; }
+    </style>
+
+    <!-- USWDS Gradients -->
+    <linearGradient id="govPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+    <linearGradient id="govOchreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A4F13" />
+      <stop offset="100%" stop-color="#8A4F13" />
+    </linearGradient>
+    <linearGradient id="govHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+
+    <!-- Elevation is reserved for dialogs. -->
+    <filter id="modalShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="28" flood-color="#152E35" flood-opacity="0.32" />
+    </filter>
+
+  </defs>
+  <rect width="100%" height="100%" fill="#EEF3F3" />
+  
+  <!-- USWDS Official Government Banner -->
+  <g class="usa-banner">
+    <rect width="1440" height="32" fill="#EEF3F3" stroke="#CFDADD" />
+    <g transform="translate(48, 6)">
+      <!-- Government Seal / Ashoka Emblem Vector Graphic -->
+      <circle cx="10" cy="10" r="9" fill="#075A46" />
+      <circle cx="10" cy="10" r="5" fill="#FFFFFF" />
+      <circle cx="10" cy="10" r="2.5" fill="#075A46" />
+      
+      <text x="26" y="14" font-size="11" font-weight="600" fill="#152E35">
+        Tribe Saarthi · Scholarship support for tribal students
+      </text>
+
+      <!-- Security HTTPS Seal -->
+      <g transform="translate(1120, 1)">
+        
+    <g transform="translate(0, 2) scale(0.5833333333333334)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </g>
+        <text x="18" y="13" font-size="11" font-weight="600" fill="#075A46">Design preview · Sample records</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- USWDS Header &amp; Navigation -->
+  <g transform="translate(0, 32)">
+    <rect width="1440" height="72" fill="#FFFFFF" stroke="#CFDADD" />
+    <rect width="1440" height="3" fill="url(#govPrimaryGrad)" />
+
+    <g transform="translate(48, 16)">
+      <!-- Logo &amp; Brand -->
+      <circle cx="20" cy="20" r="20" fill="url(#govPrimaryGrad)" />
+      <text x="20" y="26" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">TS</text>
+
+      <text x="50" y="18" font-size="20" font-weight="700" fill="#152E35">Tribe Saarthi</text>
+      <text x="50" y="32" font-size="10.5" font-weight="700" fill="#075A46">Scholar Portal · MoTA</text>
+
+      <!-- Search Bar -->
+      <g transform="translate(260, 0)">
+        <rect width="320" height="40" rx="8" fill="#EEF3F3" stroke="#CBD5E1" />
+        
+    <g transform="translate(12, 11) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </g>
+        <text x="38" y="25" font-size="12" fill="#52666D">Search scholarships, schemes, records...</text>
+      </g>
+
+      <!-- Language Selector -->
+      <g transform="translate(620, 6)">
+        <rect width="110" height="28" rx="6" fill="#EEF3F3" stroke="#CFDADD" />
+        <text x="55" y="18" font-size="10.5" font-weight="700" fill="#152E35" text-anchor="middle">English / हिंदी ▾</text>
+      </g>
+
+      <!-- Right User Controls -->
+      <g transform="translate(1060, 0)">
+        <!-- Bell Notification -->
+        <circle cx="16" cy="20" r="18" fill="#EEF3F3" stroke="#CFDADD" />
+        
+    <g transform="translate(7, 11) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+    </g>
+        <circle cx="23" cy="12" r="4.5" fill="#DC2626" />
+
+        <!-- User Profile Pill -->
+        <g transform="translate(50, 0)">
+          <rect width="240" height="40" rx="20" fill="#EEF3F3" stroke="#CFDADD" />
+          <circle cx="20" cy="20" r="16" fill="url(#govPrimaryGrad)" />
+          <text x="20" y="25" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">MB</text>
+          
+          <text x="44" y="18" font-size="13" font-weight="700" fill="#152E35">Mohan Birhor</text>
+          <text x="44" y="33" font-size="11" fill="#52666D">BIT Mesra · 2024-CSE-104</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- USWDS Left Navigation Rail -->
+  <g transform="translate(0, 104)">
+    <rect width="240" height="856" fill="#FFFFFF" stroke="#CFDADD" />
+    
+    <g transform="translate(16, 24)">
+      
+          <g transform="translate(0, 0)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Dashboard</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 48)">
+            <rect x="-16" y="0" width="4" height="42" fill="#075A46" rx="2" />
+            <rect width="208" height="42" rx="8" fill="#E8F2EE" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="800" fill="#075A46">Scholarships</text>
+            <circle cx="194" cy="21" r="3" fill="#075A46" />
+          </g>
+        
+
+          <g transform="translate(0, 96)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+      <polyline points="2 17 12 22 22 17"/>
+      <polyline points="2 12 12 17 22 12"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Applications</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 144)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">My documents</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 192)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">My profile</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 240)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Family access</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 288)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/>
+      <polyline points="1 20 1 14 7 14"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Saved changes</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 336)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Help and Saarthi</text>
+            
+          </g>
+        
+
+      <!-- Bottom System Resilience Indicator -->
+      <g transform="translate(0, 680)">
+        <rect width="208" height="74" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+        <circle cx="20" cy="24" r="6" fill="#075A46" />
+        <text x="34" y="27" font-size="12" font-weight="700" fill="#075A46">Your work is saved</text>
+        <text x="34" y="44" font-size="11" fill="#52666D">Last sync: 18 Oct, 15:45</text>
+        <text x="14" y="62" font-size="11" fill="#52666D">Need help? Open Saarthi.</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(268, 126)">
+    <g>
+      <rect width="1144" height="110" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+      <g transform="translate(28, 20)">
+        <text x="0" y="16" font-size="16" font-weight="700" fill="#152E35">Eligible Ministry of Tribal Affairs Scholarships</text>
+        <text x="0" y="34" font-size="11" fill="#52666D">Pre-matched based on your verified Birhor (PVTG) status and Jharkhand domicile</text>
+
+        <g transform="translate(840, -6)">
+          
+    <g class="donut-chart-component">
+      <path d="M 40.00 4.00 A 32 32 0 1 1 31.99 5.02 L 34.99 16.64 A 20 20 0 1 0 40.00 16.00 Z" fill="#075A46" stroke="#FFFFFF" stroke-width="2" />
+<path d="M 31.99 5.02 A 32 32 0 0 1 39.94 4.00 L 39.97 16.00 A 20 20 0 0 0 34.99 16.64 Z" fill="#CBD5E1" stroke="#FFFFFF" stroke-width="2" />
+      
+    <text x="40" y="41" font-size="14" font-weight="700" fill="#152E35" text-anchor="middle" class="stat-anchor">96%</text>
+    
+  
+      
+    </g>
+  
+          <rect x="84" y="24" width="180" height="26" rx="13" fill="#E8F2EE" />
+          <text x="174" y="41" font-size="10.5" font-weight="700" fill="#075A46" class="badge">96% Profile match ✓</text>
+        </g>
+      </g>
+    </g>
+
+    <g transform="translate(0, 130)">
+      <g>
+        <rect width="364" height="420" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+        <rect width="364" height="6" rx="3" fill="#075A46" />
+        <g transform="translate(24, 24)">
+          <rect x="0" y="0" width="120" height="22" rx="11" fill="#E8F2EE" />
+          <text x="60" y="15" font-size="9" font-weight="700" fill="#075A46" class="badge">Already applied</text>
+
+          <text x="0" y="52" font-size="15" font-weight="700" fill="#152E35">Post-Matric ST Scholarship</text>
+          <text x="0" y="70" font-size="11" fill="#52666D">MoTA Central Sector Scheme</text>
+
+          <rect x="0" y="88" width="316" height="60" rx="8" fill="#EEF3F3" stroke="#CFDADD" />
+          <text x="14" y="112" font-size="11" font-weight="700" fill="#52666D">Max annual sanction</text>
+          <text x="14" y="134" font-size="18" font-weight="700" fill="#075A46">₹132,000</text>
+
+          <text x="0" y="174" font-size="11" fill="#152E35">• 100% Tuition Fee Reimbursement</text>
+          <text x="0" y="194" font-size="11" fill="#152E35">• ₹24,000/yr Student Maintenance</text>
+          <text x="0" y="214" font-size="11" fill="#152E35">• Special PVTG Book &amp; Hardware Grant</text>
+
+          <rect x="0" y="250" width="316" height="38" rx="8" fill="#EEF3F3" />
+          <text x="158" y="274" font-size="11.5" font-weight="700" fill="#075A46" text-anchor="middle">View Application Status</text>
+        </g>
+      </g>
+
+      <g transform="translate(390, 0)">
+        <rect width="364" height="420" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+        <rect width="364" height="6" rx="3" fill="#225F81" />
+        <g transform="translate(24, 24)">
+          <rect x="0" y="0" width="130" height="22" rx="11" fill="#EFF6FF" />
+          <text x="65" y="15" font-size="9" font-weight="700" fill="#225F81" class="badge">Premier institute</text>
+
+          <text x="0" y="52" font-size="15" font-weight="700" fill="#152E35">Top Class Education for ST</text>
+          <text x="0" y="70" font-size="11" fill="#52666D">Valid at BIT Mesra, IITs &amp; NITs</text>
+
+          <rect x="0" y="88" width="316" height="60" rx="8" fill="#EEF3F3" stroke="#CFDADD" />
+          <text x="14" y="112" font-size="11" font-weight="700" fill="#52666D">Full coverage grant</text>
+          <text x="14" y="134" font-size="18" font-weight="700" fill="#225F81">Up to ₹2,50,000</text>
+
+          <text x="0" y="174" font-size="11" fill="#152E35">• Full Institute Hostel &amp; Mess Fees</text>
+          <text x="0" y="194" font-size="11" fill="#152E35">• One-time Laptop Grant (₹45,000)</text>
+          <text x="0" y="214" font-size="11" fill="#152E35">• Annual Book Grant (₹3,000/yr)</text>
+
+          <rect x="0" y="250" width="316" height="38" rx="8" fill="url(#govPrimaryGrad)" />
+          <text x="158" y="274" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Apply with 1-Click Sync</text>
+        </g>
+      </g>
+
+      <g transform="translate(780, 0)">
+        <rect width="364" height="420" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+        <rect width="364" height="6" rx="3" fill="#8A4F13" />
+        <g transform="translate(24, 24)">
+          <rect x="0" y="0" width="140" height="22" rx="11" fill="#FEF3C7" />
+          <text x="70" y="15" font-size="9" font-weight="700" fill="#92400E" class="badge">Overseas fellowship</text>
+
+          <text x="0" y="52" font-size="15" font-weight="700" fill="#152E35">National Overseas Scholarship</text>
+          <text x="0" y="70" font-size="11" fill="#52666D">For Higher Studies Abroad</text>
+
+          <rect x="0" y="88" width="316" height="60" rx="8" fill="#EEF3F3" stroke="#CFDADD" />
+          <text x="14" y="112" font-size="11" font-weight="700" fill="#52666D">International stipend</text>
+          <text x="14" y="134" font-size="18" font-weight="700" fill="#8A4F13">US $15,400 / yr</text>
+
+          <text x="0" y="174" font-size="11" fill="#152E35">• Full International Tuition Fees</text>
+          <text x="0" y="194" font-size="11" fill="#152E35">• Return Economy Airfare</text>
+          <text x="0" y="214" font-size="11" fill="#152E35">• Mandatory ST &amp; PVTG quota reserve</text>
+
+          <rect x="0" y="250" width="316" height="38" rx="8" fill="#EEF3F3" />
+          <text x="158" y="274" font-size="11.5" font-weight="700" fill="#152E35" text-anchor="middle">Check Master's Eligibility</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

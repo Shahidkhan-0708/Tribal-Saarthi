@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "help-saarthi.html",
+  "entry": "help-saarthi.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-10-24T05:43:04.330Z",
+  "updatedAt": "2026-10-24T05:43:04.330Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service testing · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .fault{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .fault:last-child{border-bottom:0}
+  .fault .fn{width:22px;height:22px;border-radius:6px;background:var(--canvas);border:1px solid var(--line);display:grid;place-items:center;font-size:10px;font-weight:620;color:var(--muted);flex:none;margin-top:1px}
+  .fault.on .fn{background:var(--amber-soft);border-color:var(--amber-border);color:var(--amber)}
+  .fault .ft{font-size:12.5px;font-weight:560;letter-spacing:-.005em;line-height:1.4}
+  .fault .fd{font-size:10.5px;color:var(--meta);margin-top:3px;line-height:1.5}
+  .fault .fb{font-size:10.5px;color:var(--muted);margin-top:7px;padding:7px 9px;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;line-height:1.5}
+  .fault .fb b{color:var(--ink-2);font-weight:560}
+  .chaos{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--surface-2)}
+  .chaos input[type=range]{width:100%;accent-color:var(--blue);height:4px;margin:14px 0 6px}
+  .chaos .ticks{display:flex;justify-content:space-between;font-size:9px;color:var(--meta);font-family:var(--mono)}
+  .topology{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:0;padding:8px 0}
+  .topo-node{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:10px;text-align:center;min-width:0}
+  .topo-node .tn{font-size:10px;font-weight:560;line-height:1.35}
+  .topo-node .ts{font-size:8.5px;color:var(--meta);margin-top:2px}
+  .topo-link{height:1px;background:var(--line-strong);min-width:18px;position:relative}
+  .topo-link::after{content:"";position:absolute;right:-1px;top:-2.5px;width:5px;height:5px;border-top:1px solid var(--line-strong);border-right:1px solid var(--line-strong);transform:rotate(45deg)}
+  .topo-link.green{background:var(--green)}
+  .topo-link.green::after{border-color:var(--green)}
+  @media (max-width:640px){.topology{grid-template-columns:1fr}.topo-link{width:1px;height:14px;margin:0 auto}.topo-link::after{display:none}}
+</style>
+</head>
+<body data-role="officer" data-page="resilience-console">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page wide" id="main" data-od-id="resilience-console-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><span>Service testing</span><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Fault injection</span></div>
+      <h1 class="page-title" data-od-id="resilience-console-title">Tribal belt resilience console</h1>
+      <p class="page-sub">Non-production sandbox · validates graceful offline degradation during remote network blackouts.</p>
+    </div>
+    <div class="page-actions">
+      <span class="badge badge-amber"><span class="bdot"></span>Sandbox · not production</span>
+      <button class="btn btn-danger" type="button" id="resetChaos"><svg class="i"><use href="#i-refresh"/></svg>Emergency reset</button>
+    </div>
+  </div>
+
+  <div class="grid g-main" style="align-items:start">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div><h2 class="h3">Chaos fault injection matrix</h2><p class="micro" style="margin-top:3px">Simulate upstream database latency, timeouts and satellite packet drops.</p></div>
+          <span class="badge badge-red" id="activeCount">2 active</span>
+        </div>
+
+        <div class="fault on">
+          <span class="fn">1</span>
+          <div class="grow">
+            <div class="flex between gap12 center"><div class="ft">UIDAI Aadhaar vault timeout</div>
+              <label class="switch"><input type="checkbox" checked aria-label="Toggle UIDAI timeout"><span class="tr"></span></label>
+            </div>
+            <div class="fd">Inject HTTP 504 gateway timeout on the biometric handshake.</div>
+            <div class="fb"><b>Fallback:</b> activates the cached UID token with deferred sync.</div>
+          </div>
+        </div>
+
+        <div class="fault on">
+          <span class="fn">2</span>
+          <div class="grow">
+            <div class="flex between gap12 center"><div class="ft">DigiLocker satellite packet loss (40%)</div>
+              <label class="switch"><input type="checkbox" checked aria-label="Toggle packet loss"><span class="tr"></span></label>
+            </div>
+            <div class="fd">Simulate a 40% connection drop in remote hilly terrain.</div>
+            <div class="fb"><b>Fallback:</b> the local IndexedDB certificate vault serves signed copies.</div>
+          </div>
+        </div>
+
+        <div class="fault on">
+          <span class="fn">3</span>
+          <div class="grow">
+            <div class="flex between gap12 center"><div class="ft">Force 2G / zero-bandwidth mode</div>
+              <label class="switch"><input type="checkbox" checked aria-label="Toggle 2G mode"><span class="tr"></span></label>
+            </div>
+            <div class="fd">Throttle throughput to 64 kbps to test low-spec devices.</div>
+            <div class="fb"><b>Fallback:</b> vector assets load under 30 KB with no external fonts.</div>
+          </div>
+        </div>
+
+        <div class="fault">
+          <span class="fn">4</span>
+          <div class="grow">
+            <div class="flex between gap12 center"><div class="ft">PFMS treasury circuit breaker</div>
+              <label class="switch"><input type="checkbox" aria-label="Toggle treasury circuit breaker"><span class="tr"></span></label>
+            </div>
+            <div class="fd">Trip the circuit breaker on treasury server high latency.</div>
+            <div class="fb"><b>Fallback:</b> queues the sanction payload in a signed local journal.</div>
+          </div>
+        </div>
+
+        <div class="card-b">
+          <div class="chaos">
+            <div class="flex between center">
+              <span class="eyebrow">Chaos load intensity</span>
+              <span class="badge badge-amber" id="intensityLabel">40% failure rate</span>
+            </div>
+            <input type="range" min="0" max="100" value="40" id="chaosRange" aria-label="Chaos load intensity">
+            <div class="ticks"><span>0% clean</span><span>50%</span><span>100% full outage</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Self-healing circuit topology</h2><span class="badge badge-green"><span class="bdot"></span>Failover healthy</span></div>
+        <div class="card-b">
+          <div class="topology">
+            <div class="topo-node"><div class="tn">Scholar app</div><div class="ts">Offline mode</div></div>
+            <div class="topo-link green"></div>
+            <div class="topo-node" style="border-color:var(--green-border);background:var(--green-soft)"><div class="tn" style="color:#047857">IndexedDB</div><div class="ts">Saved on device</div></div>
+            <div class="topo-link green"></div>
+            <div class="topo-node"><div class="tn">MoTA hub</div><div class="ts">NIC vault</div></div>
+          </div>
+          <p class="micro" style="margin-top:10px">Local writes are signed and replayed through the MoTA hub when connectivity returns. No record is dropped during a blackout.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">System resilience health</h2><span class="badge badge-green">Stable</span></div>
+        <div class="card-b">
+          <div class="flex center gap16">
+            <div class="donut">
+              <svg viewBox="0 0 118 118" aria-hidden="true">
+                <circle class="track" cx="59" cy="59" r="50"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--green)" stroke-dasharray="267 314"></circle>
+              </svg>
+              <div class="ctr"><div class="pct">85%</div><div class="cap">Health</div></div>
+            </div>
+            <div>
+              <div class="h4">Healthy direct route</div>
+              <p class="micro" style="margin-top:4px">Measured under the current 40% chaos injection.</p>
+              <span class="badge badge-green" style="margin-top:8px">0.00% data loss</span>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--line);margin:18px 0 6px"></div>
+
+          <div class="keyline"><span class="k">Direct route</span><span class="v">60%</span></div>
+          <div class="keyline"><span class="k">IndexedDB cache</span><span class="v">25%</span></div>
+          <div class="keyline"><span class="k">Queued / degraded</span><span class="v">15%</span></div>
+          <div class="keyline"><span class="k">MTTR</span><span class="v num">1.2 seconds</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Telemetry</h2><span class="badge badge-gray">Live</span></div>
+        <div class="card-b" style="padding-top:10px">
+          <div class="keyline"><span class="k">Edge cache hit</span><span class="v num">94.2%</span></div>
+          <div class="keyline"><span class="k">Queued sync ops</span><span class="v num">42 mutations</span></div>
+          <div class="keyline"><span class="k">Retry backoff</span><span class="v">Exponential 1–8s</span></div>
+          <div class="keyline"><span class="k">Unhandled errors</span><span class="v" style="color:var(--green)">Zero</span></div>
+        </div>
+      </section>
+
+      <div class="callout warn">
+        <svg class="i"><use href="#i-alert"/></svg>
+        <div><b>Sandbox only.</b> These switches do not affect the live scholarship service. Production changes require an approved change request.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Service testing surface · Sample telemetry · Tribe Saarthi design preview</p>
+</main>
+
+<script src="assets/app.js"></script>
+<script>
+(function(){
+  var faults = Array.prototype.slice.call(document.querySelectorAll('.fault'));
+  var count = document.getElementById('activeCount');
+  function sync(){
+    var n = faults.filter(function(f){ return f.classList.contains('on'); }).length;
+    count.textContent = n + ' active';
+    count.className = 'badge ' + (n === 0 ? 'badge-green' : n >= 3 ? 'badge-red' : 'badge-amber');
+  }
+  faults.forEach(function(f){
+    var sw = f.querySelector('input[type=checkbox]');
+    sw.addEventListener('change', function(){ f.classList.toggle('on', sw.checked); sync(); });
+  });
+  var range = document.getElementById('chaosRange');
+  var label = document.getElementById('intensityLabel');
+  range.addEventListener('input', function(){
+    label.textContent = range.value + '% failure rate';
+    label.className = 'badge ' + (Number(range.value) > 65 ? 'badge-red' : Number(range.value) > 20 ? 'badge-amber' : 'badge-green');
+  });
+  document.getElementById('resetChaos').addEventListener('click', function(){
+    faults.forEach(function(f){ f.classList.remove('on'); f.querySelector('input').checked = false; });
+    range.value = 0; label.textContent = '0% failure rate'; label.className = 'badge badge-green'; sync();
+    window.Saarthi.toast('Chaos injection reset · all faults cleared');
+  });
+  sync();
+})();
+</script>
+</body>
+</html>

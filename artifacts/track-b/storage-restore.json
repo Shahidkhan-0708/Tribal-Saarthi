@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-18T08:47:52.921Z",
+  "sourceRef": "axegexiaofxdmmizilri",
+  "targetRef": "feoqfkznfiirrsmlqgfk",
+  "objects": 6,
+  "counts": {
+    "accounts": 7,
+    "students": 2,
+    "schemes": 5,
+    "institutions": 5,
+    "documents": 5,
+    "applications": 1,
+    "deficiencies": 1,
+    "verifications": 13,
+    "grievances": 0,
+    "notifications": 27,
+    "family_grants": 1,
+    "payments": 2,
+    "baselines": 0,
+    "audit": 46,
+    "notes": 0
+  },
+  "passed": true,
+  "studentLogin": "pending test:restore-login"
+}

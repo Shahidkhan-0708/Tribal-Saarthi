@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-26T20:03:39.118Z",
+  "passed": true,
+  "checks": [
+    "Unauthenticated/incorrect service tokens cannot run operations",
+    "Student cannot export database/Auth, read job status or list backups",
+    "Real missing-bucket backup fails and is recorded without an accepted manifest",
+    "The real failed job and alert are visible to the administrator",
+    "Scheduled email processing is healthy and truthfully blocked by missing provider credentials"
+  ]
+}

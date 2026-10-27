@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "fileName": "help-saarthi.html",
+  "currentVersionId": "1b8c7317-aaf7-429b-b29b-cb91ea9debf7",
+  "entries": [
+    {
+      "id": "5348ca2b-814f-42b0-b2a1-e2ec873381ac",
+      "fileName": "help-saarthi.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1792820816550,
+      "source": "ai",
+      "prompt": "continue",
+      "size": 13434,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-5348ca2b-814f-42b0-b2a1-e2ec873381ac.html",
+      "promptSource": "message",
+      "contentDigest": "caca84347cef9b318071a5a4cbdb2a0f93c68060e9d0956b1a39067b6e134d05"
+    },
+    {
+      "id": "1b8c7317-aaf7-429b-b29b-cb91ea9debf7",
+      "fileName": "help-saarthi.html",
+      "version": 2,
+      "label": "Version 2",
+      "createdAt": 1792821615102,
+      "source": "ai",
+      "prompt": "Act as a Principal UI/UX Architect. Completely overhaul the visual language of this entire multi-page application and marketing website. Elevate the aesthetic from a basic wireframe clone to a hyper-premium, magazine-grade digital system inspired by the design languages of Apple, Linear, and Atelier Zero. \n\nApply these universal styles across all layouts, dashboards, marketing pages, and forms:\n\n1. Global Grid, Spatial Systems, & Layout Architecture\n   - Strict Desktop Fidelity: Ban all mobile-first components (like bottom navigation bars or oversized mobile tap targets) from desktop views. Layouts must use professional multi-column structures, thin headers, or minimalist sidebars.\n   - Container Rules: Build all content sections using clean white cards (#FFFFFF) sitting on a uniform, premium off-white canvas (#F9FAFB). \n   - Hairline Rules: Eliminate all heavy drop-shadows and thick borders. Separate sections exclusively using sharp, 1px translucent grey rules (#E2E8F0).\n   - Uniform Radius: Enforce a strict 6px or 8px maximum border-radius across all components, input fields, images, and buttons for a crisp, precise feel.\n\n2. Global Typographic Scale & Editorial Hierarchy\n   - Unified Typeface: Apply a clean, high-performance geometric sans-serif (such as Inter or SF Pro) universally. \n   - Strict Hierarchy: \n     * Hero / Primary Page Titles: Make them crisp, authoritative, and set in deep charcoal (#0F172A) with slight negative letter-spacing (-0.02em). Avoid massive, blown-out font sizes.\n     * Section Subheaders / Micro-Labels: Use small caps with tracking (+0.05em) in a muted slate gray (#64748B) for labels like dates, states, metadata, or table headers.\n     * Content Text: Set body copy to a highly legible charcoal tone (#334155) with generous line-height (1.6) to provide structural breathing room.\n\n3. Signature Component Styling (Uniform System)\n   - High-End Interactive Buttons: Replace saturated, generic blue and orange button overrides. Primary buttons must be a sleek, solid midnight-slate (#1E293B) or pure black with a crisp white micro-label. Secondary buttons must be clean outline actions or text-only links.\n   - Elite Enterprise Badges: Status badges (e.g., success, review, match states) must never use heavy saturated borders or backgrounds. Redesign them into elegant tags using desaturated, whisper-soft pastel fills coupled with high-contrast, deeply saturated text colors (e.g., a faint mint tint background with crisp emerald text).\n   - Forms & Input States: Standardize all form inputs. Use clean, low-profile text containers with thin borders that shift to a subtle 1px slate gray outline on active focus.\n\n4. Multi-Page Cohesion\n   - Ensure the public-facing pages, authentication screens, document repositories, and operational flow modules share this exact structural identity, color weight, padding scale, and spatial constraint without exception.\n\nExecute a comprehensive site-wide refactoring, keeping the functional architecture intact but translating every surface into an elite, pixel-perfect digital asset.",
+      "size": 13432,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0002-1b8c7317-aaf7-429b-b29b-cb91ea9debf7.html",
+      "contentDigest": "2e6aaefe8e5876edc755e33b1e5b8f1f389d7c8eda468dde49019225ecaeacff",
+      "promptSource": "message"
+    }
+  ]
+}

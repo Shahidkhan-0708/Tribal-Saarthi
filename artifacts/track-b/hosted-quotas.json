@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-18T08:58:10.021Z",
+  "projectRef": "axegexiaofxdmmizilri",
+  "passed": true,
+  "results": [
+    {
+      "route": "pilot-workflow",
+      "status": 429,
+      "retryAfter": 59,
+      "requestId": "e81b26a7-f2ce-4f00-9345-ec4d7b364cce"
+    },
+    {
+      "route": "pilot-invite",
+      "status": 429,
+      "retryAfter": 3595,
+      "requestId": "1292671e-db15-4da7-98e5-79242176460e"
+    },
+    {
+      "route": "pilot-receipt",
+      "status": 429,
+      "retryAfter": 54,
+      "requestId": "42e3b77a-df64-4ea9-b7a6-7ad11add6d13"
+    }
+  ]
+}

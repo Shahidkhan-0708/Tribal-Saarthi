@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "receipt-verification.html",
+  "entry": "receipt-verification.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-10-24T05:43:22.793Z",
+  "updatedAt": "2026-10-24T05:43:22.793Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

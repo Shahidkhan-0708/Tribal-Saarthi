@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tribe Saarthi · Interface system</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  body{background:var(--canvas)}
+  .launch{max-width:1200px;margin:0 auto;padding:0 32px 64px}
+  .masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;border-bottom:1px solid var(--line)}
+  .masthead .right{display:flex;align-items:center;gap:10px}
+  .hero{padding:56px 0 44px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:start}
+  .hero h1{font-size:clamp(30px,3.4vw,42px);line-height:1.16;letter-spacing:-.028em;font-weight:640;max-width:19ch;color:var(--ink);margin-top:14px}
+  .hero h1 span{color:var(--muted);font-weight:560}
+  .hero .lede{font-size:13px;line-height:1.75;color:var(--muted);max-width:52ch;margin-top:16px}
+  .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:34px;border-top:1px solid var(--line);padding-top:18px}
+  .hero-meta .hm{padding-right:16px;margin-right:16px;border-right:1px solid var(--line);min-width:0}
+  .hero-meta .hm:last-child{border-right:0;margin-right:0;padding-right:0}
+  .hero-meta .hm b{display:block;font-size:14.5px;font-weight:620;letter-spacing:-.02em;color:var(--ink)}
+  .hero-meta .hm span{display:block;margin-top:3px;font-size:8.5px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;line-height:1.5}
+  .specimen{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);overflow:hidden}
+  .specimen .sh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .specimen .sh b{font-size:10px;font-weight:620;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+  .specimen .row{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .specimen .row:last-child{border-bottom:0}
+  .specimen .aa{font-size:30px;line-height:1;letter-spacing:-.03em;font-weight:640;color:var(--ink)}
+  .swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:14px 16px;border-bottom:1px solid var(--line)}
+  .sw{height:46px;border-radius:4px;border:1px solid rgba(15,23,42,.06);position:relative}
+  .sw span{position:absolute;left:4px;bottom:4px;font:500 6.5px/1 var(--mono);color:#fff;background:rgba(15,23,42,.6);padding:2px 3px;border-radius:2px;letter-spacing:0}
+  .sw.light span{color:#475569;background:rgba(255,255,255,.82)}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:40px 0 4px;padding-bottom:12px;border-bottom:1px solid var(--line-strong)}
+  .section-head h2{font-size:15px;font-weight:620;letter-spacing:-.015em;color:var(--ink)}
+  .section-head p{font-size:9.5px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+  .screens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+  .sgroup{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin:24px 0 2px}
+  .sgroup .gt{font-size:9px;font-weight:620;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .sgroup .gl{height:1px;background:var(--line);flex:1}
+  .srow{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:10px;align-items:start;padding:13px 12px;margin:0 -12px;border-bottom:1px solid var(--line);color:var(--ink);transition:background var(--t)}
+  .srow:hover{text-decoration:none;background:var(--surface)}
+  .srow .idx{font:500 10px/1.7 var(--mono);color:#94A3B8;padding-top:1px}
+  .srow .st{font-size:12.5px;font-weight:560;letter-spacing:-.012em;display:flex;align-items:center;gap:7px;flex-wrap:wrap;color:var(--ink)}
+  .srow .sd{font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.55}
+  .srow .arr{color:#94A3B8;padding-top:1px;transition:transform var(--t) var(--ease),color var(--t)}
+  .srow:hover .arr{color:var(--ink);transform:translateX(2px)}
+  .srow .tag{font-size:8px;font-weight:620;letter-spacing:.06em;text-transform:uppercase;color:#475569;background:#F1F5F9;padding:2px 5px;border-radius:3px}
+  .srow .tag.o{color:#047857;background:var(--green-soft)}
+  .notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px}
+  .note{border-top:1px solid var(--line-strong);padding-top:13px}
+  .note h3{font-size:9.5px;font-weight:620;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);margin-bottom:7px}
+  .note p{font-size:11px;line-height:1.7;color:var(--muted)}
+  footer.lf{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:10px;color:var(--muted);flex-wrap:wrap;letter-spacing:.01em}
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:32px;padding:36px 0 28px}
+    .screens{grid-template-columns:1fr}
+    .notes{grid-template-columns:1fr}
+    .swatches{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:600px){
+    .launch{padding:0 18px 56px}
+    .masthead .right .hide-sm{display:none}
+    .hero h1{font-size:30px}
+    .hero-meta{grid-template-columns:repeat(2,1fr);gap:16px 0}
+    .hero-meta .hm:nth-child(2){border-right:0}
+  }
+</style>
+</head>
+<body>
+<div class="govstrip">
+  <div class="l"><svg class="i-sm" style="stroke:#94A3B8"><use href="#i-shield"/></svg><span>Scholarship support for tribal students</span><span style="color:#64748B">·</span><b>Ministry of Tribal Affairs</b></div>
+  <div class="r"><span class="tag"><svg class="i-sm" style="stroke:#94A3B8"><use href="#i-lock"/></svg>Design preview</span><span class="hide-sm" style="color:#64748B">Sample records</span></div>
+</div>
+
+<div class="launch" id="launch" data-od-id="launch-main">
+  <div class="masthead">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">TS</span>
+      <span><span class="brand-name">Tribe Saarthi</span><span class="brand-sub">Scholarship case system · MoTA</span></span>
+    </a>
+    <div class="right">
+      <span class="badge badge-green"><span class="bdot"></span>22 screens</span>
+      <a class="btn btn-secondary btn-sm" href="dashboard.html">Open scholar app <svg class="i-sm"><use href="#i-arrowRight"/></svg></a>
+    </div>
+  </div>
+
+  <header class="hero" data-od-id="launch-hero">
+    <div>
+      <div class="eyebrow">Interface system · v2</div>
+      <h1>The case file,<br><span>quietly resolved.</span></h1>
+      <p class="lede">Twenty-two wireframe flows rebuilt on one ink-and-slate system: an off-white canvas, white cards, 1px rules, a single typeface and one ink action per screen. Structure, steps and widgets are unchanged.</p>
+      <div class="hero-meta">
+        <div class="hm"><b>22</b><span>Screens · scholar, officer, public</span></div>
+        <div class="hm"><b>Inter</b><span>One face · 400–700</span></div>
+        <div class="hm"><b>6 / 8</b><span>Control &amp; card radius</span></div>
+        <div class="hm"><b>#0F172A</b><span>Single ink action</span></div>
+      </div>
+    </div>
+
+    <aside class="specimen" aria-label="Design system specimen">
+      <div class="sh"><b>System specimen</b><span class="badge badge-gray">Hairline</span></div>
+      <div class="swatches">
+        <div class="sw" style="background:#0F172A"><span>0F172A</span></div>
+        <div class="sw" style="background:#334155"><span>334155</span></div>
+        <div class="sw" style="background:#64748B"><span>64748B</span></div>
+        <div class="sw light" style="background:#E2E8F0"><span>E2E8F0</span></div>
+        <div class="sw light" style="background:#F9FAFB"><span>F9FAFB</span></div>
+        <div class="sw light" style="background:#FFFFFF"><span>FFFFFF</span></div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="aa">Aa</div>
+          <div class="micro" style="margin-top:5px">Inter · 400–700</div>
+        </div>
+        <div class="right">
+          <div class="mono" style="font-size:18px;color:var(--ink)">Aa</div>
+          <div class="micro" style="margin-top:5px">JetBrains Mono · records</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="eyebrow">Controls</span>
+        <div class="flex gap8"><span class="btn btn-primary btn-sm">Primary</span><span class="btn btn-secondary btn-sm">Secondary</span></div>
+      </div>
+      <div class="row">
+        <span class="eyebrow">States</span>
+        <div class="flex gap8 wrap"><span class="badge badge-green">Complete</span><span class="badge badge-amber">Pending</span><span class="badge badge-blue">Active</span></div>
+      </div>
+    </aside>
+  </header>
+
+  <div class="section-head" data-od-id="screen-index-heading">
+    <h2>Screen index</h2>
+    <p>22 flows · delivery order</p>
+  </div>
+
+  <div class="screens" data-od-id="screen-index">
+    <div class="sgroup"><span class="gt">Scholar journey</span><span class="gl"></span></div>
+
+    <a class="srow" href="dashboard.html">
+      <span class="idx">01</span>
+      <span><span class="st">Scholar dashboard <span class="tag">Desktop</span><span class="tag">Mobile</span></span><span class="sd">Application status, progress rail, document checklist, recent updates.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="scholarship-discovery.html">
+      <span class="idx">03</span>
+      <span><span class="st">Scholarship discovery</span><span class="sd">Three pre-matched schemes with support, coverage and next action.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="application-flow.html">
+      <span class="idx">04–06</span>
+      <span><span class="st">Application flow <span class="tag">3 steps</span></span><span class="sd">Profile, documents, and a final check with statutory declaration.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="application-tracker.html">
+      <span class="idx">07</span>
+      <span><span class="st">Application lifecycle</span><span class="sd">Five statutory milestones, sanction breakdown, DBT pipeline.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="document-wallet.html">
+      <span class="idx">08</span>
+      <span><span class="st">DigiLocker wallet</span><span class="sd">Issuer, validity and seal status for four reusable documents.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="help-saarthi.html">
+      <span class="idx">09</span>
+      <span><span class="st">Saarthi help desk</span><span class="sd">Multilingual assistant, grievance history, national helplines.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="scholar-profile.html">
+      <span class="idx">10</span>
+      <span><span class="st">Profile &amp; PVTG entitlements</span><span class="sd">Verified demographics, 100% coverage, identity and bank rails.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="family-access.html">
+      <span class="idx">11</span>
+      <span><span class="st">Family access &amp; consent</span><span class="sd">Guardian permissions, read-only scope, Aadhaar OTP authorisation.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="offline-sync.html">
+      <span class="idx">12</span>
+      <span><span class="st">Offline sync queue</span><span class="sd">Three local operations, integrity hashes, last-write-wins pipeline.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+
+    <div class="sgroup"><span class="gt">Officer verification</span><span class="gl"></span></div>
+
+    <a class="srow" href="officer-review-queue.html">
+      <span class="idx">13</span>
+      <span><span class="st">Review queue <span class="tag o">Officer</span></span><span class="sd">Caseload metrics, SLA risk filters, four ranked applications.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="officer-case-inspection.html">
+      <span class="idx">14–15</span>
+      <span><span class="st">Case inspection + deficiency</span><span class="sd">Four evidence checks, concurrence pipeline, correction notice modal.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="sanction-signing.html">
+      <span class="idx">16</span>
+      <span><span class="st">Digital sanction signing</span><span class="sd">Expenditure manifest, DSC token, six-digit PIN, audit hash.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="resilience-console.html">
+      <span class="idx">17</span>
+      <span><span class="st">Service testing console</span><span class="sd">Fault injection matrix, chaos intensity, self-healing topology.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="coverage-analytics.html">
+      <span class="idx">18</span>
+      <span><span class="st">Coverage gap analytics</span><span class="sd">State saturation, district index, outreach camp protocol.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="audit-log.html">
+      <span class="idx">19</span>
+      <span><span class="st">Decision history</span><span class="sd">Cryptographic audit blocks, actors, credentials, verification.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+
+    <div class="sgroup"><span class="gt">Access &amp; public verification</span><span class="gl"></span></div>
+
+    <a class="srow" href="sign-in.html">
+      <span class="idx">20–21</span>
+      <span><span class="st">Sign in &amp; recovery</span><span class="sd">Invite-only pilot access, password reset as a second state.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+    <a class="srow" href="receipt-verification.html">
+      <span class="idx">22</span>
+      <span><span class="st">Public receipt verification</span><span class="sd">Sanction receipt lookup, trust pathway, signing authority.</span></span>
+      <span class="arr"><svg class="i"><use href="#i-arrowRight"/></svg></span>
+    </a>
+  </div>
+
+  <div class="notes">
+    <div class="note"><h3>Structure preserved</h3><p>Two-rail desktop shells, multi-column officer tables, three-step wizard and mobile bottom bar keep the exact widget architecture of the wireframes.</p></div>
+    <div class="note"><h3>Hairline discipline</h3><p>No shadows, no gradients: 1px rules divide every region, radii stop at 8px, and status colour lives in soft pastel tags rather than fills.</p></div>
+    <div class="note"><h3>Honest sample data</h3><p>All records are the labelled sample case from the wireframes. No invented metrics, no fabricated official claims, no imagery substitutes.</p></div>
+  </div>
+
+  <footer class="lf">
+    <span>Tribe Saarthi · Scholarship case system · Interface system v2</span>
+    <span>Inter · JetBrains Mono · ink, slate and hairline</span>
+  </footer>
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

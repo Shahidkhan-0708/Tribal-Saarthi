@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "fileName": "family-access.html",
+  "currentVersionId": "3433ebc2-f33b-4fa5-91b4-1fff2cdb9530",
+  "entries": [
+    {
+      "id": "3433ebc2-f33b-4fa5-91b4-1fff2cdb9530",
+      "fileName": "family-access.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1792820816552,
+      "source": "ai",
+      "prompt": "continue",
+      "size": 9715,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-3433ebc2-f33b-4fa5-91b4-1fff2cdb9530.html",
+      "contentDigest": "d1318be8495710955f0040edf2dfc70931f03b9c2657b9682040c8d43e28411f",
+      "promptSource": "message"
+    }
+  ]
+}

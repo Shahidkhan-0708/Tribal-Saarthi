@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My documents · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .cert{padding:18px 20px;border-bottom:1px solid var(--line)}
+  .cert:last-child{border-bottom:0}
+  .cert-top{display:flex;align-items:flex-start;gap:13px}
+  .cert-name{font-size:14px;font-weight:600;letter-spacing:-.01em;line-height:1.4}
+  .cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:14px 0 0 49px;padding:12px 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px}
+  .cert-grid .cg{min-width:0}
+  .cert-grid .cgl{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--meta)}
+  .cert-grid .cgv{font-size:11.5px;font-weight:600;margin-top:2px;line-height:1.4}
+  .hashline{display:flex;align-items:center;gap:8px;margin:10px 0 0 49px;font-size:10px;color:var(--meta);min-width:0}
+  .hashline code{font-family:var(--mono);font-size:9.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:var(--canvas);padding:3px 6px;border-radius:4px;border:1px solid var(--line);min-width:0}
+  @media (max-width:760px){.cert-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-left:0}.hashline{margin-left:0}}
+</style>
+</head>
+<body data-role="scholar" data-page="document-wallet">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page" id="main" data-od-id="document-wallet-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><span>Scholar workspace</span><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>My documents</span></div>
+      <h1 class="page-title" data-od-id="document-wallet-title">My documents</h1>
+      <p class="page-sub">Keep certificates ready and reuse them when you apply. Each seal is checked against the issuing registry.</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn btn-secondary" type="button" data-toast="All four DigiLocker seals are current">
+        <svg class="i"><use href="#i-refresh"/></svg>Refresh documents</button>
+    </div>
+  </div>
+
+  <div class="metric-strip" style="margin-bottom:16px">
+    <div><div class="m-lab">Documents in wallet</div><div class="m-val num">4 records</div></div>
+    <div><div class="m-lab">DigiLocker verified</div><div class="m-val">4 of 4</div></div>
+    <div><div class="m-lab">Last vault sync</div><div class="m-val">18 Oct 2026 · 15:45</div></div>
+    <div><div class="m-lab">Consent token</div><div class="m-val mono" style="font-size:11px">TKN-MOTA-2026-90412</div></div>
+  </div>
+
+  <div class="grid g-main" style="align-items:start">
+    <section class="card" aria-labelledby="cert-title">
+      <div class="card-h">
+        <div>
+          <h2 class="h3" id="cert-title">Certificates and records</h2>
+          <p class="micro" style="margin-top:3px">Check the issuer, details, and review status for each document.</p>
+        </div>
+        <span class="badge badge-green"><svg class="i-sm" style="width:10px;height:10px"><use href="#i-shield"/></svg>Vault verified</span>
+      </div>
+
+      <div class="cert">
+        <div class="cert-top">
+          <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+          <div class="grow">
+            <div class="cert-name">Scheduled Tribe Caste Certificate</div>
+            <div class="micro" style="margin-top:3px">Community: Birhor (PVTG Tier-1) · Lifetime validity</div>
+          </div>
+          <span class="badge badge-green"><span class="bdot"></span>Sealed</span>
+        </div>
+        <div class="cert-grid">
+          <div class="cg"><div class="cgl">Issuing authority</div><div class="cgv">SDO Mahuadanr, Latehar, Jharkhand</div></div>
+          <div class="cg"><div class="cgl">Certificate number</div><div class="cgv mono">JH/ST/2023/88194</div></div>
+          <div class="cg"><div class="cgl">Issued</div><div class="cgv">14 Aug 2023</div></div>
+        </div>
+        <div class="hashline">
+          <svg class="i-sm" style="stroke:var(--muted)"><use href="#i-lock"/></svg>
+          <code>SHA-256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code>
+          <button class="btn btn-ghost btn-sm" type="button" data-copy="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" style="margin-left:auto;flex:none">Copy</button>
+          <button class="btn btn-secondary btn-sm" type="button" data-toast="Opening the NIC seal certificate" style="flex:none">View NIC seal</button>
+        </div>
+      </div>
+
+      <div class="cert">
+        <div class="cert-top">
+          <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+          <div class="grow">
+            <div class="cert-name">Annual Family Income Certificate</div>
+            <div class="micro" style="margin-top:3px">Certified gross income: ₹1,20,000 / year · Within the ₹2.50 lakh limit</div>
+          </div>
+          <span class="badge badge-green"><span class="bdot"></span>Sealed</span>
+        </div>
+        <div class="cert-grid">
+          <div class="cg"><div class="cgl">Issuing authority</div><div class="cgv">Revenue Circle Office, Latehar</div></div>
+          <div class="cg"><div class="cgl">Certificate number</div><div class="cgv mono">JH/INC/2026/0192</div></div>
+          <div class="cg"><div class="cgl">Validity</div><div class="cgv">March 2027</div></div>
+        </div>
+        <div class="hashline">
+          <svg class="i-sm" style="stroke:var(--muted)"><use href="#i-lock"/></svg>
+          <code>SHA-256 f482a014948a901ba8472910c0194821a810f821ba091482910948210f948201</code>
+          <button class="btn btn-ghost btn-sm" type="button" data-copy="f482a014948a901ba8472910c0194821a810f821ba091482910948210f948201" style="margin-left:auto;flex:none">Copy</button>
+          <button class="btn btn-secondary btn-sm" type="button" data-toast="Opening the NIC seal certificate" style="flex:none">View NIC seal</button>
+        </div>
+      </div>
+
+      <div class="cert">
+        <div class="cert-top">
+          <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+          <div class="grow">
+            <div class="cert-name">APAAR / Academic Bank of Credits ID</div>
+            <div class="micro" style="margin-top:3px">Enrolled B.Tech CSE (4th sem) · CGPA 8.84 · Clean disciplinary record</div>
+          </div>
+          <span class="badge badge-green"><span class="bdot"></span>Synced</span>
+        </div>
+        <div class="cert-grid">
+          <div class="cg"><div class="cgl">Institution</div><div class="cgv">Birla Institute of Technology, Mesra</div></div>
+          <div class="cg"><div class="cgl">APAAR ID</div><div class="cgv mono">9482-1049-5821</div></div>
+          <div class="cg"><div class="cgl">ABC vault</div><div class="cgv">Linked · 15 Sep 2026</div></div>
+        </div>
+        <div class="hashline">
+          <svg class="i-sm" style="stroke:var(--muted)"><use href="#i-lock"/></svg>
+          <code>SHA-256 9c84e1b4028471049281a049182904812a048129048102948120481029481204</code>
+          <button class="btn btn-ghost btn-sm" type="button" data-copy="9c84e1b4028471049281a049182904812a048129048102948120481029481204" style="margin-left:auto;flex:none">Copy</button>
+          <button class="btn btn-secondary btn-sm" type="button" data-toast="Opening the NIC seal certificate" style="flex:none">View NIC seal</button>
+        </div>
+      </div>
+
+      <div class="cert">
+        <div class="cert-top">
+          <div class="doc-ico"><svg class="i"><use href="#i-file"/></svg></div>
+          <div class="grow">
+            <div class="cert-name">Senior Secondary (Class 12) Marksheet</div>
+            <div class="micro" style="margin-top:3px">CBSE · Aggregate 84.6% · Science (PCM with Computer Science)</div>
+          </div>
+          <span class="badge badge-green"><span class="bdot"></span>Checked</span>
+        </div>
+        <div class="cert-grid">
+          <div class="cg"><div class="cgl">Board</div><div class="cgv">Central Board of Secondary Education</div></div>
+          <div class="cg"><div class="cgl">Roll number</div><div class="cgv mono">1284920</div></div>
+          <div class="cg"><div class="cgl">Year</div><div class="cgv">2024</div></div>
+        </div>
+        <div class="hashline">
+          <svg class="i-sm" style="stroke:var(--muted)"><use href="#i-lock"/></svg>
+          <code>SHA-256 710daef049281940182904128904182904182094182049182049182049182049</code>
+          <button class="btn btn-ghost btn-sm" type="button" data-copy="710daef049281940182904128904182904182094182049182049182049182049" style="margin-left:auto;flex:none">Copy</button>
+          <button class="btn btn-secondary btn-sm" type="button" data-toast="Opening the NIC seal certificate" style="flex:none">View NIC seal</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Document checks</h2><span class="badge badge-gray">Sample</span></div>
+        <div class="card-b">
+          <div class="flex center gap16">
+            <div class="donut">
+              <svg viewBox="0 0 118 118" aria-hidden="true">
+                <circle class="track" cx="59" cy="59" r="50"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--green)" stroke-dasharray="314 314"></circle>
+              </svg>
+              <div class="ctr"><div class="pct">100%</div><div class="cap">Vault</div></div>
+            </div>
+            <div>
+              <div class="h4">DigiLocker verified</div>
+              <p class="micro" style="margin-top:4px">4 documents · 4 issuer seals</p>
+              <span class="badge badge-green" style="margin-top:8px"><span class="bdot"></span>Current</span>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--line);margin:18px 0 6px"></div>
+
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Identity</span><span class="v">UIDAI token</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Issuer</span><span class="v">e-Sign sealed</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Vault hash</span><span class="v">SHA-256 Merkle</span></div>
+        </div>
+      </section>
+
+      <div class="callout warn">
+        <svg class="i"><use href="#i-alert"/></svg>
+        <div><b>Keep the originals.</b> Keep the original certificates available. Your officer may ask to see them during physical verification.</div>
+      </div>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Security specifications</h2></div>
+        <div class="card-b" style="padding-top:12px">
+          <div class="keyline"><span class="k">Masked Aadhaar</span><span class="v mono">•••• •••• 4921</span></div>
+          <div class="keyline"><span class="k">Transport</span><span class="v mono">TLS 1.3 / AES-256</span></div>
+          <div class="keyline"><span class="k">Consent token</span><span class="v mono" style="font-size:10.5px">TKN-MOTA-2026-90412</span></div>
+          <div class="keyline"><span class="k">Registry</span><span class="v">National Knowledge Network</span></div>
+          <p class="micro" style="margin-top:12px">Raw Aadhaar numbers are never stored. Consent expires automatically after 365 days.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample records · Seals are illustrative and not live certificates · Tribe Saarthi design preview</p>
+</main>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

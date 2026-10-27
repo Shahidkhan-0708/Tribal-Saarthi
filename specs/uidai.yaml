@@ -1,0 +1,79 @@
+openapi: 3.0.3
+info:
+  title: UIDAI Aadhaar OTP Verification (mock spec)
+  version: "1.0.0"
+servers:
+  - url: https://uidai-sandbox.gov.in/api/v1
+paths:
+  /otp/verify:
+    post:
+      operationId: verifyAadhaarOtp
+      summary: Verify Aadhaar OTP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AadhaarOtpRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AadhaarOtpResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    AadhaarOtpRequest:
+      type: object
+      required: [uid, otp]
+      properties:
+        uid:
+          type: string
+          pattern: '^\d{12}$'
+          example: "123456789012"
+        otp:
+          type: string
+          pattern: '^\d{6}$'
+          example: "123456"
+    AadhaarOtpResponse:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [SUCCESS, FAILED]
+        data:
+          type: object
+          properties:
+            name:
+              type: string
+            gender:
+              type: string
+              enum: [M, F, T]
+            dob:
+              type: string
+              format: date
+            address:
+              type: string
+            photo:
+              type: string
+              format: byte
+        errorCode:
+          type: string
+        errorMessage:
+          type: string
+    ErrorResponse:
+      type: object
+      required: [errorCode, errorMessage]
+      properties:
+        errorCode:
+          type: string
+        errorMessage:
+          type: string

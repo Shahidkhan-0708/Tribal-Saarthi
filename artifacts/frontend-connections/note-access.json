@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-26T20:07:05.543Z",
+  "passed": true,
+  "assertions": 16,
+  "checks": [
+    {
+      "role": "admin",
+      "direct": 1,
+      "snapshot": 1,
+      "expected": 1
+    },
+    {
+      "role": "student",
+      "direct": 0,
+      "snapshot": 0,
+      "expected": 0
+    },
+    {
+      "role": "other",
+      "direct": 0,
+      "snapshot": 0,
+      "expected": 0
+    },
+    {
+      "role": "institute",
+      "direct": 1,
+      "snapshot": 1,
+      "expected": 1
+    },
+    {
+      "role": "otherInstitute",
+      "direct": 0,
+      "snapshot": 0,
+      "expected": 0
+    },
+    {
+      "role": "nodal",
+      "direct": 1,
+      "snapshot": 1,
+      "expected": 1
+    },
+    {
+      "role": "family",
+      "direct": 0,
+      "snapshot": 0,
+      "expected": 0
+    }
+  ]
+}

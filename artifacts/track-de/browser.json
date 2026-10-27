@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-18T12:08:45.041Z",
+  "passed": true,
+  "checks": [
+    "Keyboard-only login and a single primary heading",
+    "Private upload controls reached by keyboard and real files stored; file selection supplied by the headless driver",
+    "Student attaches immutable versions, saves, submits and sees server status using keyboard",
+    "Keyboard consent grant/revoke with an announced acknowledgement",
+    "Student account at 320 CSS pixels and 200 percent zoom",
+    "Translated pilot content has a Hindi language attribute",
+    "Officer institution/department approvals and typed pilot sanction work by keyboard",
+    "Officer private-file dialog contains focus, closes with Escape and returns focus",
+    "Officer analytics export is keyboard reachable",
+    "Hosted manifest, standalone display and correctly sized icons"
+  ],
+  "errors": []
+}

@@ -1,0 +1,533 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load raw extracted PDFs text
+const rawDatasetPath = path.resolve('src/data/indian-govt-scholarships.json');
+const rawData = JSON.parse(fs.readFileSync(rawDatasetPath, 'utf8'));
+const rawMap = new Map();
+rawData.forEach(item => {
+  rawMap.set(item.file_name, item.text);
+  rawMap.set(item.label, item.text);
+});
+
+// Build comprehensive, structured Unified Scholarship list
+const scholarships = [
+  {
+    id: 'mota-pms-st',
+    name: 'Post-Matric Scholarship for ST Students',
+    shortName: 'PMS-ST',
+    ministry: 'Ministry of Tribal Affairs',
+    portal: 'NSP',
+    targetGroup: 'Scheduled Tribe (ST) & PVTG students',
+    category: 'Central Sector',
+    amount: '₹5,000 – ₹1,32,000 / yr',
+    amountValue: 132000,
+    amountSubtitle: '100% course fee reimbursement + monthly maintenance allowance',
+    courseLevels: ['class-11-12', 'diploma', 'undergrad', 'postgrad', 'research'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: 250000,
+    familyIncomeCapFormatted: '≤ ₹2,50,000 / year',
+    domicileRequirement: 'All notified Indian States & Union Territories',
+    minMarksRequirement: 40,
+    deadline: '2026-11-15',
+    keyBenefits: [
+      'Full course-fee reimbursement at sanctioned government ceiling rates',
+      'Monthly maintenance allowance for hostellers (₹1,200/mo) and day scholars (₹550/mo)',
+      'Special book & equipment allowance for PVTG scholars',
+      'Renewable every academic year until course completion'
+    ],
+    eligibilityCriteria: [
+      'Candidate must belong to a notified Scheduled Tribe (ST) or PVTG community',
+      'Must be enrolled in a recognized post-matriculation institution or university',
+      'Total annual family income from all sources must not exceed ₹2.50 Lakh',
+      'Student must have a valid Aadhaar-seeded bank account for DBT'
+    ],
+    requiredDocuments: [
+      'Caste / ST Certificate issued by Competent Authority',
+      'Annual Income Certificate for current financial year',
+      'State Domicile Certificate',
+      'Previous Examination Marksheet',
+      'Aadhaar-seeded Bank Passbook copy',
+      'Bonafide / Admission letter from registered institution'
+    ],
+    selectionMethod: 'Entitlement-based for all eligible applicants meeting criteria',
+    disbursementMode: 'Direct Benefit Transfer (DBT) via PFMS to Aadhaar Seeded Bank Account',
+    applicationProcedure: 'Apply online on National Scholarship Portal (NSP) with One-Time Registration (OTR). Institutional Nodal Officer (INO) and State Nodal Officer (SNO) verify online.',
+    faqs: [
+      {
+        q: 'Can a student availing PMS-ST receive another scholarship?',
+        a: 'No. As per MoTA guidelines, a student holding PMS-ST cannot hold another central or state scholarship concurrently.'
+      },
+      {
+        q: 'Is Aadhaar mandatory for PMS-ST?',
+        a: 'Yes, an Aadhaar number and Aadhaar-seeded general savings bank account are required for Direct Benefit Transfer (DBT).'
+      },
+      {
+        q: 'How does renewal work for subsequent years?',
+        a: 'The scholarship is renewed automatically upon uploading the annual promotion mark sheet and bonafide certificate verified by the institute head.'
+      }
+    ],
+    keywords: ['pms', 'st', 'post-matric', 'mota', 'tribal', 'tribals', 'pvtg', 'tuition', 'maintenance', 'fees', 'undergrad', 'postgrad', 'diploma', 'class 11']
+  },
+  {
+    id: 'mota-top-class-st',
+    name: 'National Top-Class Education Scholarship for ST Students',
+    shortName: 'Top-Class ST',
+    ministry: 'Ministry of Tribal Affairs',
+    portal: 'NSP',
+    targetGroup: 'Scheduled Tribe (ST) students in notified premier institutions (IITs, NITs, IIMs, AIIMS, BIT Mesra, NLUs)',
+    category: 'Premier Institute Grant',
+    amount: 'Full Tuition + ₹3,000 / month living allowance',
+    amountValue: 250000,
+    amountSubtitle: 'Full tuition fee + ₹45,000 laptop grant + ₹3,000/yr book grant',
+    courseLevels: ['undergrad', 'postgrad'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: 600000,
+    familyIncomeCapFormatted: '≤ ₹6,00,000 / year',
+    domicileRequirement: 'All Indian States & UTs',
+    minMarksRequirement: 50,
+    deadline: '2026-10-31',
+    keyBenefits: [
+      'Full tuition fee and non-refundable charges reimbursement (up to ₹2.5 Lakh/yr in private, actuals in govt)',
+      'Living allowance of ₹3,000 per month (₹36,000/year)',
+      'Books and stationery allowance of ₹3,000 per year',
+      'One-time computer/laptop grant of ₹45,000 with accessories'
+    ],
+    eligibilityCriteria: [
+      'Must be a Scheduled Tribe (ST) student',
+      'Must have secured admission in notified institutes of excellence (IIT, NIT, IIM, BIT Mesra, etc.)',
+      'Total family income from all sources must not exceed ₹6.00 Lakh per annum',
+      'Must not be in receipt of any other scholarship or stipend'
+    ],
+    requiredDocuments: [
+      'ST Caste Certificate from Revenue Authority',
+      'Income Certificate issued by Tehsildar / SDO',
+      'Admission allotment letter & Fee Receipt from premier institute',
+      'Class 12th / Qualifying marksheet',
+      'Aadhaar card and bank account proof'
+    ],
+    selectionMethod: 'Merit list generated among admitted ST students within the allocated institutional quota',
+    disbursementMode: 'Direct Benefit Transfer (DBT) to student account for allowances; institutional fee disbursed directly or reimbursed',
+    applicationProcedure: 'Submit fresh application online at scholarships.gov.in (NSP) selecting MoTA - Top Class Education Scheme.',
+    faqs: [
+      {
+        q: 'Which institutes are covered under Top Class ST?',
+        a: 'Top 250+ notified premier institutes across India including all IITs, NITs, IIMs, IISc, AIIMS, BIT Mesra, National Law Universities, and premier design schools.'
+      },
+      {
+        q: 'Is there a laptop grant provided?',
+        a: 'Yes, a one-time grant of ₹45,000 is sanctioned to first-year admitted students for laptop/computer purchase.'
+      }
+    ],
+    keywords: ['top-class', 'premier', 'iit', 'nit', 'iim', 'bit mesra', 'mota', 'st', 'laptop', 'tuition', 'excellence']
+  },
+  {
+    id: 'mota-nfst',
+    name: 'National Fellowship for Higher Education of ST Students',
+    shortName: 'NFST',
+    ministry: 'Ministry of Tribal Affairs',
+    portal: 'SFMP',
+    targetGroup: 'ST scholars pursuing regular full-time M.Phil and Ph.D degrees',
+    category: 'Research Fellowship',
+    amount: '₹37,000 / month (JRF) · ₹42,000 / month (SRF)',
+    amountValue: 504000,
+    amountSubtitle: 'Monthly stipend + ₹25,000 annual contingency grant',
+    courseLevels: ['research'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: 600000,
+    familyIncomeCapFormatted: '≤ ₹6,00,000 / year',
+    domicileRequirement: 'All Indian States & UTs',
+    minMarksRequirement: 55,
+    deadline: '2026-12-01',
+    keyBenefits: [
+      'Junior Research Fellowship (JRF): ₹37,000/month for initial 2 years',
+      'Senior Research Fellowship (SRF): ₹42,000/month for remaining 3 years',
+      'Contingency grant: ₹10,000 - ₹25,000 per annum depending on stream (Humanities/Sciences)',
+      'Escorts / Reader assistance allowance of ₹2,000/mo for divyangjan scholars'
+    ],
+    eligibilityCriteria: [
+      'Scheduled Tribe (ST) candidate registered for regular full-time M.Phil/Ph.D in a UGC-recognized university',
+      'Annual family income ceiling of ₹6.00 Lakh',
+      'Must not be employed or drawing salary/fellowship from any other funding agency'
+    ],
+    requiredDocuments: [
+      'ST Community Certificate',
+      'University M.Phil / Ph.D registration / joining report',
+      'Research Supervisor certification',
+      'Master degree marksheet and degree certificate',
+      'Income Certificate'
+    ],
+    selectionMethod: 'National merit list based on Post-Graduate marks and research admission',
+    disbursementMode: 'Direct monthly credit via Canara Bank Scholarship & Fellowship Management Portal (SFMP)',
+    applicationProcedure: 'Online registration on the MoTA Fellowship portal with verified university supervisor credentials.',
+    faqs: [
+      {
+        q: 'What is the maximum duration of NFST?',
+        a: 'Maximum 5 years for integrated M.Phil + Ph.D or direct Ph.D research.'
+      }
+    ],
+    keywords: ['nfst', 'fellowship', 'phd', 'mphil', 'research', 'jrf', 'srf', 'mota', 'st', 'scholar', 'university']
+  },
+  {
+    id: 'mota-nos',
+    name: 'National Overseas Scholarship for ST Students',
+    shortName: 'NOS',
+    ministry: 'Ministry of Tribal Affairs',
+    portal: 'NOS',
+    targetGroup: 'ST students securing admission in top foreign universities (QS/THE top 500)',
+    category: 'Overseas Fellowship',
+    amount: 'Up to ₹1.6 Crore / student',
+    amountValue: 16000000,
+    amountSubtitle: 'Full foreign tuition + US$15,400 annual living allowance + return airfare',
+    courseLevels: ['postgrad', 'research'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: 680000,
+    familyIncomeCapFormatted: '≤ ₹6,80,000 / year',
+    domicileRequirement: 'All Indian States & UTs',
+    minMarksRequirement: 60,
+    deadline: '2026-11-30',
+    keyBenefits: [
+      '100% full international tuition fee payment directly to foreign institution',
+      'Annual living allowance: US$ 15,400 (or £9,900 for UK)',
+      'Contingency allowance for books, research materials, study tours: US$ 1,500/yr',
+      'Economy class return flight ticket from India to destination country',
+      'Mandatory medical insurance coverage and visa fees reimbursement'
+    ],
+    eligibilityCriteria: [
+      'Must belong to a notified Scheduled Tribe (ST) community',
+      'Unconditional admission offer letter from a foreign university ranked in Top 500 QS world rankings',
+      'Minimum 60% marks or equivalent CGPA in Bachelor / Master degree',
+      'Total annual family income must not exceed ₹6.80 Lakh',
+      'Age limit: Below 35 years as of 1st July of the application year'
+    ],
+    requiredDocuments: [
+      'ST Community Certificate issued by designated District Authority',
+      'Unconditional Offer Letter from overseas University with QS ranking proof',
+      'Valid Indian Passport copy',
+      'GRE / GMAT / IELTS / TOEFL scorecard (if required by institution)',
+      'Income Certificate of parents/family',
+      'Degree certificates and complete academic transcripts'
+    ],
+    selectionMethod: 'Central Selection Committee interview & ranking based on university QS rank and student academic merit',
+    disbursementMode: 'Direct wire transfer to overseas university for tuition fees and quarterly maintenance allowance into international bank account',
+    applicationProcedure: 'Online application on overseas.tribal.gov.in with unconditional admission confirmation.',
+    faqs: [
+      {
+        q: 'Can PVTG candidates apply with priority?',
+        a: 'Yes, MoTA guidelines reserve specific slots and give priority considerations to candidates from Particularly Vulnerable Tribal Groups (PVTGs).'
+      },
+      {
+        q: 'Is work experience required?',
+        a: 'Work experience is preferable for Master’s candidates and advantageous for Ph.D. proposals, but not strictly mandatory if academic record is exceptional.'
+      }
+    ],
+    keywords: ['nos', 'overseas', 'foreign', 'abroad', 'masters', 'phd', 'international', 'mota', 'st', 'usa', 'uk', 'airfare']
+  },
+  {
+    id: 'aicte-pragati-degree',
+    name: 'AICTE Pragati Scholarship Scheme for Girl Students (Degree)',
+    shortName: 'AICTE Pragati (Degree)',
+    ministry: 'Ministry of Education / AICTE',
+    portal: 'NSP',
+    targetGroup: 'Girl students admitted to 1st year Degree or 2nd year Lateral Entry in AICTE-approved institutions',
+    category: 'Women in STEM',
+    amount: '₹50,000 / year',
+    amountValue: 50000,
+    amountSubtitle: 'Lump-sum grant towards college fee, computer, books & equipment',
+    courseLevels: ['undergrad'],
+    eligibleGenders: ['female'],
+    familyIncomeCap: 800000,
+    familyIncomeCapFormatted: '≤ ₹8,00,000 / year',
+    domicileRequirement: 'All Indian States & Union Territories',
+    minMarksRequirement: 50,
+    deadline: '2026-11-20',
+    keyBenefits: [
+      '₹50,000 per annum for each year of study (up to 4 years for 1st year admits, 3 years for lateral entry)',
+      'Single lump-sum payment towards tuition fee, computer purchase, software, stationeries, and books',
+      'All eligible girl applicants from 13 Union Territories & North Eastern States receive 100% scholarships without state quota caps'
+    ],
+    eligibilityCriteria: [
+      'Only female students are eligible',
+      'Admitted to 1st year B.E./B.Tech/B.Pharm or 2nd year through Lateral Entry in an AICTE-approved institution',
+      'Maximum two girl children per family eligible',
+      'Family income from all sources must not exceed ₹8.00 Lakh per annum',
+      'Must NOT be a recipient of any other central, state or AICTE sponsored scholarship'
+    ],
+    requiredDocuments: [
+      'Class 10th and 12th marksheets',
+      'AICTE institute admission letter & bonafide certificate (Appendix-I)',
+      'Annual Family Income Certificate issued by Tehsildar/BDO (Appendix-II)',
+      'Parent Declaration certifying max two daughters availing facility (Appendix-III)',
+      'Aadhaar card and Aadhaar-seeded saving bank account'
+    ],
+    selectionMethod: 'Pure merit based on percentage of marks in 10+2 / qualifying examination across State/UT quotas (5,000 total scholarships nationwide)',
+    disbursementMode: 'Direct Benefit Transfer (DBT) directly into the student’s general savings bank account',
+    applicationProcedure: 'Online submission on National Scholarship Portal (scholarships.gov.in). Host institution verifies, followed by State Directorate of Technical Education (DTE).',
+    faqs: [
+      {
+        q: 'I am a 3rd year degree student, can I apply for Pragati?',
+        a: 'No. Only first-year admitted degree students or second-year lateral entry students are eligible to apply for fresh Pragati scholarships.'
+      },
+      {
+        q: 'Can both daughters in a family receive Pragati?',
+        a: 'Yes, up to two girls per family are explicitly eligible to receive the Pragati scholarship concurrently.'
+      },
+      {
+        q: 'Can SC/ST/OBC students apply for Pragati?',
+        a: 'Yes, reservation is applied as per Government of India norms (15% SC, 7.5% ST, 27% OBC) with vacant slots transferring to general merit.'
+      }
+    ],
+    keywords: ['aicte', 'pragati', 'girls', 'female', 'women', 'engineering', 'tech', 'degree', 'stem', 'btech', 'lateral entry']
+  },
+  {
+    id: 'aicte-pragati-diploma',
+    name: 'AICTE Pragati Scholarship Scheme for Girl Students (Diploma)',
+    shortName: 'AICTE Pragati (Diploma)',
+    ministry: 'Ministry of Education / AICTE',
+    portal: 'NSP',
+    targetGroup: 'Girl students admitted to 1st year or 2nd year lateral entry in polytechnic diploma courses',
+    category: 'Women in Technical Education',
+    amount: '₹50,000 / year',
+    amountValue: 50000,
+    amountSubtitle: 'Lump-sum grant towards polytechnic fee, stationery, equipment',
+    courseLevels: ['diploma'],
+    eligibleGenders: ['female'],
+    familyIncomeCap: 800000,
+    familyIncomeCapFormatted: '≤ ₹8,00,000 / year',
+    domicileRequirement: 'All Indian States & Union Territories',
+    minMarksRequirement: 50,
+    deadline: '2026-11-20',
+    keyBenefits: [
+      '₹50,000 per annum (maximum 3 years for first year diploma, 2 years for lateral entry)',
+      'Lump-sum allowance for college fee, computer, software, and tools'
+    ],
+    eligibilityCriteria: [
+      'Female candidate admitted to AICTE approved polytechnic institution for diploma',
+      'Family income not exceeding ₹8.00 Lakh per annum',
+      'Maximum two girls per family'
+    ],
+    requiredDocuments: [
+      'SSC / 10th Marks sheet',
+      'Polytechnic Bonafide certificate',
+      'Family Income certificate',
+      'Parent Declaration'
+    ],
+    selectionMethod: 'Merit list based on 10th standard percentage against state polytechnic quotas',
+    disbursementMode: 'Direct Benefit Transfer (DBT) to bank account',
+    applicationProcedure: 'Apply on NSP portal (scholarships.gov.in) with OTR and institute verification.',
+    faqs: [
+      {
+        q: 'What is the duration for diploma students?',
+        a: 'Maximum 3 years for first year students, and maximum 2 years for lateral entry students.'
+      }
+    ],
+    keywords: ['aicte', 'pragati', 'diploma', 'polytechnic', 'girls', 'female', 'technical', 'tools']
+  },
+  {
+    id: 'pm-usp-csss',
+    name: 'PM-USP Central Sector Scheme of Scholarship for College and University Students',
+    shortName: 'PM-USP CSSS',
+    ministry: 'Ministry of Education (Dept of Higher Education)',
+    portal: 'NSP',
+    targetGroup: 'Meritorious Class 12th passouts (above 80th percentile) from State & Central Boards',
+    category: 'Merit-cum-Means',
+    amount: '₹12,000 – ₹20,000 / year',
+    amountValue: 20000,
+    amountSubtitle: '₹12,000/yr for Graduation (1st–3rd yr) · ₹20,000/yr for Post-Graduation',
+    courseLevels: ['undergrad', 'postgrad'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: 450000,
+    familyIncomeCapFormatted: '≤ ₹4,50,000 / year',
+    domicileRequirement: 'Pan India (allocated across State Education Boards by population)',
+    minMarksRequirement: 80,
+    deadline: '2026-11-30',
+    keyBenefits: [
+      'Financial assistance to meet day-to-day higher education expenses',
+      'Graduation rate: ₹12,000 per annum for the first 3 years',
+      'Post-Graduation rate: ₹20,000 per annum (and for 4th/5th year of integrated/professional courses)',
+      'Total of 82,000 fresh scholarships awarded annually nationwide'
+    ],
+    eligibilityCriteria: [
+      'Applicant must be in the top 20th percentile list of the concerned Class 12 Board examination',
+      'Pursuing regular full-time degree course (distance/correspondence or diploma NOT eligible)',
+      'Gross parental/family annual income up to ₹4.50 Lakh',
+      'Not receiving any other central or state fee waiver/scholarship'
+    ],
+    requiredDocuments: [
+      'Class 12th Board marksheet and Roll Number matching NSP records',
+      'DigiLocker verified credentials (caste, Aadhaar, marksheets)',
+      'Current Financial Year Income Certificate',
+      'College Bonafide with AISHE code',
+      'Aadhaar seeded bank account'
+    ],
+    selectionMethod: 'State Board quota distribution in stream ratio 3:3:1 (Science:Humanities:Commerce) with 50% reservation for girls and statutory SC (15%), ST (7.5%), OBC (27%) reservations',
+    disbursementMode: 'Direct Benefit Transfer (DBT) directly into student’s Aadhaar-seeded account via PFMS',
+    applicationProcedure: 'Online submission on NSP (scholarships.gov.in) using One-Time Registration (OTR) and e-KYC.',
+    faqs: [
+      {
+        q: 'Are students taking a drop year after 12th eligible?',
+        a: 'No. Students who had taken a gap/drop after 12th class are not eligible for fresh PM-USP CSSS scholarships.'
+      },
+      {
+        q: 'What is the renewal condition?',
+        a: 'Securing at least 50% marks in annual exam and maintaining minimum 75% attendance without disciplinary complaints.'
+      }
+    ],
+    keywords: ['csss', 'pm-usp', 'higher education', 'college', 'university', 'merit', 'percentile', 'degree', 'education', 'mhrd']
+  },
+  {
+    id: 'pmss-railways',
+    name: 'Prime Minister’s Scholarship Scheme for Ministry of Railways (RPF/RPSF)',
+    shortName: 'PMSS Railways',
+    ministry: 'Ministry of Railways',
+    portal: 'NSP',
+    targetGroup: 'Dependent wards of serving or retired RPF / RPSF personnel',
+    category: 'Security Force Welfare',
+    amount: '₹30,000 – ₹36,000 / year',
+    amountValue: 36000,
+    amountSubtitle: '₹3,000/mo for girls (₹36,000/yr) · ₹2,500/mo for boys (₹30,000/yr)',
+    courseLevels: ['undergrad', 'diploma'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: null,
+    familyIncomeCapFormatted: 'No income ceiling (service rank priority applies)',
+    domicileRequirement: 'Pan India',
+    minMarksRequirement: 60,
+    deadline: '2026-11-15',
+    keyBenefits: [
+      'Encourages higher technical & professional education for children of Railway Protection Force personnel',
+      'Female wards: ₹3,000 per month (disbursed annually as ₹36,000)',
+      'Male wards: ₹2,500 per month (disbursed annually as ₹30,000)',
+      'Duration: 2 to 5 years according to course duration approved by regulatory body'
+    ],
+    eligibilityCriteria: [
+      'Dependent son/daughter of serving/retired RPF/RPSF personnel (including death during service)',
+      'Maximum two children of an RPF/RPSF personnel can avail simultaneously',
+      'Admitted to approved professional/technical courses (B.Tech, MBBS, BDS, MBA, MCA, etc.)',
+      'Minimum 60% marks in 10+2 or diploma'
+    ],
+    requiredDocuments: [
+      'Serving Certificate or Discharge Certificate of parent in RPF/RPSF',
+      'Class 12th / Diploma Marksheet',
+      'Admission fee receipt & Bonafide certificate from recognized college',
+      'Aadhaar card and bank details'
+    ],
+    selectionMethod: 'Order of preference based on category: Category I (Martyrs) to Category VII (Serving personnel)',
+    disbursementMode: 'Direct Benefit Transfer (DBT) directly into student account',
+    applicationProcedure: 'Online registration on National Scholarship Portal (www.scholarships.gov.in).',
+    faqs: [
+      {
+        q: 'Can lateral entry B.Tech students apply?',
+        a: 'Yes, students entering 2nd year B.Tech after polytechnic can apply if they obtained at least 60% marks in polytechnic.'
+      }
+    ],
+    keywords: ['railways', 'pmss', 'rpf', 'rpsf', 'security', 'technical', 'btech', 'mbbs', 'wards', 'defence']
+  },
+  {
+    id: 'ugc-pg-studies',
+    name: 'National Scholarship for Post Graduate Studies',
+    shortName: 'UGC PG Scholarship',
+    ministry: 'University Grants Commission (UGC)',
+    portal: 'NSP',
+    targetGroup: 'Students admitted to 1st year full-time Post-Graduate programs in Indian Universities/Colleges',
+    category: 'Post-Graduate Research & Merit',
+    amount: '₹1,50,000 / year',
+    amountValue: 150000,
+    amountSubtitle: '₹15,000 per month for 10 months each academic year (Total 20 months)',
+    courseLevels: ['postgrad'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: null,
+    familyIncomeCapFormatted: 'Merit-based (Open competition)',
+    domicileRequirement: 'All Indian States & UTs',
+    minMarksRequirement: 60,
+    deadline: '2026-11-25',
+    keyBenefits: [
+      'Stipend of ₹15,000 per month for 10 months in each year of PG study (Total ₹3,00,000 over 2 years)',
+      'Total 10,000 slots earmarked per annum for PG scholars across India',
+      'Supports Master of Arts, Sciences, Commerce, Engineering, and Management'
+    ],
+    eligibilityCriteria: [
+      'Admitted in 1st year of regular full-time Master degree program in recognized university/college',
+      'Student should not be receiving any other fellowship, stipend or salary',
+      'Distance, part-time or private mode courses are not eligible'
+    ],
+    requiredDocuments: [
+      'Undergraduate Degree certificate & final marksheet',
+      'University Post-Graduate admission proof & AISHE code',
+      'Bonafide student certificate',
+      'Aadhaar-seeded bank passbook'
+    ],
+    selectionMethod: 'National merit list prepared on the basis of marks scored in qualifying graduation examination with reservation quotas',
+    disbursementMode: 'Direct Benefit Transfer (DBT) through PFMS on monthly/quarterly schedule',
+    applicationProcedure: 'Online application through National Scholarship Portal (NSP).',
+    faqs: [
+      {
+        q: 'How many scholarships are available under this UGC scheme?',
+        a: 'A total of 10,000 fresh PG scholarships are awarded annually.'
+      }
+    ],
+    keywords: ['ugc', 'postgraduate', 'masters', 'pg', 'stipend', 'higher studies', 'university', 'ma', 'msc', 'mtech']
+  },
+  {
+    id: 'nec-stipend-bookgrant',
+    name: 'Financial Support to the Students of NER for Higher Professional Courses (NEC Stipend)',
+    shortName: 'NEC Stipend & Book Grant',
+    ministry: 'Ministry of Development of North Eastern Region (DoNER) / NEC',
+    portal: 'NSP',
+    targetGroup: 'Permanent residents of North Eastern Region pursuing professional diploma, degree, PG, or M.Phil/Ph.D',
+    category: 'Regional Development',
+    amount: '₹20,000 – ₹30,000 / year',
+    amountValue: 30000,
+    amountSubtitle: 'Annual stipend + initial book grant based on course level',
+    courseLevels: ['diploma', 'undergrad', 'postgrad', 'research'],
+    eligibleGenders: ['all', 'female', 'male', 'other'],
+    familyIncomeCap: 800000,
+    familyIncomeCapFormatted: '≤ ₹8,00,000 / year',
+    domicileRequirement: 'Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, or Tripura',
+    minMarksRequirement: 55,
+    deadline: '2026-11-15',
+    keyBenefits: [
+      'Financial support for students of North Eastern States studying within or outside the region',
+      'Diploma level: ₹20,000/year; Degree level: ₹22,000/year; PG level: ₹25,000/year; M.Phil/Ph.D: ₹30,000/year',
+      'One-time book grant sanctioned at commencement of course'
+    ],
+    eligibilityCriteria: [
+      'Permanent resident of any of the 8 North Eastern States',
+      'Admitted to a recognized institution for approved technical or professional courses',
+      'Parental annual income from all sources not exceeding ₹8.00 Lakh'
+    ],
+    requiredDocuments: [
+      'Permanent Resident Certificate (PRC) from Deputy Commissioner / District Magistrate',
+      'Caste Certificate (if applicable)',
+      'Income Certificate',
+      'Admission proof and marksheet of qualifying examination'
+    ],
+    selectionMethod: 'Merit list prepared state-wise based on entrance exam or qualifying exam marks',
+    disbursementMode: 'Direct Benefit Transfer (DBT) via PFMS to Aadhaar seeded bank account',
+    applicationProcedure: 'Online registration on NSP choosing DoNER - NEC Stipend scheme.',
+    faqs: [
+      {
+        q: 'Can a student studying outside the North East apply for NEC Stipend?',
+        a: 'Yes, as long as the student is a permanent resident of one of the 8 NE states and enrolled in a recognized institution anywhere in India.'
+      }
+    ],
+    keywords: ['nec', 'north east', 'doner', 'assam', 'nagaland', 'manipur', 'meghalaya', 'mizoram', 'arunachal', 'tripura', 'sikkim', 'stipend', 'book grant']
+  }
+];
+
+// Write to db.json
+const dbContent = {
+  scholarships,
+  meta: {
+    totalSchemes: scholarships.length,
+    updatedAt: new Date().toISOString(),
+    sourceDatasets: ['NetraVerse/indian-govt-scholarships', 'Ministry of Tribal Affairs Official Directives'],
+    apiVersion: '1.0.0'
+  }
+};
+
+fs.writeFileSync(path.resolve('db.json'), JSON.stringify(dbContent, null, 2), 'utf8');
+console.log('db.json populated with', scholarships.length, 'rich scholarship records.');
+
+// Also save to src/data/unified-scholarships.json for direct client/SSR imports
+fs.writeFileSync(path.resolve('src/data/unified-scholarships.json'), JSON.stringify(dbContent, null, 2), 'utf8');
+console.log('src/data/unified-scholarships.json created successfully.');

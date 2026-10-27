@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="screen-title screen-description"><title id="screen-title">Help and Saarthi</title><desc id="screen-description">Ask about an application, contact support, or follow a help request.</desc>
+  
+  <defs>
+    <style>
+      * { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        text-rendering: geometricPrecision; 
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .mono { 
+        font-family: 'Trebuchet MS', 'Nirmala UI', Arial, sans-serif;
+        font-feature-settings: "tnum" 1; 
+      }
+      .stat-anchor { font-weight: 700; font-variant-numeric: tabular-nums; }
+      .badge { font-weight: 700; text-anchor: middle; }
+    </style>
+
+    <!-- USWDS Gradients -->
+    <linearGradient id="govPrimaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+    <linearGradient id="govOchreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A4F13" />
+      <stop offset="100%" stop-color="#8A4F13" />
+    </linearGradient>
+    <linearGradient id="govHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075A46" />
+      <stop offset="100%" stop-color="#075A46" />
+    </linearGradient>
+
+    <!-- Elevation is reserved for dialogs. -->
+    <filter id="modalShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="28" flood-color="#152E35" flood-opacity="0.32" />
+    </filter>
+
+  </defs>
+  <rect width="100%" height="100%" fill="#EEF3F3" />
+  
+  <!-- USWDS Official Government Banner -->
+  <g class="usa-banner">
+    <rect width="1440" height="32" fill="#EEF3F3" stroke="#CFDADD" />
+    <g transform="translate(48, 6)">
+      <!-- Government Seal / Ashoka Emblem Vector Graphic -->
+      <circle cx="10" cy="10" r="9" fill="#075A46" />
+      <circle cx="10" cy="10" r="5" fill="#FFFFFF" />
+      <circle cx="10" cy="10" r="2.5" fill="#075A46" />
+      
+      <text x="26" y="14" font-size="11" font-weight="600" fill="#152E35">
+        Tribe Saarthi · Scholarship support for tribal students
+      </text>
+
+      <!-- Security HTTPS Seal -->
+      <g transform="translate(1120, 1)">
+        
+    <g transform="translate(0, 2) scale(0.5833333333333334)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </g>
+        <text x="18" y="13" font-size="11" font-weight="600" fill="#075A46">Design preview · Sample records</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- USWDS Header &amp; Navigation -->
+  <g transform="translate(0, 32)">
+    <rect width="1440" height="72" fill="#FFFFFF" stroke="#CFDADD" />
+    <rect width="1440" height="3" fill="url(#govPrimaryGrad)" />
+
+    <g transform="translate(48, 16)">
+      <!-- Logo &amp; Brand -->
+      <circle cx="20" cy="20" r="20" fill="url(#govPrimaryGrad)" />
+      <text x="20" y="26" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">TS</text>
+
+      <text x="50" y="18" font-size="20" font-weight="700" fill="#152E35">Tribe Saarthi</text>
+      <text x="50" y="32" font-size="10.5" font-weight="700" fill="#075A46">Scholar Portal · MoTA</text>
+
+      <!-- Search Bar -->
+      <g transform="translate(260, 0)">
+        <rect width="320" height="40" rx="8" fill="#EEF3F3" stroke="#CBD5E1" />
+        
+    <g transform="translate(12, 11) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </g>
+        <text x="38" y="25" font-size="12" fill="#52666D">Search scholarships, schemes, records...</text>
+      </g>
+
+      <!-- Language Selector -->
+      <g transform="translate(620, 6)">
+        <rect width="110" height="28" rx="6" fill="#EEF3F3" stroke="#CFDADD" />
+        <text x="55" y="18" font-size="10.5" font-weight="700" fill="#152E35" text-anchor="middle">English / हिंदी ▾</text>
+      </g>
+
+      <!-- Right User Controls -->
+      <g transform="translate(1060, 0)">
+        <!-- Bell Notification -->
+        <circle cx="16" cy="20" r="18" fill="#EEF3F3" stroke="#CFDADD" />
+        
+    <g transform="translate(7, 11) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+    </g>
+        <circle cx="23" cy="12" r="4.5" fill="#DC2626" />
+
+        <!-- User Profile Pill -->
+        <g transform="translate(50, 0)">
+          <rect width="240" height="40" rx="20" fill="#EEF3F3" stroke="#CFDADD" />
+          <circle cx="20" cy="20" r="16" fill="url(#govPrimaryGrad)" />
+          <text x="20" y="25" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">MB</text>
+          
+          <text x="44" y="18" font-size="13" font-weight="700" fill="#152E35">Mohan Birhor</text>
+          <text x="44" y="33" font-size="11" fill="#52666D">BIT Mesra · 2024-CSE-104</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- USWDS Left Navigation Rail -->
+  <g transform="translate(0, 104)">
+    <rect width="240" height="856" fill="#FFFFFF" stroke="#CFDADD" />
+    
+    <g transform="translate(16, 24)">
+      
+          <g transform="translate(0, 0)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Dashboard</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 48)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Scholarships</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 96)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+      <polyline points="2 17 12 22 22 17"/>
+      <polyline points="2 12 12 17 22 12"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Applications</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 144)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14 2 14 8 20 8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">My documents</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 192)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="7" r="4"/>
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">My profile</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 240)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Family access</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 288)">
+            
+            <rect width="208" height="42" rx="8" fill="transparent" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#52666D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="23 4 23 10 17 10"/>
+      <polyline points="1 20 1 14 7 14"/>
+      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="600" fill="#52666D">Saved changes</text>
+            
+          </g>
+        
+
+          <g transform="translate(0, 336)">
+            <rect x="-16" y="0" width="4" height="42" fill="#075A46" rx="2" />
+            <rect width="208" height="42" rx="8" fill="#E8F2EE" />
+            
+    <g transform="translate(14, 12) scale(0.75)" fill="none" stroke="#075A46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+      <line x1="12" y1="17" x2="12.01" y2="17"/>
+    </g>
+            <text x="44" y="26" font-size="14" font-weight="800" fill="#075A46">Help and Saarthi</text>
+            <circle cx="194" cy="21" r="3" fill="#075A46" />
+          </g>
+        
+
+      <!-- Bottom System Resilience Indicator -->
+      <g transform="translate(0, 680)">
+        <rect width="208" height="74" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+        <circle cx="20" cy="24" r="6" fill="#075A46" />
+        <text x="34" y="27" font-size="12" font-weight="700" fill="#075A46">Your work is saved</text>
+        <text x="34" y="44" font-size="11" fill="#52666D">Last sync: 18 Oct, 15:45</text>
+        <text x="14" y="62" font-size="11" fill="#52666D">Need help? Open Saarthi.</text>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(268, 126)">
+    <!-- Top Bar -->
+    <g>
+      <rect width="1144" height="74" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+      <g transform="translate(24, 18)">
+        <circle cx="20" cy="20" r="20" fill="url(#govPrimaryGrad)" />
+        
+    <g transform="translate(10, 10) scale(0.8333333333333334)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </g>
+        <text x="52" y="18" font-size="16" font-weight="700" fill="#152E35">Saarthi Multilingual Assistance &amp; Grievance Redressal</text>
+        <text x="52" y="34" font-size="11" fill="#52666D">24/7 vernacular AI guide for tribal scholars · Section 508 voice-enabled accessible support</text>
+
+        <!-- Vernacular Language Selectors -->
+        <g transform="translate(730, 2)">
+          <rect x="0" y="0" width="70" height="34" rx="17" fill="#075A46" />
+          <text x="35" y="21" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">English</text>
+
+          <rect x="76" y="0" width="68" height="34" rx="17" fill="#EEF3F3" />
+          <text x="110" y="21" font-size="11" font-weight="700" fill="#52666D" text-anchor="middle">हिन्दी</text>
+
+          <rect x="150" y="0" width="80" height="34" rx="17" fill="#EEF3F3" />
+          <text x="190" y="21" font-size="11" font-weight="700" fill="#52666D" text-anchor="middle">ᱥᱟᱱᱛᱟᱲᱤ</text>
+
+          <rect x="236" y="0" width="74" height="34" rx="17" fill="#EEF3F3" />
+          <text x="273" y="21" font-size="11" font-weight="700" fill="#52666D" text-anchor="middle">गोंडी</text>
+
+          <rect x="316" y="0" width="88" height="34" rx="17" fill="#FEF3C7" stroke="#FDE68A" />
+          <text x="360" y="21" font-size="10.5" font-weight="700" fill="#92400E" text-anchor="middle">Voice Mode</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Main Section -->
+    <g transform="translate(0, 94)">
+      <!-- Left: Interactive Assistant Chat Surface -->
+      <g>
+        <rect width="690" height="710" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+        <g transform="translate(24, 20)">
+          <text x="0" y="16" font-size="15" font-weight="700" fill="#152E35">Conversation with Saarthi AI</text>
+          <text x="0" y="32" font-size="11" fill="#075A46" font-weight="600">Secure Government AI Agent · Session #SA-2026-8819</text>
+          <line x1="0" y1="44" x2="642" y2="44" stroke="#EEF3F3" />
+
+          <!-- Chat Message 1: Scholar -->
+          <g transform="translate(180, 60)">
+            <rect width="462" height="72" rx="8" fill="#075A46" />
+            <text x="18" y="24" font-size="12" font-weight="700" fill="#FFFFFF">Mohan Birhor (Scholar)</text>
+            <text x="18" y="44" font-size="12" fill="#E8F2EE" leading="1.4">What is the exact disbursement timeline for my BIT Mesra PVTG special maintenance allowance?</text>
+          </g>
+
+          <!-- Chat Message 2: Saarthi AI -->
+          <g transform="translate(0, 146)">
+            <rect width="642" height="240" rx="8" fill="#EEF3F3" stroke="#CFDADD" />
+            <g transform="translate(18, 16)">
+              <circle cx="16" cy="16" r="16" fill="url(#govPrimaryGrad)" />
+              <text x="16" y="21" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">SA</text>
+              <text x="42" y="15" font-size="13" font-weight="700" fill="#152E35">Saarthi AI Assistant</text>
+              <text x="42" y="29" font-size="10" fill="#52666D">Verified against MoTA National Scholarship Regulations 2026</text>
+
+              <text x="0" y="58" font-size="12.5" fill="#152E35" font-weight="600">Johar Mohan! Here is your personalized scholarship timeline:</text>
+              <text x="0" y="80" font-size="12" fill="#152E35" leading="1.5">1. <tspan font-weight="700">Verification Status:</tspan> BIT Mesra Nodal Desk approved your application on 14 Oct 2026.</text>
+              <text x="0" y="100" font-size="12" fill="#152E35" leading="1.5">2. <tspan font-weight="700">Current Step:</tspan> District Welfare Office Latehar is processing statutory concurrence (SLA: 48h).</text>
+              <text x="0" y="120" font-size="12" fill="#152E35" leading="1.5">3. <tspan font-weight="700">Total Sanction Amount:</tspan> ₹132,000 (Tuition ₹98,000 + Maintenance ₹24,000 + Book ₹10,000).</text>
+              <text x="0" y="140" font-size="12" fill="#152E35" leading="1.5">4. <tspan font-weight="700">Target Bank Account:</tspan> Bank of India · ••••••••9012 (Aadhaar Seeded &amp; NPCI Validated).</text>
+
+              <rect x="0" y="158" width="606" height="52" rx="8" fill="#E8F2EE" stroke="#A7F3D0" />
+              <text x="14" y="178" font-size="11" font-weight="700" fill="#075A46">Official Assurance:</text>
+              <text x="14" y="196" font-size="10.5" fill="#075A46">As a recognized PVTG Birhor scholar, your payment receives Tier-1 priority PFMS queue sequencing.</text>
+            </g>
+          </g>
+
+          <!-- Suggested Quick Prompts -->
+          <g transform="translate(0, 404)">
+            <text x="0" y="14" font-size="11" font-weight="700" fill="#52666D">Suggested statutory prompts</text>
+            <g transform="translate(0, 24)">
+              <rect x="0" y="0" width="200" height="32" rx="8" fill="#EEF3F3" />
+              <text x="100" y="20" font-size="10.5" font-weight="700" fill="#075A46" text-anchor="middle">Explain PVTG Entitlement</text>
+
+              <rect x="210" y="0" width="190" height="32" rx="8" fill="#EEF3F3" />
+              <text x="305" y="20" font-size="10.5" font-weight="700" fill="#075A46" text-anchor="middle">How DBT Seeding Works?</text>
+
+              <rect x="410" y="0" width="220" height="32" rx="8" fill="#EEF3F3" />
+              <text x="520" y="20" font-size="10.5" font-weight="700" fill="#075A46" text-anchor="middle">Connect to Latehar Nodal Officer</text>
+            </g>
+          </g>
+
+          <!-- Input Box -->
+          <g transform="translate(0, 500)">
+            <rect width="642" height="150" rx="8" fill="#EEF3F3" stroke="#CBD5E1" />
+            <text x="20" y="32" font-size="12" fill="#52666D">Ask Saarthi in English, Hindi, Santhali or Gondi (Type or press mic)...</text>
+            
+            <!-- Voice Bar Simulation -->
+            <g transform="translate(20, 56)">
+              <line x1="0" y1="10" x2="6" y2="10" stroke="#075A46" stroke-width="3" stroke-linecap="round" />
+              <line x1="12" y1="4" x2="18" y2="4" stroke="#075A46" stroke-width="3" stroke-linecap="round" />
+              <line x1="24" y1="14" x2="30" y2="14" stroke="#075A46" stroke-width="3" stroke-linecap="round" />
+              <line x1="36" y1="2" x2="42" y2="2" stroke="#075A46" stroke-width="3" stroke-linecap="round" />
+              <line x1="48" y1="12" x2="54" y2="12" stroke="#075A46" stroke-width="3" stroke-linecap="round" />
+              <text x="68" y="14" font-size="10.5" font-weight="700" fill="#075A46">Voice Input: "Click to speak in your native dialect"</text>
+            </g>
+
+            <rect x="20" y="96" width="130" height="38" rx="8" fill="#FEF3C7" stroke="#FDE68A" />
+            <text x="85" y="120" font-size="11" font-weight="700" fill="#92400E" text-anchor="middle">🎙 Hold to Speak</text>
+
+            <rect x="502" y="96" width="120" height="38" rx="8" fill="url(#govPrimaryGrad)" />
+            <text x="562" y="120" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Send Query</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Right: Formal Grievances &amp; Toll-Free Desk -->
+      <g transform="translate(714, 0)">
+        <!-- Grievance Ticket Card -->
+        <g>
+          <rect width="430" height="390" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+          <g transform="translate(24, 20)">
+            <text x="0" y="16" font-size="14" font-weight="700" fill="#152E35">Formal Grievance Tickets</text>
+            <text x="0" y="32" font-size="11" fill="#52666D">Centralized Public Grievance Redress and Monitoring System</text>
+            <line x1="0" y1="44" x2="382" y2="44" stroke="#EEF3F3" />
+
+            <!-- Active Ticket Detail -->
+            <g transform="translate(0, 56)">
+              <rect width="382" height="170" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+              <g transform="translate(16, 16)">
+                <text x="0" y="14" font-size="12" font-weight="700" fill="#152E35">Ticket #CPGRAMS-2026-9041</text>
+                <rect x="260" y="0" width="90" height="20" rx="10" fill="#E8F2EE" />
+                <text x="305" y="14" font-size="8.5" font-weight="700" fill="#075A46" class="badge">Resolved ✓</text>
+
+                <text x="0" y="34" font-size="11" fill="#52666D">Subject: DigiLocker Caste Certificate Re-synchronization</text>
+                <text x="0" y="50" font-size="10.5" fill="#52666D">Filed: 08 Oct 2026 · Redressed: 09 Oct 2026 (Resolution SLA: 24h)</text>
+
+                <g transform="translate(0, 68)">
+                  
+    <g transform="translate(0, 0)" class="pipeline-diagram-component">
+      <line x1="20" y1="14" x2="330" y2="14" stroke="#CFDADD" stroke-width="3" stroke-linecap="round" />
+      
+          <g>
+            
+            <circle cx="20" cy="14" r="12" fill="#075A46" />
+            
+    <g transform="translate(14, 8) scale(0.5)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </g>
+          
+            <text x="20" y="36" font-size="10" font-weight="600" fill="#075A46" text-anchor="middle">Filed</text>
+            <text x="20" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">Portal Ack</text>
+          </g>
+        
+
+          <g>
+            
+            <circle cx="175" cy="14" r="12" fill="#075A46" />
+            
+    <g transform="translate(169, 8) scale(0.5)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </g>
+          
+            <text x="175" y="36" font-size="10" font-weight="600" fill="#075A46" text-anchor="middle">Officer Assign</text>
+            <text x="175" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">Latehar Desk</text>
+          </g>
+        
+
+          <g>
+            
+            <circle cx="330" cy="14" r="12" fill="#075A46" />
+            
+    <g transform="translate(324, 8) scale(0.5)" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </g>
+          
+            <text x="330" y="36" font-size="10" font-weight="600" fill="#075A46" text-anchor="middle">Redressed</text>
+            <text x="330" y="52" font-size="10" font-weight="400" fill="#52666D" text-anchor="middle">Key Re-synced</text>
+          </g>
+        
+    </g>
+  
+                </g>
+              </g>
+            </g>
+
+            <rect x="0" y="246" width="382" height="42" rx="8" fill="url(#govPrimaryGrad)" />
+            <text x="191" y="272" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Create a help request</text>
+
+            <g transform="translate(0, 304)">
+              
+    <g class="donut-chart-component">
+      <path d="M 48.00 4.00 A 32 32 0 1 1 47.94 4.00 L 47.97 16.00 A 20 20 0 1 0 48.00 16.00 Z" fill="#075A46" stroke="#FFFFFF" stroke-width="2" />
+      
+    <text x="48" y="34" font-size="14" font-weight="700" fill="#152E35" text-anchor="middle" class="stat-anchor">100%</text>
+    <text x="48" y="49" font-size="8.5" font-weight="700" fill="#52666D" text-anchor="middle">SLA</text>
+  
+      <g transform="translate(96, 18)">
+      
+          <g transform="translate(0, 0)">
+            <rect x="0" y="2" width="9" height="9" rx="2.5" fill="#075A46" />
+            <text x="14" y="10" font-size="10.5" font-weight="600" fill="#152E35">Resolved (Within 48h SLA)</text>
+            <text x="276" y="10" font-size="10.5" font-weight="700" fill="#075A46" text-anchor="end">100% · 1/1</text>
+          </g>
+        
+    </g>
+    </g>
+  
+            </g>
+          </g>
+        </g>
+
+        <!-- MoTA Toll-Free Helplines -->
+        <g transform="translate(0, 410)">
+          <rect width="430" height="300" rx="8" fill="#FFFFFF" stroke="#CFDADD" />
+          <g transform="translate(24, 20)">
+            <text x="0" y="16" font-size="14" font-weight="700" fill="#152E35">National MoTA Tribal Helplines</text>
+            <text x="0" y="32" font-size="11" fill="#52666D">Toll-free direct telephone support in scheduled tribal languages</text>
+            <line x1="0" y1="44" x2="382" y2="44" stroke="#EEF3F3" />
+
+            <!-- Helpline 1 -->
+            <g transform="translate(0, 56)">
+              <rect width="382" height="88" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+              <g transform="translate(16, 16)">
+                <text x="0" y="14" font-size="11" font-weight="700" fill="#075A46">National tribal scholarship cell</text>
+                <text x="0" y="38" font-size="18" font-weight="700" fill="#152E35" class="mono">1800-11-7788</text>
+                <text x="0" y="56" font-size="10.5" fill="#52666D">Operating: Mon–Sat, 09:00 AM – 06:00 PM IST (Toll-Free)</text>
+              </g>
+            </g>
+
+            <!-- Helpline 2 -->
+            <g transform="translate(0, 160)">
+              <rect width="382" height="88" rx="10" fill="#EEF3F3" stroke="#CFDADD" />
+              <g transform="translate(16, 16)">
+                <text x="0" y="14" font-size="11" font-weight="700" fill="#8A4F13">Jharkhand state welfare direct help</text>
+                <text x="0" y="38" font-size="18" font-weight="700" fill="#152E35" class="mono">1800-345-6543</text>
+                <text x="0" y="56" font-size="10.5" fill="#52666D">Tribal Welfare Commissionerate, Ranchi Desk</text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

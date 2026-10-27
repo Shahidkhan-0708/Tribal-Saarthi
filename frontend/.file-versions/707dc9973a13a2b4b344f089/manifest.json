@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "fileName": "application-tracker.html",
+  "currentVersionId": "8107e1d8-022d-400d-a602-0f41024ce196",
+  "entries": [
+    {
+      "id": "dfd08e07-3852-4ff8-b199-421a0c0c0b93",
+      "fileName": "application-tracker.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1792820816548,
+      "source": "ai",
+      "prompt": "continue",
+      "size": 11218,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-dfd08e07-3852-4ff8-b199-421a0c0c0b93.html",
+      "promptSource": "message",
+      "contentDigest": "ac6e8284903e67fc57061fc33344c781e513225864fc36b906031987a9590c75"
+    },
+    {
+      "id": "8107e1d8-022d-400d-a602-0f41024ce196",
+      "fileName": "application-tracker.html",
+      "version": 2,
+      "label": "Version 2",
+      "createdAt": 1792821615109,
+      "source": "ai",
+      "prompt": "Act as a Principal UI/UX Architect. Completely overhaul the visual language of this entire multi-page application and marketing website. Elevate the aesthetic from a basic wireframe clone to a hyper-premium, magazine-grade digital system inspired by the design languages of Apple, Linear, and Atelier Zero. \n\nApply these universal styles across all layouts, dashboards, marketing pages, and forms:\n\n1. Global Grid, Spatial Systems, & Layout Architecture\n   - Strict Desktop Fidelity: Ban all mobile-first components (like bottom navigation bars or oversized mobile tap targets) from desktop views. Layouts must use professional multi-column structures, thin headers, or minimalist sidebars.\n   - Container Rules: Build all content sections using clean white cards (#FFFFFF) sitting on a uniform, premium off-white canvas (#F9FAFB). \n   - Hairline Rules: Eliminate all heavy drop-shadows and thick borders. Separate sections exclusively using sharp, 1px translucent grey rules (#E2E8F0).\n   - Uniform Radius: Enforce a strict 6px or 8px maximum border-radius across all components, input fields, images, and buttons for a crisp, precise feel.\n\n2. Global Typographic Scale & Editorial Hierarchy\n   - Unified Typeface: Apply a clean, high-performance geometric sans-serif (such as Inter or SF Pro) universally. \n   - Strict Hierarchy: \n     * Hero / Primary Page Titles: Make them crisp, authoritative, and set in deep charcoal (#0F172A) with slight negative letter-spacing (-0.02em). Avoid massive, blown-out font sizes.\n     * Section Subheaders / Micro-Labels: Use small caps with tracking (+0.05em) in a muted slate gray (#64748B) for labels like dates, states, metadata, or table headers.\n     * Content Text: Set body copy to a highly legible charcoal tone (#334155) with generous line-height (1.6) to provide structural breathing room.\n\n3. Signature Component Styling (Uniform System)\n   - High-End Interactive Buttons: Replace saturated, generic blue and orange button overrides. Primary buttons must be a sleek, solid midnight-slate (#1E293B) or pure black with a crisp white micro-label. Secondary buttons must be clean outline actions or text-only links.\n   - Elite Enterprise Badges: Status badges (e.g., success, review, match states) must never use heavy saturated borders or backgrounds. Redesign them into elegant tags using desaturated, whisper-soft pastel fills coupled with high-contrast, deeply saturated text colors (e.g., a faint mint tint background with crisp emerald text).\n   - Forms & Input States: Standardize all form inputs. Use clean, low-profile text containers with thin borders that shift to a subtle 1px slate gray outline on active focus.\n\n4. Multi-Page Cohesion\n   - Ensure the public-facing pages, authentication screens, document repositories, and operational flow modules share this exact structural identity, color weight, padding scale, and spatial constraint without exception.\n\nExecute a comprehensive site-wide refactoring, keeping the functional architecture intact but translating every surface into an elite, pixel-perfect digital asset.",
+      "size": 11216,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0002-8107e1d8-022d-400d-a602-0f41024ce196.html",
+      "contentDigest": "c86bd5ca11b049d10e9b60608485af2ebc4fd96adce6ff6bcbb51080be69c00d",
+      "promptSource": "message"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+.staging/
+.env
+.env.*
+.vercel/
+artifacts/
+.gsd/
+.agents/
+.pilot-browser-dist/
+test-results/
+playwright-report/
+node_modules/

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case inspection · Tribe Saarthi</title>
+<link rel="stylesheet" href="assets/app.css">
+<style>
+  .ev{padding:18px 20px;border-bottom:1px solid var(--line)}
+  .ev:last-child{border-bottom:0}
+  .ev-head{display:flex;align-items:flex-start;gap:12px}
+  .ev-num{width:22px;height:22px;border-radius:6px;background:var(--canvas);border:1px solid var(--line);display:grid;place-items:center;font-size:10px;font-weight:700;color:var(--muted);flex:none;margin-top:1px}
+  .ev-body{margin:12px 0 0 34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px}
+  .ev-item .el{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--meta)}
+  .ev-item .ev-v{font-size:11.5px;margin-top:2px;line-height:1.5;color:var(--ink-2)}
+  .ev-hash{margin:8px 0 0 34px;font-family:var(--mono);font-size:9.5px;color:var(--meta);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .concur{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .concur > div{padding:14px;background:var(--surface-2)}
+  .concur > div + div{border-left:1px solid var(--line)}
+  @media (max-width:720px){.ev-body{grid-template-columns:minmax(0,1fr);margin-left:0}.ev-hash{margin-left:0}.concur{grid-template-columns:minmax(0,1fr)}.concur>div+div{border-left:0;border-top:1px solid var(--line)}}
+</style>
+</head>
+<body data-role="officer" data-page="officer-case-inspection">
+<a class="skip" href="#main">Skip to content</a>
+
+<main class="page wide" id="main" data-od-id="officer-case-inspection-main">
+  <div class="page-head">
+    <div>
+      <div class="crumb"><a href="officer-review-queue.html">Review queue</a><svg class="i-sm"><use href="#i-chevronRight"/></svg><span>Case #TS-2026-88194</span></div>
+      <h1 class="page-title" data-od-id="officer-case-inspection-title">Review Mohan Birhor's application</h1>
+      <p class="page-sub">Case #TS-2026-88194 · BIT Mesra · Birhor (PVTG Tier-1) · SLA clock 24h remaining.</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn btn-secondary" type="button" data-open="noticeModal">
+        <svg class="i"><use href="#i-alert"/></svg>Issue notice</button>
+      <a class="btn btn-primary" href="sanction-signing.html" data-od-id="officer-case-inspection-primary-cta">
+        <svg class="i"><use href="#i-signature"/></svg>Approve with DSC</a>
+    </div>
+  </div>
+
+  <section class="card" style="margin-bottom:16px">
+    <div class="card-b" style="padding:18px 22px">
+      <div class="flex between center wrap gap16">
+        <div class="flex center gap14">
+          <span class="avatar avatar-lg">MB</span>
+          <div>
+            <div class="flex center gap8 wrap"><h2 class="h3">Mohan Birhor</h2><span class="badge badge-blue">PVTG tier-1</span><span class="badge badge-amber"><span class="bdot"></span>Under review</span></div>
+            <div class="micro" style="margin-top:3px">BIT Mesra, Ranchi · B.Tech Computer Science, 2nd year · Roll #2024-CSE-104</div>
+          </div>
+        </div>
+        <div class="flex gap24 wrap">
+          <div><div class="eyebrow">Claimed sanction</div><div class="h4 num" style="margin-top:3px">₹1,32,000</div></div>
+          <div><div class="eyebrow">Submitted</div><div class="h4" style="margin-top:3px">12 Oct 2026</div></div>
+          <div><div class="eyebrow">SLA remaining</div><div class="h4" style="margin-top:3px;color:var(--red)">24 hours</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid g-main" style="align-items:start">
+    <div class="stack">
+      <section class="card">
+        <div class="card-h">
+          <div>
+            <h2 class="h3">DigiLocker vs stated data cross-examination</h2>
+            <p class="micro" style="margin-top:3px">Automated verification against Government of Jharkhand state repositories.</p>
+          </div>
+          <span class="badge badge-green"><svg class="i-sm" style="width:9px;height:9px"><use href="#i-check"/></svg>4 of 4 match</span>
+        </div>
+
+        <div class="ev">
+          <div class="ev-head">
+            <span class="ev-num">1</span>
+            <div class="grow">
+              <div class="flex between gap8 wrap"><div class="h4">Tribal community &amp; PVTG classification</div><span class="badge badge-green">Perfect match</span></div>
+              <div class="micro" style="margin-top:2px">Verified against the state ST register and SDO Mahuadanr certificate.</div>
+            </div>
+          </div>
+          <div class="ev-body">
+            <div class="ev-item"><div class="el">Candidate claim</div><div class="ev-v">Birhor Scheduled Tribe (PVTG Tier-1)</div></div>
+            <div class="ev-item"><div class="el">DigiLocker record</div><div class="ev-v">Birhor · Cert #JH/ST/2023/88194 · SDO Mahuadanr</div></div>
+          </div>
+          <div class="ev-hash">SHA-256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4…</div>
+        </div>
+
+        <div class="ev">
+          <div class="ev-head">
+            <span class="ev-num">2</span>
+            <div class="grow">
+              <div class="flex between gap8 wrap"><div class="h4">Annual family gross income</div><span class="badge badge-green">Statutory pass</span></div>
+              <div class="micro" style="margin-top:2px">Within the ₹2.50 lakh ceiling for full grant coverage.</div>
+            </div>
+          </div>
+          <div class="ev-body">
+            <div class="ev-item"><div class="el">Candidate claim</div><div class="ev-v">₹1,20,000 / year</div></div>
+            <div class="ev-item"><div class="el">DigiLocker record</div><div class="ev-v">₹1,20,000 · Revenue Circle Latehar · valid till Mar 2027</div></div>
+          </div>
+          <div class="ev-hash">SHA-256 f482a014948a901ba8472910c0194821a810f821ba…</div>
+        </div>
+
+        <div class="ev">
+          <div class="ev-head">
+            <span class="ev-num">3</span>
+            <div class="grow">
+              <div class="flex between gap8 wrap"><div class="h4">Academic enrollment &amp; standing</div><span class="badge badge-green">NKN verified</span></div>
+              <div class="micro" style="margin-top:2px">College desk attestation matched to the APAAR academic record.</div>
+            </div>
+          </div>
+          <div class="ev-body">
+            <div class="ev-item"><div class="el">College attestation</div><div class="ev-v">BIT Mesra · Roll #2024-CSE-104 · B.Tech CSE</div></div>
+            <div class="ev-item"><div class="el">Academic record</div><div class="ev-v mono">APAAR 9482-1049-5821 · CGPA 8.84 · clean standing</div></div>
+          </div>
+          <div class="ev-hash">Attested by Dr. K. Soren, BIT Mesra nodal ST desk · 14 Oct 2026</div>
+        </div>
+
+        <div class="ev">
+          <div class="ev-head">
+            <span class="ev-num">4</span>
+            <div class="grow">
+              <div class="flex between gap8 wrap"><div class="h4">Aadhaar-seeded PFMS bank account</div><span class="badge badge-green">NPCI active</span></div>
+              <div class="micro" style="margin-top:2px">Account verified by penny-drop validation.</div>
+            </div>
+          </div>
+          <div class="ev-body">
+            <div class="ev-item"><div class="el">Target account</div><div class="ev-v">Bank of India · ••••9012 · Mesra branch</div></div>
+            <div class="ev-item"><div class="el">NPCI mapper</div><div class="ev-v">Aadhaar linked &amp; active for direct benefit transfer</div></div>
+          </div>
+          <div class="ev-hash">IFSC BKID0004910 · zero-rejection check passed 14 Oct 2026</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Multi-tier concurrence pipeline</h2><span class="badge badge-amber">Stage 1 of 3</span></div>
+        <div class="card-b">
+          <div class="concur">
+            <div>
+              <div class="flex center gap8"><svg class="i-sm" style="stroke:var(--blue)"><use href="#i-clock"/></svg><span class="m-lab">College desk</span></div>
+              <div class="h4" style="margin-top:8px">Dr. K. Soren</div>
+              <div class="micro" style="margin-top:2px">Review in progress · your signature</div>
+            </div>
+            <div>
+              <div class="flex center gap8"><svg class="i-sm" style="stroke:var(--meta)"><use href="#i-building"/></svg><span class="m-lab">District concurrence</span></div>
+              <div class="h4" style="margin-top:8px;color:var(--muted)">Latehar office</div>
+              <div class="micro" style="margin-top:2px">Follows your approval</div>
+            </div>
+            <div>
+              <div class="flex center gap8"><svg class="i-sm" style="stroke:var(--meta)"><use href="#i-scale"/></svg><span class="m-lab">Central sanction</span></div>
+              <div class="h4" style="margin-top:8px;color:var(--muted)">MoTA treasury</div>
+              <div class="micro" style="margin-top:2px">PFMS release</div>
+            </div>
+          </div>
+          <div class="callout info mt16">
+            <svg class="i"><use href="#i-shield"/></svg>
+            <div><b>No confidence score is used here.</b> The decision rests on the four evidence checks above. Approving with your DSC carries statutory responsibility.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Evidence coverage</h2><span class="badge badge-green">Complete</span></div>
+        <div class="card-b">
+          <div class="flex center gap16">
+            <div class="donut" style="width:100px;height:100px">
+              <svg viewBox="0 0 118 118" aria-hidden="true">
+                <circle class="track" cx="59" cy="59" r="50"></circle>
+                <circle class="seg" cx="59" cy="59" r="50" stroke="var(--green)" stroke-dasharray="314 314"></circle>
+              </svg>
+              <div class="ctr"><div class="pct">4/4</div><div class="cap">Checked</div></div>
+            </div>
+            <div>
+              <div class="h4">All checks complete</div>
+              <p class="micro" style="margin-top:4px">Identity, income, academic standing and bank mapping.</p>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid var(--line);margin:16px 0 6px"></div>
+
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Identity</span><span class="v">25 of 25 fields</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Income</span><span class="v">Under ceiling</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Academic</span><span class="v">CGPA 8.84</span></div>
+          <div class="keyline"><svg class="i"><use href="#i-check"/></svg><span class="k">Bank</span><span class="v">NPCI active</span></div>
+
+          <p class="micro" style="margin-top:12px">Review the evidence, then sign. No automatic approval is possible.</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-h"><h2 class="h3">Sanction allocation</h2><span class="badge badge-gray">FY 2026–27</span></div>
+        <div class="card-b">
+          <div class="flex between center" style="margin-bottom:14px">
+            <span class="eyebrow">Total</span><span class="price" style="font-size:20px">₹1,32,000</span>
+          </div>
+          <div class="bars" style="--max:100">
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 78px;row-gap:4px">
+              <span class="bar-label">Tuition · BIT Mesra</span><span class="bar-value">74% · ₹98K</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar" style="--v:74"></div></div>
+            </div>
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 78px;row-gap:4px">
+              <span class="bar-label">Living maintenance</span><span class="bar-value">18% · ₹24K</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar" style="--v:18"></div></div>
+            </div>
+            <div class="bar-row" style="grid-template-columns:minmax(0,1fr) 78px;row-gap:4px">
+              <span class="bar-label">PVTG book allowance</span><span class="bar-value">8% · ₹10K</span>
+              <div class="bar-track" style="grid-column:1/-1"><div class="bar" style="--v:8"></div></div>
+            </div>
+          </div>
+          <div class="callout ok mt16">
+            <svg class="i"><use href="#i-check"/></svg>
+            <div><b>Full statutory grant.</b> Zero parent contribution for this PVTG household.</div>
+          </div>
+        </div>
+        <div class="card-ft" style="display:block">
+          <a class="link-arrow" href="sanction-signing.html">Continue to digital signing <svg class="i-sm"><use href="#i-arrowRight"/></svg></a>
+        </div>
+      </section>
+
+      <div class="callout warn">
+        <svg class="i"><use href="#i-clock"/></svg>
+        <div><b>SLA clock running.</b> 24 hours remain. Cases that breach SLA are escalated to the collector automatically.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="micro" style="margin-top:24px;color:var(--meta)">Sample case evidence · Decision support only · Tribe Saarthi design preview</p>
+</main>
+
+<!-- Deficiency notice modal (screen 15) -->
+<div class="modal-backdrop" id="noticeModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="notice-title" style="max-width:660px">
+    <div class="modal-h">
+      <div>
+        <h2 class="h2" id="notice-title" style="font-size:18px">Request a document correction</h2>
+        <p class="micro" style="margin-top:3px">Application #TS-2026-88194 · Mohan Birhor</p>
+      </div>
+      <button class="iconlink" type="button" data-close aria-label="Close"><svg class="i"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="modal-b">
+      <div class="field" style="gap:8px">
+        <span class="flabel">1. Which document needs a correction?</span>
+        <p class="micro" style="margin-bottom:4px">Choose a document, then explain what the scholar needs to change.</p>
+        <label class="radio"><input type="radio" name="doc" checked>
+          <span><b style="font-weight:600">Income certificate expiry / renewal required</b><span class="micro" style="display:block;margin-top:2px">Must be renewed within 30 days of the sanction date.</span></span></label>
+        <label class="radio"><input type="radio" name="doc">
+          <span><b style="font-weight:600">Aadhaar name / DOB discrepancy</b><span class="micro" style="display:block;margin-top:2px">Does not match the senior secondary marksheet.</span></span></label>
+        <label class="radio"><input type="radio" name="doc">
+          <span><b style="font-weight:600">Academic fee receipt breakup missing</b><span class="micro" style="display:block;margin-top:2px">Hostel and maintenance components are not itemised.</span></span></label>
+      </div>
+
+      <div class="field" style="margin-top:18px;gap:8px">
+        <span class="flabel">2. When is the correction due?</span>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+          <label class="radio" style="padding:10px"><input type="radio" name="due" checked><span><b style="font-weight:600">7 working days</b><span class="micro" style="display:block">Standard</span></span></label>
+          <label class="radio" style="padding:10px"><input type="radio" name="due"><span><b style="font-weight:600">14 working days</b><span class="micro" style="display:block">Remote belt</span></span></label>
+          <label class="radio" style="padding:10px"><input type="radio" name="due"><span><b style="font-weight:600">21 days</b><span class="micro" style="display:block">PVTG special</span></span></label>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:18px">
+        <label for="notice-text">3. Explain what needs to change</label>
+        <textarea class="textarea" id="notice-text" style="min-height:104px">Dear Mohan Birhor,
+
+Your fee receipt shows ₹98,000 but does not include hostel charges. Upload a hostel receipt, or ask your warden to confirm your residence.
+
+You can upload the corrected document from your application page. Your place in the queue is held for the cure period.</textarea>
+        <span class="hint">The notice is sent by SMS and in-app audio in the scholar's chosen language.</span>
+      </div>
+
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+        <div class="h4" style="margin-bottom:10px">Cure &amp; resolution workflow</div>
+        <ol class="minirail">
+          <li class="active"><span class="mdot"></span>Notice sent</li>
+          <li><span class="mdot"></span>Scholar cures</li>
+          <li><span class="mdot"></span>Auto-recheck</li>
+          <li><span class="mdot"></span>Sanction release</li>
+        </ol>
+      </div>
+    </div>
+    <div class="modal-f">
+      <button class="btn btn-ghost" type="button" data-close>Cancel</button>
+      <button class="btn btn-dark" type="button" id="transmitNotice">
+        <svg class="i"><use href="#i-signature"/></svg>Transmit notice with DSC</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+document.getElementById('transmitNotice').addEventListener('click', function(){
+  var m = document.getElementById('noticeModal');
+  m.hidden = true; document.body.classList.remove('modal-open');
+  window.Saarthi.toast('Notice transmitted · cure window 7 working days');
+});
+</script>
+</body>
+</html>
